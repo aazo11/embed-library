@@ -4,7 +4,8 @@ import {WidgetLibraryComponent} from 'src/app/widget-library/widget-library.comp
 
 
 const routes: Routes = [
-  { path: 'library', component: WidgetLibraryComponent }
+  { path: 'library', component: WidgetLibraryComponent },
+  { path: '', component: WidgetLibraryComponent }
 ];
 
 @NgModule({
