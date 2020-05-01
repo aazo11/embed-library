@@ -1,0 +1,27 @@
+.example-card {
+    max-width: 800px;
+  }
+  
+  .example-header-image {
+    
+    background-image: url('../../assets/logo.png');
+    background-size: cover;
+  }
+
+  iframe{
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  mat-card-actions{
+     text-align:right;
+  }
+
+  .description{
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 650px;
+    padding-top: 20px;
+  }
+  
+  

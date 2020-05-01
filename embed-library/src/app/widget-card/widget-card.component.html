@@ -1,0 +1,19 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Voter registration breakdown by state</mat-card-title>
+      <mat-card-subtitle>Donation Based Geovisualization</mat-card-subtitle>
+    </mat-card-header>
+    <div style="text-align: center;">
+        <iframe style="display:block;" width="665" height="530"  [src]="sanitizer.bypassSecurityTrustResourceUrl(iframeSRC)" frameBorder="0"></iframe>
+    </div>
+    <mat-card-content>
+        <div class="description">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+         </div>
+    
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>Copy Embed Code</button>
+    </mat-card-actions>
+  </mat-card>
