@@ -1,7 +1,7 @@
 <div class="container">
 <ul>
-<li *ngFor="let embedID of embedList$ | async">
-<app-widget-card [campaignID]="embedID"></app-widget-card>
+<li *ngFor="let embed of embedList$ | async">
+<app-widget-card [campaignID]="embed.id" [embedTitle]="embed.embedTitleInLibrary" [embedSubtitle]="embed.embedSubtitleInLibrary" [embedDescription]="embed.embedDescriptionInLibrary"></app-widget-card>
 </li>
 </ul>
 

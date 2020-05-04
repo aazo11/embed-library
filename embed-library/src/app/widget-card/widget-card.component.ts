@@ -10,6 +10,10 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class WidgetCardComponent implements OnInit {
   @Input() campaignID: string[]
+  @Input() embedTitle: string
+  @Input() embedSubtitle: string
+  @Input() embedDescription: string
+
   server_url = "https://callyourcongressperson.com/embed/" 
   iframeSRC: string;
 
