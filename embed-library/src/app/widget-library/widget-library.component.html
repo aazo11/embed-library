@@ -1,7 +1,11 @@
 <div class="container">
 <ul>
 <li *ngFor="let embed of embedList$ | async">
-<app-widget-card [campaignID]="embed.id" [embedTitle]="embed.embedTitleInLibrary" [embedSubtitle]="embed.embedSubtitleInLibrary" [embedDescription]="embed.embedDescriptionInLibrary"></app-widget-card>
+<app-widget-card [campaignID]="embed.id" 
+                [embedTitle]="embed.embedTitleInLibrary" 
+                [embedSubtitle]="embed.embedSubtitleInLibrary" 
+                [embedDescription]="embed.embedDescriptionInLibrary"
+                (copyEmbedCode)="embedCopied($event)"></app-widget-card>
 </li>
 </ul>
 
