@@ -2,8 +2,6 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {MatCardModule} from '@angular/material/card'
 import { DomSanitizer } from '@angular/platform-browser';
 
-
-
 @Component({
   selector: 'app-widget-card',
   templateUrl: './widget-card.component.html',
@@ -25,12 +23,12 @@ export class WidgetCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.iframeSRC = this.server_url + this.campaignID
-    this.embedCodeHTML =  '<iframe style="display:block;" width="665" height="530" partnerID="" [src]="' + this.iframeSRC +'" frameBorder="0"></iframe>' 
+    this.embedCodeHTML =  '<iframe style="display:block;" width="665" height="530" partnerID="" src="' + this.iframeSRC +'" frameBorder="0"></iframe>' 
 
   }
 
   getCodeForWidget():void{
-    console.log('get code for widget');
+    //console.log('get code for widget');
     this.copyEmbedCode.emit(this.embedTitle)
 
   }

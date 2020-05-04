@@ -13,13 +13,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatListModule} from '@angular/material/list';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ClipboardModule } from 'ngx-clipboard';
+import { CachedSrcDirective } from './cached-src.directive';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     WidgetLibraryComponent,
-    WidgetCardComponent
+    WidgetCardComponent,
+    CachedSrcDirective
   ],
   imports: [
     BrowserModule,
