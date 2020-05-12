@@ -5,15 +5,17 @@
       <mat-card-subtitle>{{embedSubtitle}}</mat-card-subtitle>
     </mat-card-header>
     <div style="text-align: center;">
-        <iframe style="display:block;" width="665" height="530"  [cachedSrc]="iframeSRC" frameBorder="0"></iframe>
+        <iframe style="display:block;"   [cachedSrc]="iframeSRC" frameBorder="0"></iframe>
     </div>
     <mat-card-content>
         <div class="description">
        {{embedDescription}} 
          </div>
-    
     </mat-card-content>
+
+    
     <mat-card-actions>
-      <button mat-flat-button (click)="getCodeForWidget()" ngxClipboard [cbContent]="embedCodeHTML">Get Embed Code</button>
+        <span class="embedCodeBox"> {{embedCodeHTML}}</span>
+      <button mat-flat-button (click)="getCodeForWidget()" ngxClipboard [cbContent]="embedCodeHTML">Copy Embed Code</button>
     </mat-card-actions>
   </mat-card>

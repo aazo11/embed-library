@@ -23,7 +23,7 @@ export class WidgetLibraryComponent implements OnInit {
 
   // We open snackbar when user has been logged out
   embedCopied(title: string) {
-    this.snackBar.open('Embed code copied to clipboard', undefined, {
+    this.snackBar.open('Embed code copied to clipboard, contact us for revenue share opportunities.', undefined, {
       duration: 2000,
     })
     
@@ -34,7 +34,7 @@ export class WidgetLibraryComponent implements OnInit {
        
         
     }
-    window.location.href = 'mailto:?'+qs.stringify(params)
+    //window.location.href = 'mailto:?'+qs.stringify(params)
     
   }
 }

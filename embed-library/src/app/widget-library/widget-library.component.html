@@ -1,4 +1,11 @@
+<div class="headerText"> 
+    <div class="top">Embed Library </div>
+    <div class="description">We provide free interactive data visualizations. No strings attached. Feel free to use and embed in your articles. If you want to explore using our data visualizations for shared monetization opportunities <a href="mailto:partnerships@reconnectinglabs.com">contact us</a>.
+</div>
+</div>
+
 <div class="container">
+
 <ul>
 <li *ngFor="let embed of embedList$ | async">
 <app-widget-card [campaignID]="embed.id" 

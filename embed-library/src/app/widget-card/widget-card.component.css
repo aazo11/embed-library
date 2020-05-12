@@ -2,6 +2,25 @@
     max-width: 800px;
   }
   
+
+.embedCodeBox{
+    float: left;
+    width: 70%;
+    border:solid  lightgray 2px;
+    text-align: left;
+    margin-top: 4px;
+    margin-left: 75px;
+   
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    color: grey;
+    font-size: 0.9em;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 600px;
+}
+
   .example-header-image {
     
     background-image: url('../../assets/logo.png');
@@ -41,6 +60,17 @@
   text-decoration:none;box-shadow:0 3px 12px 0 rgba(0,0,0,.2)}
 
   @media screen and (max-width: 500px) {
+
+    .embedCodeBox{
+        
+        width: 320px;
+       margin-left: 30px;
+       margin-right: 30px;
+       
+        margin-bottom: 10px;
+        
+    }
+
     iframe{
         margin-right: 0;
         margin-left: 0;
