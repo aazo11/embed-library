@@ -4,20 +4,22 @@
 }
 
 .headerText{
-  max-width: 720px;
+  max-width: 1020px;
   padding: 10px;
   margin: 30px auto 50px;
+  
 }
 
 .headerText .top {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 600;
   margin-bottom: 16px;
+  color: #8F48F1;
 }
 
 .headerText .description {
-  font-weight: 500;
-  font-size: 16px;
+  
+  font-size: 1.2em;
 }
 
 .container{
@@ -42,4 +44,13 @@
   .container {
     padding: 0;
   }
+  
+ 
+}
+
+@media screen and (max-width: 1394px){
+    .headerText{
+        max-width: 680px;
+      }
+
 }

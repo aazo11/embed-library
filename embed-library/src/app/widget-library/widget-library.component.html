@@ -1,21 +1,20 @@
 <div class="component">
-  <div class="headerText">
-    <div class="top">Tool Library </div>
-    <div class="description">
-      Our tools are transforming passive readers into active participants by allowing them
-      to voice their opinions and contribute to causes, all without leaving the page.
-      These plugins can be adapted to the most pressing civic issues an deployed for a wide
-      range of causes.<br />
-      For customization and revenue sharing inquiries, please reach out to
-      <a href="mailto:partnerships@reconnectinglabs.com">partnerships@reconnectinglabs.com</a>.
+    <div class="headerText">
+      <div class="top">HiGeorge Data Viz Library</div>
+      <div class="description">
+        Expand your breadth of coverage using AI-powered visual journalism. 
+        Our embeddable and interactive data visualizations can be freely used and embedded into publisher websites. No strings attached.
+        They transform passive readers into active participants by allowing them to take actions all without leaving the page and can be adapted to all storylines. <br><br>
+        For any customization or if you want to explore using our data visualizations for shared monetization opportunities reach out
+        to <a href="mailto:partnerships@reconnectinglabs.com">our partnerships team</a>.
+      </div>
+    </div>
+  
+    <div class="container">
+      <div *ngFor="let embed of embedList$ | async" class="widget-box">
+        <app-widget-card [campaignID]="embed.id" [embedTitle]="embed.embedTitleInLibrary"
+          [embedSubtitle]="embed.embedSubtitleInLibrary" [embedDescription]="embed.embedDescriptionInLibrary"
+          (copyEmbedCode)="embedCopied($event)"></app-widget-card>
+      </div>
     </div>
   </div>
-
-  <div class="container">
-    <div *ngFor="let embed of embedList$ | async" class="widget-box">
-      <app-widget-card [campaignID]="embed.id" [embedTitle]="embed.embedTitleInLibrary"
-        [embedSubtitle]="embed.embedSubtitleInLibrary" [embedDescription]="embed.embedDescriptionInLibrary"
-        (copyEmbedCode)="embedCopied($event)"></app-widget-card>
-    </div>
-  </div>
-</div>
