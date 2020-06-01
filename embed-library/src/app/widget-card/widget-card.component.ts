@@ -23,7 +23,7 @@ export class WidgetCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.iframeSRC = this.server_url + this.campaignID
-    this.embedCodeHTML =  '<iframe style="display:block;" width="665px" height="530px" partnerID="" src="' + this.iframeSRC +'" frameBorder="0"></iframe>' 
+    this.embedCodeHTML =  '<iframe style="display:block;" width="665px" height="530px" src="' + this.iframeSRC +'" frameborder="0"></iframe>' 
 
   }
 
