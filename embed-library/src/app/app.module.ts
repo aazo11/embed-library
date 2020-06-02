@@ -1,16 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WidgetLibraryComponent } from './widget-library/widget-library.component';
 import { WidgetCardComponent } from './widget-card/widget-card.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatCardModule,   
+import {
+  MatCardModule,
 } from '@angular/material/card';
-import {   MatSnackBarModule} from '@angular/material/snack-bar'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule } from '@angular/material/list';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ClipboardModule } from 'ngx-clipboard';
 import { CachedSrcDirective } from './cached-src.directive';
@@ -26,6 +28,7 @@ import { CachedSrcDirective } from './cached-src.directive';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     FlexLayoutModule,
     MatCardModule,
     BrowserAnimationsModule,
