@@ -14,13 +14,13 @@
     <div class="search">
       <div class="field">
         <label>Seach Library</label>
-        <input #storyline (input)="searchByStoryline(storyline.value)" />
+        <input  #tags (input)="searchByTags(tags.value)" />
       </div>
       <div class="field">
         <label>Issue</label>
-        <select #tags (input)="searchByTags(tags.value)">
+        <select #storyline (input)="searchByStoryline(storyline.value)">
           <option value=''>All</option>
-          <option *ngFor="let op of searchOptions.tags" [value]="op.value">{{op.label}}</option>
+          <option *ngFor="let op of searchOptions.storylines" [value]="op.value">{{op.label}}</option>
         </select>
       </div>
       <div class="field">

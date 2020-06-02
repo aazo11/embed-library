@@ -13,7 +13,7 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
   embedList$: Observable<string[]>
   searchParams = new BehaviorSubject<any>({ storyline: '', tags: '', location: '' });
   searchOptions = {
-    tags: [
+    storylines: [
       { label: 'COVID-19', value: 'COVID' },
       { label: 'Election 2020', value: 'Election 2020' },
       { label: 'Environment', value: 'Environment' }
