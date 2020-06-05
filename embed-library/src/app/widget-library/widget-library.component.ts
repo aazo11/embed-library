@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { EmbedService } from 'src/app/embed.service'
-import { Observable, BehaviorSubject, fromEvent } from 'rxjs'
+import { BehaviorSubject, fromEvent, Subscription } from 'rxjs'
 import { MatSnackBar } from '@angular/material/snack-bar'
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
@@ -10,7 +10,8 @@ import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
   styleUrls: ['./widget-library.component.css']
 })
 export class WidgetLibraryComponent implements OnInit, OnDestroy {
-  embedList$: Observable<string[]>
+  sub: Subscription
+  embedList: any[] = []
   searchParams = new BehaviorSubject<any>({ storyline: '', tags: '', location: '' });
   searchOptions = {
     storylines: [
@@ -79,20 +80,31 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-    this.embedList$ = this.searchParams.pipe(
-      debounceTime(500),
-      distinctUntilChanged(),
-      switchMap((term: string) => this.embedService.getEmbeds(term)),
-    )
+    this.sub = this.searchParams
+      .pipe(
+        debounceTime(500),
+        distinctUntilChanged(),
+        switchMap((term: string) => this.embedService.getEmbeds(term)),
+      )
+      .subscribe((list) => {
+        this.embedList = list
+        this.limit = 2
+      })
 
-    fromEvent(window, 'scroll').pipe(debounceTime(500)).subscribe(() => {
-      if (window.scrollY + document.documentElement.offsetHeight >= document.documentElement.scrollHeight) {
-        this.limit += 2
-      }
-    })
+    fromEvent(window, 'scroll')
+      .pipe(debounceTime(500))
+      .subscribe(() => {
+        if (window.scrollY + document.documentElement.offsetHeight >= document.documentElement.scrollHeight) {
+          this.limit += 2
+        }
+      })
   }
 
-  ngOnDestroy() { }
+  ngOnDestroy() {
+    if (this.sub) {
+      this.sub.unsubscribe()
+    }
+  }
 
   // We open snackbar when user has been logged out
   embedCopied(title: string) {
