@@ -75,7 +75,10 @@
   display: flex;
   width: 697px;
   max-width: 100%;
-  margin-bottom: 30px;
+}
+
+.container .widget-box > * {
+  padding-bottom: 30px;
 }
 
 @media screen and (max-width: 680px) {

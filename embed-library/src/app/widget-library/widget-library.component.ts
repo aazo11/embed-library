@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { EmbedService } from 'src/app/embed.service'
-import { Observable, BehaviorSubject } from 'rxjs'
+import { Observable, BehaviorSubject, fromEvent } from 'rxjs'
 import { MatSnackBar } from '@angular/material/snack-bar'
-import { debounceTime, distinctUntilChanged, switchMap, skip } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-widget-library',
@@ -71,6 +71,7 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
       { label: 'Wyoming', value: 'WY' }
     ]
   }
+  limit = 2
 
   constructor(
     private embedService: EmbedService,
@@ -82,7 +83,13 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
       debounceTime(500),
       distinctUntilChanged(),
       switchMap((term: string) => this.embedService.getEmbeds(term)),
-    );
+    )
+
+    fromEvent(window, 'scroll').pipe(debounceTime(500)).subscribe(() => {
+      if (window.scrollY + document.documentElement.offsetHeight >= document.documentElement.scrollHeight) {
+        this.limit += 2
+      }
+    })
   }
 
   ngOnDestroy() { }

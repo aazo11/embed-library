@@ -34,10 +34,10 @@
   </div>
 
   <div class="container">
-    <div *ngFor="let embed of embedList$ | async" class="widget-box">
+    <div *ngFor="let embed of embedList$ | async; let idx = index;" class="widget-box">
       <app-widget-card [campaignID]="embed.id" [embedTitle]="embed.embedTitleInLibrary"
         [embedSubtitle]="embed.embedSubtitleInLibrary" [embedDescription]="embed.embedDescriptionInLibrary"
-        (copyEmbedCode)="embedCopied($event)"></app-widget-card>
+        (copyEmbedCode)="embedCopied($event)" *ngIf="idx < limit"></app-widget-card>
     </div>
   </div>
 </div>
