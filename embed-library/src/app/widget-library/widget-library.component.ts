@@ -17,7 +17,8 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
     storylines: [
       { label: 'COVID-19', value: 'COVID' },
       { label: 'Election 2020', value: 'Election 2020' },
-      { label: 'Environment', value: 'Environment' }
+      { label: 'Environment', value: 'Environment' },
+      { label: 'Police Brutality', value: 'Police Brutality' }
     ],
     locations: [
       { label: 'Alabama', value: 'AL' },
