@@ -14,7 +14,7 @@
     <div class="search">
       <div class="field">
         <label>Seach Library</label>
-        <input  #tags (input)="searchByTags(tags.value)" />
+        <input #tags (input)="searchByTags(tags.value)" />
       </div>
       <div class="field">
         <label>Issue</label>
@@ -34,7 +34,7 @@
   </div>
 
   <div class="container">
-    <div *ngFor="let embed of embedList$ | async; let idx = index;" class="widget-box">
+    <div *ngFor="let embed of embedList; let idx = index;" class="widget-box">
       <app-widget-card [campaignID]="embed.id" [embedTitle]="embed.embedTitleInLibrary"
         [embedSubtitle]="embed.embedSubtitleInLibrary" [embedDescription]="embed.embedDescriptionInLibrary"
         (copyEmbedCode)="embedCopied($event)" *ngIf="idx < limit"></app-widget-card>
