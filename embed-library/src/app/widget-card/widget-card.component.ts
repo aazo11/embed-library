@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import {MatCardModule} from '@angular/material/card'
+import { MatCardModule } from '@angular/material/card'
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -16,20 +16,19 @@ export class WidgetCardComponent implements OnInit {
 
   embedCodeHTML: string
 
-  server_url = "https://callyourcongressperson.com/embed/" 
+  server_url = "https://callyourcongressperson.com/embed/"
   iframeSRC: string;
 
   constructor(public sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.iframeSRC = this.server_url + this.campaignID
-    this.embedCodeHTML =  '<iframe style="display:block;" width="665px" height="530px" src="' + this.iframeSRC +'" frameborder="0"></iframe>' 
+    this.embedCodeHTML = '<iframe style="display:block;" width="665px" height="530px" src="' + this.iframeSRC + '" frameborder="0"></iframe>'
 
   }
 
-  getCodeForWidget():void{
+  getCodeForWidget(): void {
     //console.log('get code for widget');
     this.copyEmbedCode.emit(this.embedTitle)
-
   }
 }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { of, Observable, pipe, throwError, from, Subject, BehaviorSubject } from 'rxjs'
-import { tap, map, catchError, flatMap } from 'rxjs/operators'
-import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { Observable, throwError } from 'rxjs'
+import { catchError } from 'rxjs/operators'
+import { HttpClient } from '@angular/common/http'
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,6 @@ export class EmbedService {
   constructor(private http: HttpClient) { }
 
   getEmbeds(searchParams: any = {}): Observable<string[]> {
-    console.log(searchParams)
     const params = []
     for (let key in searchParams) {
       if (!searchParams[key]) continue
