@@ -95,7 +95,7 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
     fromEvent(window, 'scroll')
       .pipe(debounceTime(500))
       .subscribe(() => {
-        if (window.scrollY + document.documentElement.offsetHeight >= document.documentElement.scrollHeight) {
+        if (window.scrollY + document.documentElement.offsetHeight >= 0.85 * document.documentElement.scrollHeight) {
           this.limit += 2
         }
       })
