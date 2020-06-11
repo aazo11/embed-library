@@ -18,7 +18,7 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
       { label: 'COVID-19', value: 'COVID' },
       { label: 'Election 2020', value: 'Election 2020' },
       { label: 'Environment', value: 'Environment' },
-      { label: 'Police Brutality', value: 'Police Brutality' }
+      { label: 'Criminal Justice', value: 'Criminal Justice' }
     ],
     locations: [
       { label: 'Alabama', value: 'AL' },
