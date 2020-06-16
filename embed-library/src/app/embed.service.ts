@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http'
   providedIn: 'root'
 })
 export class EmbedService {
-  private CYCServerURL = 'https://coreservices.hi-george.com/api/embed' // Static server url base path
+  private CYCServerURL = 'https://coreservices.hi-george.com/api/datainteractive' // Static server url base path
   constructor(private http: HttpClient) { }
 
   getEmbeds(searchParams: any = {}): Observable<string[]> {
