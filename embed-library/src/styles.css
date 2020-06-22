@@ -1,4 +1,68 @@
 /* You can add global styles to this file, and also import other style files */
 
+/* Fonts */
+@font-face {
+  font-family: "Lato-Bold";
+  src: url("src/assets/fonts/Lato-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("src/assets/fonts/Lato-Regular.ttf");
+}
+
+@font-face {
+  font-family: "PlayfairDisplay-Bold";
+  src: url("src/assets/fonts/PlayfairDisplay-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("src/assets/fonts/Roboto-Bold.ttf");
+}
+
+/* Layout */
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+.mat-form-field-label,
+.mat-input-element,
+.mat-select,
+.mat-option {
+  font-family: "Lato" !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+}
+
+.mat-form-field-label {
+  top: 1.1em !important;
+}
+
+.mat-hint {
+  font-family: "Lato-Bold" !important;
+  font-size: 10px !important;
+  line-height: 13px !important;
+  text-transform: uppercase;
+  color: #333366 !important;
+}
+.mat-hint a {
+  color: #E61C32;
+  margin-left: 5px;
+}
+
+.mat-dialog-container {
+  padding: 0 !important;
+}
+
+.cdk-overlay-pane {
+  max-width: 90vw !important;
+}
