@@ -16,7 +16,7 @@ export class WidgetCardComponent implements OnInit {
 
   embedCodeHTML: string
 
-  server_url = "https://callyourcongressperson.com/embed/"
+  server_url = "https://callyourcongressperson.com/datainteractive/"
   iframeSRC: string;
 
   constructor(public sanitizer: DomSanitizer) { }
