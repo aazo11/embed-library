@@ -138,4 +138,8 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
     if (searchParams[key] === value) return
     this.searchParams.next({ ...searchParams, [key]: value })
   }
+
+  getJSON(list: string){
+    return JSON.parse(list)
+  }
 }

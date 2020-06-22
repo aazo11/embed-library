@@ -34,9 +34,9 @@
   </div>
 
   <div class="container">
-    <div *ngFor="let embed of embedList; let idx = index;" class="widget-box">
-      <app-widget-card [campaignID]="embed.id" [embedTitle]="embed.embedTitleInLibrary"
-        [embedSubtitle]="embed.embedSubtitleInLibrary" [embedDescription]="embed.embedDescriptionInLibrary"
+    <div *ngFor="let embed  of embedList; let idx = index;" class="widget-box">
+      <app-widget-card [campaignID]="getJSON(embed)._id.$oid" [embedTitle]="getJSON(embed).embed_title_in_library"
+        [embedSubtitle]="getJSON(embed).embed_subtitle_in_library" [embedDescription]="getJSON(embed).embed_description_in_library"
         (copyEmbedCode)="embedCopied($event)" *ngIf="idx < limit"></app-widget-card>
     </div>
   </div>
