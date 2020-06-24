@@ -1,18 +1,16 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { EmbedService } from 'src/app/embed.service'
-import { BehaviorSubject, fromEvent, Subscription } from 'rxjs'
-import { MatSnackBar } from '@angular/material/snack-bar'
-import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { debounceTime, distinctUntilChanged, skip } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-widget-library',
-  templateUrl: './widget-library.component.html',
-  styleUrls: ['./widget-library.component.css']
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.scss']
 })
-export class WidgetLibraryComponent implements OnInit, OnDestroy {
-  sub: Subscription
-  embedList: any[] = []
-  searchParams = new BehaviorSubject<any>({ storyline: '', tags: '', location: '' });
+export class SearchComponent implements OnInit {
+  _params = new BehaviorSubject<any>({ storyline: '', tags: '', location: '' });
+
+  // constants
   searchOptions = {
     storylines: [
       { label: 'COVID-19', value: 'COVID' },
@@ -72,71 +70,46 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
       { label: 'Wisconsin', value: 'WI' },
       { label: 'Wyoming', value: 'WY' }
     ]
-  }
-  limit = 2
+  };
 
-  constructor(
-    private embedService: EmbedService,
-    private snackBar: MatSnackBar,
-  ) { }
+  @Input() set params(value) {
+    if (value) this._params.next(value);
+  }
+  @Output() update = new EventEmitter<any>();
 
   ngOnInit() {
-    this.sub = this.searchParams
-      .pipe(
-        debounceTime(500),
-        distinctUntilChanged(),
-        switchMap((term: string) => this.embedService.getEmbeds(term)),
-      )
-      .subscribe((list) => {
-        this.embedList = list
-        this.limit = 2
-      })
-
-    fromEvent(window, 'scroll')
-      .pipe(debounceTime(500))
-      .subscribe(() => {
-        if (window.scrollY + document.documentElement.offsetHeight >= 0.85 * document.documentElement.scrollHeight) {
-          this.limit += 2
-        }
-      })
-  }
-
-  ngOnDestroy() {
-    if (this.sub) {
-      this.sub.unsubscribe()
-    }
-  }
-
-  // We open snackbar when user has been logged out
-  embedCopied(title: string) {
-    this.snackBar.open('Embed code copied to clipboard, contact us for revenue share opportunities.', undefined, {
-      duration: 2000,
-    })
-
-    const params = {
-      to: 'partnerships@reconntinglabs.com',
-      subject: 'Revenue share account request',
-      body: `We are interested in getting a partner account to generate revenue on embed visualization "${title}"`
-    }
-    //window.location.href = 'mailto:?'+qs.stringify(params)
-  }
-
-  searchByStoryline(value) {
-    this.updateSearch('storyline', value)
+    this._params.pipe(
+      skip(1),
+      debounceTime(500),
+      distinctUntilChanged((a: any, b: any) => {
+        let result = true;
+        ['storyline', 'tags', 'location'].forEach(key => {
+          result = result && (a[key] === b[key]);
+        });
+        return result;
+      }),
+    ).subscribe((terms: any) => {
+      this.update.emit(terms);
+    });
   }
 
   searchByTags(value) {
     this.updateSearch('tags', value)
   }
 
-  searchByLocation(value) {
-    this.updateSearch('location', value)
+  searchByStoryline(event) {
+    this.updateSearch('storyline', event.value)
+  }
+
+  searchByLocation(event) {
+    this.updateSearch('location', event.value)
   }
 
   private updateSearch(key, value) {
-    const searchParams = this.searchParams.value
-    if (searchParams[key] === value) return
-    this.searchParams.next({ ...searchParams, [key]: value })
+    this._params.next({
+      ...this._params.value,
+      [key]: value
+    });
   }
 
   getJSON(list: string){

@@ -1,0 +1,132 @@
+@import '../../../assets/mixin';
+
+:host {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+
+    .info {
+      width: 30%;
+
+      .title {
+        font-family: "Lato-Bold";
+        font-size: 23px;
+        line-height: 31px;
+        color: #3931D8;
+        margin-bottom: 10px;
+      }
+
+      .subtitle {
+        font-family: "Lato";
+        font-size: 16px;
+        line-height: 24px;
+        color: #66709D;
+        margin-bottom: 15px;
+      }
+
+      .guide {
+        display: flex;
+        font-family: "Lato";
+        font-size: 16px;
+        line-height: 24px;
+        color: #66709D;
+        margin-bottom: 25px;
+
+        .mat-icon {
+          margin-right: 5px;
+        }
+        
+        a {
+          color: #E61C32;
+        }
+      }
+
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 48px;
+        width: 195px;
+        border: 2px solid #3931D8;
+        border-radius: 3px;
+        background-color: #fff;
+        font-family: "Lato-Bold";
+        font-size: 13px;
+        text-transform: uppercase;
+        color: #3931D8;
+        cursor: pointer;
+        outline: none;
+      }
+    }
+
+    .widget {
+      width: 60%;
+
+      .label {
+        font-family: "Lato-Bold";
+        text-transform: uppercase;
+        font-size: 13px;
+        line-height: 24px;
+        margin-bottom: 5px;
+        color: #9CA3C5;
+      }
+
+      .iframeWrapper {
+        position: relative;
+        width: 100%;
+        padding-top: 85%;
+
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  @include sm {
+    .container {
+      flex-direction: column;
+      justify-content: flex-start;
+
+      .info {
+        width: 100%;
+
+        .title {
+          text-align: center;
+          font-size: 21px;
+        }
+
+        .subtitle {
+          text-align: center;
+        }
+
+        .guide {
+          .mat-icon {
+            margin-right: 16px;
+          }
+          padding: 0 15px;
+        }
+
+        button {
+          margin: 0 auto;
+        }
+      }
+
+      .widget {
+        width: 100%;
+        margin-top: 15px;
+
+        .label {
+          font-size: 8px;
+          line-height: 15px;
+        }
+      }
+    }
+  }
+}

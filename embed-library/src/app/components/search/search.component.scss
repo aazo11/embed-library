@@ -1,0 +1,28 @@
+@import '../../../assets/mixin';
+
+:host {
+  .search {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    > .mat-form-field {
+      width: 22%;
+
+      &:first-child {
+        width: 44%;
+      }
+    }
+  }
+
+  @include sm {
+    .search {
+      flex-direction: column;
+
+      > .mat-form-field {
+        width: 100% !important;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}

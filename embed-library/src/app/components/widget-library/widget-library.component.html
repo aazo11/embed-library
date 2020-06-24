@@ -1,0 +1,37 @@
+<div class="component">
+  <div class="headerText">
+    <div class="title">Data Visualization Library</div>
+    <div class="subtitle">Expand your breadth of coverage using AI-powered visual journalism.</div>
+    <ul class="description">
+      <li>
+        Our interactive data visualizations can be freely used on any publisher websites.
+      </li>
+      <li>
+        No strings attached. Transform your readers into active participants by allowing them to take actions all
+        without leaving the page.
+      </li>
+      <li>
+        Can be adapted to all storylines. Having trouble? We can help!
+        <a style="visibility:hidden">
+          Help me find the right visualization
+          <mat-icon class="md-18">arrow_forward</mat-icon>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="searchContainer">
+    <div class="searchBar">
+      <div class="searchTitle">Find visualization that matches your story</div>
+      <app-search (update)="updateSearchParams($event)" [params]="queryParams"></app-search>
+    </div>
+  </div>
+
+  <div class="list">
+    <div *ngFor="let embed of embedList; let idx = index;" class="widget-box">
+      <div class="widget-content" *ngIf="idx < limit">
+        <app-widget [campaign]="getJSON(embed)"></app-widget>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div mat-dialog-content>
+  <a class="close" [mat-dialog-close]="true">
+    <mat-icon>close</mat-icon>
+  </a>
+  <div mat-dialog-title>Add visualization to your web</div>
+  <div class="description">
+    To add visualization to your website copy the code below and paste it into your editor. Need help?
+    <a>Let us know</a>
+  </div>
+  <div class="options">
+    <div class="label">Options</div>
+    <div class="option">
+      <label>Width</label>
+      <mat-form-field>
+        <input matInput [(ngModel)]="width">
+      </mat-form-field>
+    </div>
+    <div class="option">
+      <label>Height</label>
+      <mat-form-field>
+        <input matInput [(ngModel)]="height">
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="embedCodes">
+    <div class="code">{{embedCodeHTML}}</div>
+    <button (click)="copy()" ngxClipboard [cbContent]="embedCodeHTML">Copy embed code</button>
+    <a>Email me the code</a>
+  </div>
+</div>
