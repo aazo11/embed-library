@@ -50,4 +50,8 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
     });
     this.router.navigate([], { queryParams });
   }
+
+  getJSON(list: string){
+    return JSON.parse(list)
+  }
 }

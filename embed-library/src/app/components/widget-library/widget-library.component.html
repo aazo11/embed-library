@@ -30,7 +30,7 @@
   <div class="list">
     <div *ngFor="let embed of embedList; let idx = index;" class="widget-box">
       <div class="widget-content" *ngIf="idx < limit">
-        <app-widget [campaign]="embed"></app-widget>
+        <app-widget [campaign]="getJSON(embed)"></app-widget>
       </div>
     </div>
   </div>

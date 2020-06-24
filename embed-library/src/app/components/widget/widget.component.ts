@@ -13,7 +13,7 @@ export class WidgetComponent implements OnInit {
 
   embedCodeHTML: string
 
-  server_url = "https://callyourcongressperson.com/embed/"
+  server_url = "https://callyourcongressperson.com/datainteractive/" 
   iframeSRC: string;
 
   constructor(
@@ -22,7 +22,7 @@ export class WidgetComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.iframeSRC = this.server_url + this.campaign.id
+    this.iframeSRC = this.server_url + this.campaign._id.$oid
     this.embedCodeHTML = '<iframe style="display:block;" width="665px" height="530px" src="' + this.iframeSRC + '" frameborder="0"></iframe>'
   }
 

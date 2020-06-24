@@ -111,4 +111,8 @@ export class SearchComponent implements OnInit {
       [key]: value
     });
   }
+
+  getJSON(list: string){
+    return JSON.parse(list)
+  }
 }
