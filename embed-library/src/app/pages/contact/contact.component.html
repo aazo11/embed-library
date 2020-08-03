@@ -1,0 +1,55 @@
+<div class="col">
+  <app-header [active]="3"></app-header>
+  <div class="main-content col">
+    <div class="section-one">
+      <div class="container row justify-center">
+        <h2 class="page-title">Company</h2>
+      </div>
+    </div>
+
+    <div class="section-two">
+      <div class="contents row justify-between align-start">
+        <div class="section-content col">
+          <div class="title">We are here to help!</div>
+          <p class="desc">
+            Have questions or need support?<br/>
+            Let us know!
+          </p>
+          <p class="desc">
+            hello@reconnectinglabs.com<br/>
+            HiGeorge (c/o Reconnecting Labs)<br/>
+            2443 Fillmore St #380-9884<br/>
+            San Francisco, CA 94115
+          </p>
+        </div>
+        <form class="col align-end" [formGroup]="contactForm" autocomplete="off" novalidate (ngSubmit)="submit()">
+          <div class="form-content col">
+            <mat-form-field>
+              <input matInput type="text" placeholder="Name" formControlName="name" id="name">
+              <mat-error *ngIf="hasError('name', 'required')">Name is required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput type="text" placeholder="Company" formControlName="company" id="company">
+              <mat-error *ngIf="hasError('company', 'required')">Company is required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput type="text" placeholder="Email" formControlName="email" id="email">
+              <mat-error *ngIf="hasError('email', 'required')">Email is required</mat-error>
+              <mat-error *ngIf="hasError('email', 'email')">Email is not valid</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput type="text" placeholder="Subject" formControlName="subject" id="subject">
+              <mat-error *ngIf="hasError('subject', 'required')">Subject is required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <textarea matInput placeholder="Message" rows="5" formControlName="message" id="message"></textarea>
+              <mat-error *ngIf="hasError('message', 'required')">Subject is required</mat-error>
+            </mat-form-field>
+          </div>
+          <app-button type="submit">Submit</app-button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

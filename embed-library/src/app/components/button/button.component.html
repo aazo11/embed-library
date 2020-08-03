@@ -1,0 +1,8 @@
+<button
+  [ngClass]="color"
+  [ngStyle]="{ minWidth: width }"
+  [type]="type"
+  (click)="handleClick()"
+>
+  <ng-content></ng-content>
+</button>

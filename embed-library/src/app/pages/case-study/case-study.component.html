@@ -1,0 +1,62 @@
+<div class="component">
+  <app-header></app-header>
+  <div class="main-content col" *ngIf="!!content">
+    <div class="section-title">
+      <div class="container col align-center justify-center">
+        <img [src]="imageUrl('logo')" [ngStyle]="{ height: content.logoHeight + 'px' }">
+        <div class="page-title">Case Study</div>
+      </div>
+    </div>
+    <div class="section-post">
+      <div class="contents row align-start">
+        <div class="section-content col">
+          <div class="title">{{ content.post }}</div>
+          <div class="desc">
+            Pick from different visualization styles and options.
+            Our library has many visualizations based on current on going topics. 
+          </div>
+        </div>
+        <div class="image">
+          <img [src]="imageUrl('post')">
+        </div>
+      </div>
+    </div>
+    <div class="section-graph">
+      <div class="contents row align-start">
+        <div class="image row justify-end">
+          <img [src]="imageUrl('graph')">
+        </div>
+        <div class="section-content col">
+          <div class="title">{{ content.graph }}</div>
+          <div class="desc">
+            Easily add our dynamic visualizations to your articles or 
+            use a share link to share any visualization directly to social media.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-deployment">
+      <div class="contents row align-start">
+        <div class="section-left col">
+          <div class="section-content">
+            <div class="title">Deployment</div>
+            <div class="desc">
+              The visualizations are embeded with a simple embed code that
+              automatically pulls the latest data into the visualization.
+              This is crucial as the data is updated daily so their viewers
+              alway got the latest information. 
+            </div>
+            <div class="links row">
+              <a class="row justify-center" [href]="content.url" target="_blank">Visit the article</a>
+            </div>
+          </div>
+          <app-touch-panel></app-touch-panel>
+        </div>
+        <div class="image">
+          <img [src]="imageUrl('screen')">
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

@@ -1,0 +1,30 @@
+@import '../../../assets/colors';
+@import '../../../assets/breakpoints';
+
+:host {
+  .bg {
+    width: 100%;
+    background-color: rgb(241, 243, 250);
+  }
+  .title {
+    font-family: Lato-Bold;
+    font-size: 11px;
+    line-height: 24px;
+    color: $color-text-purple;
+    text-transform: uppercase;
+  }
+
+  .main-content {
+    overflow: hidden;
+    padding: 60px 24px;
+
+    .header {
+      margin-bottom: 45px;
+    }
+
+    iframe {
+      border: none;
+      margin-bottom: 45px;
+    }
+  }
+}

@@ -1,0 +1,149 @@
+<div class="col">
+  <app-header [active]="-1"></app-header>
+  <div class="main-content col">
+    <div class="section-one">
+      <div class="container col">
+        <div class="section-content row">
+          <div class="col">
+            <h2>Add Truth and Action to Your Articles</h2>
+            <div class="desc">
+              Using real-time data visualizations and interactive functionality,
+              our mission is to educate and empower readers to not just read the story,
+              but become a part of them through action.
+            </div>
+            <div class="links row">
+              <app-button url="/" color="blue">Contact us to start</app-button>
+              <a class="row link-red" [routerLink]="['/']">
+                How it works
+                <mat-icon aria-hidden="false">arrow_right_alt</mat-icon>
+              </a>
+            </div>
+          </div>
+          <div class="image col">
+            <img class="bg" src="assets/images/home/1.jpg" />
+          </div>
+        </div>
+        <div class="col">
+          <div class="subtitle row">See case studies</div>
+          <div class="logos row justify-center">
+            <a class="logo row justify-center" [routerLink]="['/case-study/forbes']">
+              <img src="assets/images/logos/forbes.png">
+            </a>
+            <a class="logo row justify-center" [routerLink]="['/case-study/advocate']">
+              <img src="assets/images/logos/advocate.png">
+            </a>
+            <a class="logo row justify-center" [routerLink]="['/case-study/mission-local']">
+              <img src="assets/images/logos/mission-local.png">
+            </a>
+            <a class="logo row justify-center" [routerLink]="['/case-study/bkr']">
+              <img src="assets/images/logos/bkr.png">
+            </a>
+            <a class="logo row justify-center" [routerLink]="['/case-study/eye']">
+              <img src="assets/images/logos/eye.png">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-two">
+      <div class="slim-contents">
+        <div class="col">
+          <div class="subtitle">Unifeid platform</div>
+          <h3>A visualization library for ongoing stories</h3>
+          <div class="desc">
+            An easy way to supplement a wide array of articles with rich data interactives.
+            We are 100% free for publishers, includes the necessary datasets,
+            and requires no coding whatsoever.
+          </div>
+          <div class="links row">
+            <app-button url="/">See how it works</app-button>
+          </div>
+          <div class="image-1 row">
+            <img src="assets/images/home/4.jpg" />
+          </div>
+        </div>
+        <div class="col">
+          <div class="image-2 row">
+            <img src="assets/images/home/2.jpg" />
+          </div>
+          <div class="image-3 row">
+            <img src="assets/images/home/3.jpg" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-three">
+      <div class="slim-contents row justify-between align-start">
+        <div class="col">
+          <div class="subtitle">Focus your readers on what’s important</div>
+          <h3>See the whole picture</h3>
+          <p>
+            Pick visualization that best works for your articles.
+            From simple widgets that take up minimal space to full blown graphs.
+            Our visualizations come with overview tiles that help readers quickly
+            see the underlying information.
+          </p>
+          <div class="items col">
+            <div class="row">
+              <img src="assets/images/icons/check-green.svg">
+              Auto updated with latest data
+            </div>
+            <div class="row">
+              <img src="assets/images/icons/check-green.svg">
+              Summary information for each metric
+            </div>
+          </div>
+          <div class="links row">
+            <app-button color="white">See our library</app-button>
+          </div>
+        </div>
+        <div class="image row">
+          <img src="assets/images/home/5.svg">
+        </div>
+      </div>
+    </div>
+
+    <div class="section-four">
+      <div class="slim-contents">
+        <div class="col flex-1">
+          <div class="subtitle">Why us</div>
+          <h3>Loved by Journalists, Engaging for readers</h3>
+          <div class="desc">
+            Your content will now look more complete with facts to back up your main points.
+            We are also available to create custom visualizations for your stories.
+          </div>
+        </div>
+        <div class="col flex-1">
+          <div class="tip col align-start">
+            <img src="assets/images/home/money.svg" />
+            <h5>Monetize</h5>
+            <p>Translate increasing engagement into new monetization opportunities</p>
+          </div>
+          <div class="tip col align-start">
+            <img src="assets/images/home/profile.svg" />
+            <h5>Easy to Deploy</h5>
+            <p>
+              Journalists want to enhance stories with interactives, but lack the time or know-how;
+              we solve this; embed into any article with simple copy/paste
+            </p>
+          </div>
+        </div>
+        <div class="col flex-1">
+          <div class="tip col align-start">
+            <img src="assets/images/home/engagement.svg" />
+            <h5>Increase Engagement</h5>
+            <p>Rich interactives enhance reader understanding, increasing engagement and pageviews</p>
+          </div>
+          <div class="tip col align-start">
+            <img src="assets/images/home/wifi.svg" />
+            <h5>AI-Powered Reporting</h5>
+            <p>Our AI-powered journalism provides expanded breadth of coverage</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

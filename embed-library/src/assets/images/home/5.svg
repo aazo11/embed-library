@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="749px" height="650px" viewBox="0 0 749 650" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>8AC9D7E6-9A77-4A1B-BC50-541B71A5F770</title>
+    <defs>
+        <filter x="-24.4%" y="-46.2%" width="148.9%" height="192.3%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="16" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <filter x="-24.4%" y="-46.2%" width="148.9%" height="192.3%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="16" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <filter x="-24.4%" y="-46.2%" width="148.9%" height="192.3%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="16" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <filter x="-24.4%" y="-46.2%" width="148.9%" height="192.3%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="16" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Homepage" transform="translate(-841.000000, -1745.000000)">
+            <g id="Blue-section-picture" transform="translate(842.000000, 1745.500000)">
+                <g id="Group-3">
+                    <g id="Group-17" transform="translate(0.000000, 174.000000)">
+                        <rect id="Rectangle" stroke="#5A38FD" stroke-width="5" fill="#201C53" opacity="0.564011347" x="2.5" y="2.5" width="528" height="288" rx="11"></rect>
+                        <rect id="Rectangle" fill="#FFFFFF" opacity="0.0433872768" x="52" y="220" width="158" height="16"></rect>
+                        <rect id="Rectangle-Copy-14" fill="#FFFFFF" opacity="0.0433872768" transform="translate(60.000000, 119.000000) rotate(-90.000000) translate(-60.000000, -119.000000) " x="-19" y="111" width="158" height="16"></rect>
+                        <rect id="Rectangle-Copy-15" fill="#FFFFFF" opacity="0.0433872768" transform="translate(84.000000, 144.250000) rotate(-90.000000) translate(-84.000000, -144.250000) " x="30.25" y="136.25" width="107.5" height="16"></rect>
+                        <rect id="Rectangle-Copy-16" fill="#FFFFFF" opacity="0.0433872768" transform="translate(108.000000, 163.500000) rotate(-90.000000) translate(-108.000000, -163.500000) " x="73.5" y="155.5" width="69" height="16"></rect>
+                        <rect id="Rectangle-Copy-17" fill="#FFFFFF" opacity="0.0433872768" transform="translate(132.000000, 148.750000) rotate(-90.000000) translate(-132.000000, -148.750000) " x="82.75" y="140.75" width="98.5" height="16"></rect>
+                        <rect id="Rectangle-Copy-18" fill="#FFFFFF" opacity="0.0433872768" transform="translate(156.000000, 134.250000) rotate(-90.000000) translate(-156.000000, -134.250000) " x="92.25" y="126.25" width="127.5" height="16"></rect>
+                        <rect id="Rectangle-Copy-19" fill="#FFFFFF" opacity="0.0433872768" transform="translate(180.000000, 119.000000) rotate(-90.000000) translate(-180.000000, -119.000000) " x="101" y="111" width="158" height="16"></rect>
+                        <rect id="Rectangle-Copy-20" fill="#FFFFFF" opacity="0.0433872768" transform="translate(204.000000, 125.500000) rotate(-90.000000) translate(-204.000000, -125.500000) " x="131.5" y="117.5" width="145" height="16"></rect>
+                        <rect id="Rectangle-Copy-21" fill="#FFFFFF" opacity="0.0433872768" transform="translate(228.000000, 134.250000) rotate(-90.000000) translate(-228.000000, -134.250000) " x="164.25" y="126.25" width="127.5" height="16"></rect>
+                        <rect id="Rectangle-Copy-22" fill="#FFFFFF" opacity="0.0433872768" transform="translate(252.000000, 141.000000) rotate(-90.000000) translate(-252.000000, -141.000000) " x="195" y="133" width="114" height="16"></rect>
+                        <rect id="Rectangle-Copy-23" fill="#FFFFFF" opacity="0.0433872768" transform="translate(276.000000, 148.750000) rotate(-90.000000) translate(-276.000000, -148.750000) " x="226.75" y="140.75" width="98.5" height="16"></rect>
+                        <rect id="Rectangle-Copy-24" fill="#FFFFFF" opacity="0.0433872768" transform="translate(300.000000, 158.500000) rotate(-90.000000) translate(-300.000000, -158.500000) " x="260.5" y="150.5" width="79" height="16"></rect>
+                        <rect id="Rectangle-Copy-25" fill="#FFFFFF" opacity="0.0433872768" transform="translate(324.000000, 166.000000) rotate(-90.000000) translate(-324.000000, -166.000000) " x="292" y="158" width="64" height="16"></rect>
+                        <rect id="Rectangle-Copy-26" fill="#FFFFFF" opacity="0.0433872768" transform="translate(348.000000, 178.250000) rotate(-90.000000) translate(-348.000000, -178.250000) " x="328.25" y="170.25" width="39.5" height="16"></rect>
+                        <rect id="Rectangle-Copy-27" fill="#FFFFFF" opacity="0.0433872768" transform="translate(372.000000, 169.250000) rotate(-90.000000) translate(-372.000000, -169.250000) " x="343.25" y="161.25" width="57.5" height="16"></rect>
+                        <rect id="Rectangle-Copy-28" fill="#FFFFFF" opacity="0.0433872768" transform="translate(396.000000, 156.500000) rotate(-90.000000) translate(-396.000000, -156.500000) " x="354.5" y="148.5" width="83" height="16"></rect>
+                        <rect id="Rectangle-Copy-29" fill="#FFFFFF" opacity="0.0433872768" transform="translate(420.000000, 137.500000) rotate(-90.000000) translate(-420.000000, -137.500000) " x="359.5" y="129.5" width="121" height="16"></rect>
+                        <rect id="Rectangle-Copy-30" fill="#FFFFFF" opacity="0.0433872768" transform="translate(444.000000, 146.500000) rotate(-90.000000) translate(-444.000000, -146.500000) " x="392.5" y="138.5" width="103" height="16"></rect>
+                        <rect id="Rectangle-Copy-31" fill="#FFFFFF" opacity="0.0433872768" transform="translate(468.000000, 158.500000) rotate(-90.000000) translate(-468.000000, -158.500000) " x="428.5" y="150.5" width="79" height="16"></rect>
+                        <rect id="Rectangle-Copy-3" fill="#FFFFFF" opacity="0.0433872768" x="52" y="245" width="92" height="16"></rect>
+                    </g>
+                    <g id="Line-chart" transform="translate(24.000000, 0.000000)" fill="#FFFFFF" opacity="0.0433872768">
+                        <rect id="Rectangle" x="0" y="100" width="482" height="16"></rect>
+                        <rect id="Rectangle-Copy-8" x="0" y="582" width="482" height="16"></rect>
+                        <rect id="Rectangle-Copy-4" x="0" y="75" width="420" height="16"></rect>
+                        <rect id="Rectangle-Copy-9" x="0" y="557" width="482" height="16"></rect>
+                        <rect id="Rectangle-Copy-5" x="0" y="50" width="356" height="16"></rect>
+                        <rect id="Rectangle-Copy-10" x="0" y="532" width="482" height="16"></rect>
+                        <rect id="Rectangle-Copy-6" x="0" y="25" width="482" height="16"></rect>
+                        <rect id="Rectangle-Copy-11" x="0" y="507" width="482" height="16"></rect>
+                        <rect id="Rectangle-Copy-7" x="0" y="0" width="482" height="16"></rect>
+                        <rect id="Rectangle-Copy-12" x="0" y="482" width="482" height="16"></rect>
+                        <rect id="Rectangle-Copy-3" x="0" y="125" width="276" height="16"></rect>
+                        <rect id="Rectangle-Copy-13" x="8.52651283e-14" y="607" width="280.658228" height="16"></rect>
+                        <rect id="Rectangle-Copy-32" x="0" y="633" width="132" height="16"></rect>
+                    </g>
+                </g>
+                <g id="Group" filter="url(#filter-1)" transform="translate(48.000000, 107.500000)">
+                    <g id="Tile" transform="translate(0.109295, 0.688865)">
+                        <rect id="Rectangle" fill="#47428B" x="0" y="0" width="268.474283" height="142" rx="11"></rect>
+                        <g id="Group" transform="translate(27.983523, 13.795661)">
+                            <text id="NEW-CASES" font-family="Lato-Bold, Lato" font-size="14" font-weight="bold" letter-spacing="0.311111111" fill="#FFFFFF">
+                                <tspan x="0.509123864" y="14.3905706">NEW CASES  </tspan>
+                            </text>
+                            <text id="543" font-family="Lato-Light, Lato" font-size="44" font-weight="300" fill="#FFFFFF">
+                                <tspan x="0.509123864" y="73.0154738">29</tspan>
+                            </text>
+                            <text id="$/sqft" font-family="Lato-Bold, Lato" font-size="12" font-weight="bold" letter-spacing="0.6" fill="#9F9FFF">
+                                <tspan x="1" y="107.119193">BROOKLYN</tspan>
+                            </text>
+                            <g id="Outlined-/-Navigation-/-arrow_upward" transform="translate(221.147513, 102.863593) rotate(-270.000000) translate(-221.147513, -102.863593) translate(214.147513, 95.863593)">
+                                <polygon id="Path" points="0 0 14 0 14 14 0 14"></polygon>
+                                <polygon id="🔹-Icon-Color" fill="#00B866" points="2.33333333 7 3.15583333 7.8225 6.41666667 4.5675 6.41666667 11.6666667 7.58333333 11.6666667 7.58333333 4.5675 10.8383333 7.82833333 11.6666667 7 7 2.33333333"></polygon>
+                            </g>
+                            <text id="On-July-12" font-family="Lato-Bold, Lato" font-size="12" font-weight="bold" fill="#00B063">
+                                <tspan x="153.609513" y="106.863593">On July 12</tspan>
+                            </text>
+                        </g>
+                    </g>
+                </g>
+                <g id="Group-Copy" filter="url(#filter-2)" transform="translate(328.601942, 107.500000)">
+                    <g id="Tile" transform="translate(0.109295, 0.688865)">
+                        <rect id="Rectangle" fill="#47428B" x="0" y="0" width="268.474283" height="142" rx="11"></rect>
+                        <g id="Group" transform="translate(27.983523, 13.795661)">
+                            <text id="NEW-DEATH" font-family="Lato-Bold, Lato" font-size="14" font-weight="bold" letter-spacing="0.311111111" fill="#FFFFFF">
+                                <tspan x="0.509123864" y="14.3905706">NEW DEATH  </tspan>
+                            </text>
+                            <text id="1" font-family="Lato-Light, Lato" font-size="44" font-weight="300" fill="#FFFFFF">
+                                <tspan x="0.509123864" y="73.0154738">1</tspan>
+                            </text>
+                            <text id="$/sqft" font-family="Lato-Bold, Lato" font-size="12" font-weight="bold" letter-spacing="0.6" fill="#9F9FFF">
+                                <tspan x="1" y="107.119193">BROOKLYN</tspan>
+                            </text>
+                            <text id="On-July-12" font-family="Lato-Bold, Lato" font-size="12" font-weight="bold" fill="#00B063">
+                                <tspan x="145.971124" y="107.119193">On July 12</tspan>
+                            </text>
+                            <g id="Group-2" transform="translate(208.837400, 95.015474)">
+                                <g id="Outlined-/-Navigation-/-arrow_upward" transform="translate(7.671724, 7.848119) rotate(-270.000000) translate(-7.671724, -7.848119) translate(0.671724, 0.848119)">
+                                    <polygon id="Path" points="0 0 14 0 14 14 0 14"></polygon>
+                                    <polygon id="🔹-Icon-Color" fill="#00B866" points="2.33333333 7 3.15583333 7.8225 6.41666667 4.5675 6.41666667 11.6666667 7.58333333 11.6666667 7.58333333 4.5675 10.8383333 7.82833333 11.6666667 7 7 2.33333333"></polygon>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+                <g id="Group-Copy-2" filter="url(#filter-3)" transform="translate(145.000000, 269.000000)">
+                    <g id="Tile" transform="translate(0.109295, 0.688865)">
+                        <rect id="Rectangle" fill="#47428B" x="0" y="0" width="268.474283" height="142" rx="11"></rect>
+                        <g id="Group" transform="translate(27.983523, 13.795661)">
+                            <text id="TOTAL-CASES" font-family="Lato-Bold, Lato" font-size="14" font-weight="bold" letter-spacing="0.311111111" fill="#FFFFFF">
+                                <tspan x="0.509123864" y="14.3905706">TOTAL CASES</tspan>
+                            </text>
+                            <text id="59.4K" font-family="Lato-Light, Lato" font-size="44" font-weight="300" fill="#FFFFFF">
+                                <tspan x="0.509123864" y="73.0154738">59.4K</tspan>
+                            </text>
+                            <text id="$/sqft" font-family="Lato-Bold, Lato" font-size="12" font-weight="bold" letter-spacing="0.6" fill="#9F9FFF">
+                                <tspan x="1" y="107.119193">BROOKLYN</tspan>
+                            </text>
+                            <text id="As-of-July-13" font-family="Lato-Bold, Lato" font-size="12" font-weight="bold" fill="#00B063">
+                                <tspan x="134.991124" y="107.119193">As of July 13</tspan>
+                            </text>
+                            <g id="Group-2" transform="translate(208.837400, 95.015474)">
+                                <g id="Outlined-/-Navigation-/-arrow_upward" transform="translate(7.671724, 7.848119) rotate(-270.000000) translate(-7.671724, -7.848119) translate(0.671724, 0.848119)">
+                                    <polygon id="Path" points="0 0 14 0 14 14 0 14"></polygon>
+                                    <polygon id="🔹-Icon-Color" fill="#00B866" points="2.33333333 7 3.15583333 7.8225 6.41666667 4.5675 6.41666667 11.6666667 7.58333333 11.6666667 7.58333333 4.5675 10.8383333 7.82833333 11.6666667 7 7 2.33333333"></polygon>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+                <g id="Group-Copy-3" filter="url(#filter-4)" transform="translate(429.000000, 269.000000)">
+                    <g id="Tile" transform="translate(0.109295, 0.688865)">
+                        <rect id="Rectangle" fill="#47428B" x="0" y="0" width="268.474283" height="142" rx="11"></rect>
+                        <g id="Group" transform="translate(27.983523, 13.795661)">
+                            <text id="TOTAL-DEATH" font-family="Lato-Bold, Lato" font-size="14" font-weight="bold" letter-spacing="0.311111111" fill="#FFFFFF">
+                                <tspan x="0.509123864" y="14.3905706">TOTAL DEATH</tspan>
+                            </text>
+                            <text id="543" font-family="Lato-Light, Lato" font-size="44" font-weight="300" fill="#FFFFFF">
+                                <tspan x="0.509123864" y="73.0154738">29</tspan>
+                            </text>
+                            <text id="$/sqft" font-family="Lato-Bold, Lato" font-size="12" font-weight="bold" letter-spacing="0.6" fill="#9F9FFF">
+                                <tspan x="1" y="107.119193">BROOKLYN</tspan>
+                            </text>
+                            <text id="As-of-July-13" font-family="Lato-Bold, Lato" font-size="12" font-weight="bold" fill="#00B063">
+                                <tspan x="134.991124" y="107.119193">As of July 13</tspan>
+                            </text>
+                            <g id="Group-2" transform="translate(208.837400, 95.015474)">
+                                <g id="Outlined-/-Navigation-/-arrow_upward" transform="translate(7.671724, 7.848119) rotate(-270.000000) translate(-7.671724, -7.848119) translate(0.671724, 0.848119)">
+                                    <polygon id="Path" points="0 0 14 0 14 14 0 14"></polygon>
+                                    <polygon id="🔹-Icon-Color" fill="#00B866" points="2.33333333 7 3.15583333 7.8225 6.41666667 4.5675 6.41666667 11.6666667 7.58333333 11.6666667 7.58333333 4.5675 10.8383333 7.82833333 11.6666667 7 7 2.33333333"></polygon>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
