@@ -26,20 +26,12 @@
         <div class="col">
           <div class="subtitle row">See case studies</div>
           <div class="logos row justify-center">
-            <a class="logo row justify-center" [routerLink]="['/case-study/forbes']">
-              <img src="assets/images/logos/forbes.png">
-            </a>
-            <a class="logo row justify-center" [routerLink]="['/case-study/advocate']">
-              <img src="assets/images/logos/advocate.png">
-            </a>
-            <a class="logo row justify-center" [routerLink]="['/case-study/mission-local']">
-              <img src="assets/images/logos/mission-local.png">
-            </a>
-            <a class="logo row justify-center" [routerLink]="['/case-study/bkr']">
-              <img src="assets/images/logos/bkr.png">
-            </a>
-            <a class="logo row justify-center" [routerLink]="['/case-study/eye']">
-              <img src="assets/images/logos/eye.png">
+            <a
+              *ngFor="let logo of logos"
+              class="logo row justify-center"
+              [routerLink]="['/case-study', logo]"
+            >
+              <img [src]="'assets/images/logos/' + logo + '.png'">
             </a>
           </div>
         </div>
