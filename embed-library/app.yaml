@@ -1,12 +1,11 @@
-runtime: python27
-api_version: 1
-threadsafe: true
-handlers:
-- url: /
-  static_files: dist/index.html
-  upload: dist/index.html
-- url: /
-  static_dir: dist
+runtime: nodejs10
 
-skip_files:
-- ^node_modules$
+handlers:
+- url: /.*
+  secure: always
+  redirect_http_response_code: 301
+  script: auto
+
+- url: /favicon.ico
+  static_files: /favicon.ico
+  upload: /favicon.ico

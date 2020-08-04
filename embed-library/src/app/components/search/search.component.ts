@@ -16,7 +16,7 @@ export class SearchComponent implements OnInit {
       { label: 'COVID-19', value: 'COVID' },
       { label: 'Election 2020', value: 'Election 2020' },
       { label: 'Environment', value: 'Environment' },
-      { label: 'Criminal Justice', value: 'Criminal Justice' }
+      { label: 'Criminal Justice Reform', value: 'Criminal Justice' }
     ],
     locations: [
       { label: 'Alabama', value: 'AL' },

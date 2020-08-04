@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="9px" height="18px" viewBox="0 0 9 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>25DF6613-A0A3-419E-BA34-5578D7939CA4</title>
+    <defs>
+        <path d="M5.625,18 L5.625,9 L9,9 L9,6.75 L5.625,6.75 L5.625,4.5 C5.84163569,3.62224797 6.08921933,2.98957126 7.875,3.375 L9,3.375 L9,0 C8.71895911,0.0834298957 7.74869888,0 6.75,0 C4.26914498,0 2.66319703,1.49478563 2.25,4.5 L2.25,6.75 L0,6.75 L0,9 L2.25,9 L2.25,18 L5.625,18 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Homepage" transform="translate(-178.000000, -3993.000000)">
+            <g id="Elements-/-Footer" transform="translate(0.000000, 3642.000000)">
+                <g id="Social-Media" transform="translate(170.000000, 348.000000)">
+                    <g id="⚙️/Facebook/White" transform="translate(8.000000, 3.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Facebook" fill="#FFFFFF" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
