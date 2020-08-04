@@ -1,0 +1,61 @@
+@import '../../../assets/colors';
+@import '../../../assets/breakpoints';
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 17px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $color-title-purple;
+}
+
+:host {
+  .container {
+    height: 95px;
+    padding: 0 16px;
+
+    ul {
+      height: 100%;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        position: relative;
+        margin-right: 40px;
+        height: 100%;
+
+        &.active {
+          &:before {
+            content: ' ';
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            height: 5px;
+            width: 100%;
+            background-color: $color-title-purple;
+          }
+        }
+      }
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+  }
+
+  @include md {
+    .container {
+      ul {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
+    }
+  }
+}

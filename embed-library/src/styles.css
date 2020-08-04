@@ -66,3 +66,66 @@ a {
 .cdk-overlay-pane {
   max-width: 90vw !important;
 }
+
+
+/* Layouts */
+.container {
+  max-width: 1365px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contents {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.slim-contents {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.pointer {
+  cursor: pointer;
+}

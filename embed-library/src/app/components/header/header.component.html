@@ -1,0 +1,20 @@
+<div class="container row justify-between">
+  <a [routerLink]="['/']" class="logo">
+    <img src="assets/images/logos/hi-george.svg" alt="HiGeorges" />
+  </a>
+  <ul class="row">
+    <li class="row" *ngFor="let item of menuItems; let i = index" [ngClass]="{active: active === i}">
+      <a class="menu-item" [routerLink]="[item.path]">{{item.label}}</a>
+    </li>
+  </ul>
+  <div class="mobile-menu">
+    <button mat-icon-button color="primary" [matMenuTriggerFor]="mobileMenu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #mobileMenu="matMenu" xPosition="before">
+      <a *ngFor="let item of menuItems" class="menu-item" [routerLink]="[item.path]" mat-menu-item>
+        {{item.label}}
+      </a>
+    </mat-menu>
+  </div>
+</div>

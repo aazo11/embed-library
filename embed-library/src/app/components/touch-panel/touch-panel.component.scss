@@ -1,0 +1,44 @@
+@import '../../../assets/colors';
+@import '../../../assets/breakpoints';
+
+:host {
+  color: $color-text-blue;
+
+  .slim-contents {
+    padding: 35px 0 50px;
+    background-color: $color-bg-purple;
+
+    h3 {
+      font-family: PlayfairDisplay-Bold;
+      font-size: 39px;
+      line-height: 52px;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-family: Lato;
+      text-align: center;
+      font-size: 18px;
+      line-height: 29px;
+      margin-bottom: 32px;
+    }
+  }
+
+  @include md {
+    .slim-contents {
+      padding: 20px 0 30px;
+
+      h3 {
+        font-size: 27px;
+        line-height: 37px;
+        margin-bottom: 12px;
+      }
+
+      p {
+        font-size: 13px;
+        line-height: 21px;
+        margin-bottom: 24px;
+      }
+    }
+  }
+}

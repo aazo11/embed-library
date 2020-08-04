@@ -1,0 +1,90 @@
+@import '../../../assets/colors';
+@import '../../../assets/breakpoints';
+
+:host {
+  .component {
+    display: block;
+    padding: 72px 24px;
+    background-color: $color-bg-blue;
+
+    .text-red {
+      color: $color-text-red;
+    }
+
+    .text-white {
+      color: white;
+    }
+
+    h5 {
+      font-size: 39px;
+      line-height: 52px;
+      margin: 0;
+      font-family: PlayfairDisplay-Bold;
+    }
+
+    .contact {
+      width: 300px;
+      padding: 16px 0 80px;
+      color: white;
+      font-size: 16px;
+      line-height: 19px;
+      font-family: Lato-Bold;
+
+      .address,
+      .mail {
+        font-family: Lato;
+        font-size: 14px;
+        line-height: 17px;
+        color: $color-text-purple;
+      }
+
+      .address {
+        line-height: 29px;
+        margin: 24px 0;
+      }
+    }
+
+    .socials {
+      margin-bottom: 16px;
+
+      a {
+        margin-right: 24px;
+      }
+    }
+
+    .links {
+      font-family: Lato;
+      font-size: 16px;
+      line-height: 24px;
+      color: $color-text-purple;
+
+      > * {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  @include md {
+    .component {
+      padding: 60px 24px;
+
+      .titles {
+        flex-direction: column;
+      }
+
+      h5 {
+        font-size: 28px;
+      }
+
+      .contact {
+        padding-top: 30px;
+        padding-bottom: 75px;
+      }
+
+      .links {
+        flex-wrap: wrap;
+        font-size: 13px;
+      }
+    }
+  }
+}

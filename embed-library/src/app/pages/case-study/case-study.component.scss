@@ -1,0 +1,247 @@
+@import '../../../assets/colors';
+@import '../../../assets/breakpoints';
+
+:host {
+  .page-title {
+    font-family: PlayfairDisplay-Bold;
+    font-size: 59px;
+    line-height: 79px;
+    color: $color-title-purple;
+    margin: 0;
+  }
+
+  .title {
+    font-family: PlayfairDisplay-Bold;
+    font-size: 39px;
+    line-height: 52px;
+    color: $color-title-blue;
+  }
+
+  .desc {
+    font-family: Lato;
+    font-size: 18px;
+    line-height: 29px;
+    color: $color-text-blue;
+  }
+
+  .main-content {
+    overflow: hidden;
+
+    .section-title {
+      padding: 0 16px;
+
+      .container {
+        height: 280px;
+        background-color: $color-bg-purple;
+      }
+    }
+
+    .section-post {
+      padding: 0 24px;
+      margin-top: 120px;
+
+      .section-content {
+        position: relative;
+        width: 50%;
+        padding: 0 60px;
+
+        .title {
+          margin: 24px 0 32px;
+        }
+      }
+
+      .image {
+        width: 50%;
+
+        img {
+          margin-left: 36px;
+          height: 374px;
+          width: auto;
+        }
+      }
+    }
+
+    .section-graph {
+      padding: 0 24px;
+      margin-top: 120px;
+
+      .image {
+        width: 50%;
+
+        img {
+          height: 380px;
+          width: auto;
+
+        }
+      }
+
+      .section-content {
+        position: relative;
+        width: 50%;
+        padding: 0 80px;
+
+        .title {
+          margin: 24px 0 32px;
+        }
+      }
+    }
+
+    .section-deployment {
+      padding: 0 24px;
+      margin-top: 120px;
+
+      .section-left {
+        width: 50%;
+        .section-content {
+          padding: 0 60px;
+          margin-bottom: 60px;
+
+          .title {
+            margin-bottom: 32px;
+          }
+
+          .desc {
+            margin-bottom: 48px;
+          }
+
+          .links {
+            a {
+              font-size: 13px;
+              line-height: 16px;
+              height: 48px;
+              width: 210px;
+              text-decoration: none;
+              text-transform: uppercase;
+              border: 2px solid $color-button-blue;
+            }
+          }
+        }
+      }
+
+      .image {
+        width: 50%;
+        img {
+          height: 1000px;
+          width: auto;
+          margin-bottom: -100px;
+          margin-top: -60px;
+        }
+      }
+    }
+  }
+
+  @include md {
+    .page-title {
+      font-size: 29px;
+      line-height: 38px;
+    }
+
+    .title {
+      font-size: 27px;
+      line-height: 37px;
+    }
+
+    .desc {
+      font-size: 13px;
+      line-height: 21px;
+    }
+
+    .main-content {
+      .section-title {
+        .container {
+          height: 160px;
+
+          img {
+            transform: scale(.6);
+          }
+        }
+      }
+
+      .section-post {
+        margin-top: 50px;
+        .image {
+          img {
+            height: 280px;
+          }
+        }
+      }
+
+      .section-graph {
+        margin-top: 50px;
+        .image {
+          img {
+            height: 250px;
+          }
+        }
+      }
+
+      .section-deployment {
+        margin-top: 70px;
+        .image {
+          img {
+            height: 800px;
+          }
+        }
+      }
+    }
+  }
+
+  @include sm {
+    .main-content {
+      .section-post {
+        .contents {
+          flex-direction: column;
+
+          .section-content {
+            width: 100%;
+            padding: 0;
+            margin-bottom: 30px;
+          }
+
+          .image {
+            width: 100%;
+            img {
+              margin:0;
+              width: 100%;
+              height: auto;
+            }
+          }
+        }
+      }
+
+      .section-graph {
+        .contents {
+          flex-direction: column-reverse;
+          .section-content {
+            width: 100%;
+            padding: 0;
+            margin-bottom: 30px;
+          }
+          .image {
+            width: 100%;
+            img {
+              width: 100%;
+              height: auto;
+            }
+          }
+        }
+      }
+
+      .section-deployment {
+        margin-bottom: 50px;
+        .section-left {
+          width: 100%;
+          .section-content {
+            padding: 0;
+            .links {
+              justify-content: center;
+            }
+          }
+        }
+        .image {
+          display: none;
+        }
+      }
+    }
+  }
+}

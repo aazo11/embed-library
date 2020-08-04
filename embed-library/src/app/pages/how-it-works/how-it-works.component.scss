@@ -1,0 +1,162 @@
+@import '../../../assets/colors';
+@import '../../../assets/breakpoints';
+
+:host {
+  .title {
+    font-family: PlayfairDisplay-Bold;
+    font-size: 39px;
+    line-height: 52px;
+    color: $color-title-blue;
+  }
+
+  .desc {
+    font-family: Lato;
+    font-size: 18px;
+    line-height: 29px;
+    color: $color-text-blue;
+  }
+
+  .page-title {
+    font-family: PlayfairDisplay-Bold;
+    font-size: 59px;
+    line-height: 79px;
+    color: $color-title-purple;
+    margin: 0;
+  }
+
+  .main-content {
+    overflow: hidden;
+
+    .section-one {
+      padding: 0 16px;
+
+      .container {
+        height: 280px;
+        background-color: $color-bg-purple;
+      }
+    }
+
+    .section-two {
+      padding: 60px 24px;
+
+      .contents {
+        .section-content {
+          width: 50%;
+          padding-top: 70px;
+
+          .step {
+            height: 580px;
+
+            .number {
+              margin-top: 24px;
+              margin-right: 32px;
+              padding-bottom: 16px;
+              width: 60px;
+              min-width: 60px;
+              height: 60px;
+              border-radius: 50%;
+              border: 1px solid $color-title-purple;
+              font-family: PlayfairDisplay-Bold;
+              font-size: 48px;
+              line-height: 50px;
+              color: $color-title-purple;
+            }
+
+            .step-content {
+              .desc {
+                padding-top: 32px;
+                padding-bottom: 56px;
+              }
+            }
+
+            .percents {
+              > .col {
+                margin-right: 56px;
+              }
+
+              span {
+                font-family: Lato;
+                font-size: 11px;
+                line-height: 16px;
+                text-transform: uppercase;
+                color: $color-text-blue;
+              }
+            }
+          }
+        }
+
+        .images {
+          width: 40%;
+
+          img:first-child {
+            width: 800px;
+          }
+
+          img:last-child {
+            width: 420px;
+            margin-left: 50px;
+            margin-top: 50px;
+          }
+        }
+      }
+    }
+
+    .section-three {
+      margin-bottom: 95px;
+      padding: 0 20px;
+    }
+  }
+
+  @include md {
+    .page-title {
+      font-size: 29px;
+      line-height: 38px;
+    }
+
+    .title {
+      font-size: 27px;
+      line-height: 37px;
+    }
+
+    .desc {
+      font-size: 13px;
+      line-height: 21px;
+    }
+
+    .main-content {
+      .section-one {
+        .container {
+          height: 160px;
+        }
+      }
+
+      .section-two {
+        .contents {
+          .section-content {
+            padding-top: 0;
+            width: unset;
+
+            .step {
+              height: unset;
+              margin-bottom: 50px;
+              .number {
+                margin-top: 15px;
+                margin-right: 20px;
+                min-width: 40px;
+                width: 40px;
+                height: 40px;
+                font-size: 29px;
+                line-height: 30px;
+                padding-bottom: 10px;
+              }
+            }
+          }
+
+          .images {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
