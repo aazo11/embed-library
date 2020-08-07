@@ -17,6 +17,6 @@ export class PreviewComponent implements OnInit{
 
   ngOnInit() {
     const { id } = this.route.snapshot.params;
-    this.url = `https://callyourcongressperson.com/datainteractive/${id}`;
+    this.url = `https://callyourcongressperson.com/datainteractive/${id}` + window.location.search;
   }
 }
