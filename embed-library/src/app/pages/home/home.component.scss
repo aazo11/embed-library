@@ -114,6 +114,7 @@
         }
 
         > .col {
+          position: relative;
           width: 50%;
           padding-right: 16px;
 
@@ -140,14 +141,23 @@
           .image-1 {
             margin-top: 128px;
             margin-left: -16px;
+            img {
+              max-width: 110%;
+            }
           }
 
           .image-2 {
             margin-top: 45px;
+            img {
+              max-height: 120px;
+            }
           }
 
           .image-3 {
             margin-top: 32px;
+            img {
+              max-height: 500px;
+            }
           }
         }
       }
