@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatDialog } from '@angular/material/dialog';
 import { WidgetDialogComponent } from 'src/app/components/widget-dialog/widget-dialog.component';
+import { AnalyticsService } from 'src/app/analytics.service';
 
 @Component({
   selector: 'app-widget',
@@ -13,12 +14,13 @@ export class WidgetComponent implements OnInit {
 
   embedCodeHTML: string
 
-  server_url = "https://callyourcongressperson.com/datainteractive/" 
+  server_url = "https://callyourcongressperson.com/datainteractive/"
   iframeSRC: string;
 
   constructor(
     public sanitizer: DomSanitizer,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private analytics: AnalyticsService
   ) { }
 
   ngOnInit(): void {
@@ -30,7 +32,12 @@ export class WidgetComponent implements OnInit {
     // this.copyEmbedCode.emit(this.campaign.embedTitleInLibrary)
   }
 
+  requestViz() {
+    this.analytics.trackLink('library_request_link', 'request_viz', undefined, { dataInteractiveId: this.campaign._id.$oid });
+  }
+
   openDialog(): void {
+    this.analytics.analyticsEventEmitter('use_viz_button', this.campaign._id.$oid, undefined, undefined, {dataInteractiveId: this.campaign._id.$oid});
     this.dialog.open(WidgetDialogComponent, {
       width: '520px',
       data: { src: this.iframeSRC },

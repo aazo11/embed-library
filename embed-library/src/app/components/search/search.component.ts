@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, skip } from 'rxjs/operators';
+import { AnalyticsService } from 'src/app/analytics.service';
 
 @Component({
   selector: 'app-search',
@@ -77,6 +78,8 @@ export class SearchComponent implements OnInit {
   }
   @Output() update = new EventEmitter<any>();
 
+  constructor(private analytics: AnalyticsService) {}
+
   ngOnInit() {
     this._params.pipe(
       skip(1),
@@ -94,15 +97,22 @@ export class SearchComponent implements OnInit {
   }
 
   searchByTags(value) {
-    this.updateSearch('tags', value)
+    this.updateSearch('tags', value);
+    this.analytics.analyticsEventEmitter('search', 'tags', value);
   }
 
   searchByStoryline(event) {
-    this.updateSearch('storyline', event.value)
+    this.updateSearch('storyline', event.value);
+    this.analytics.analyticsEventEmitter('search', 'storyline', event.value);
   }
 
   searchByLocation(event) {
-    this.updateSearch('location', event.value)
+    this.updateSearch('location', event.value);
+    this.analytics.analyticsEventEmitter('search', 'location', event.value);
+  }
+
+  requestViz() {
+    this.analytics.trackLink('search_request_link', 'request_viz');
   }
 
   private updateSearch(key, value) {

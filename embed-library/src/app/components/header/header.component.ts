@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { AnalyticsService } from 'src/app/analytics.service';
 
 @Component({
   selector: 'app-header',
@@ -8,10 +9,18 @@ import { Component, Input } from '@angular/core';
 export class HeaderComponent {
   @Input() active = -1;
 
+  constructor(
+    private analytics: AnalyticsService
+  ) {}
+
   menuItems = [
     { label: 'How it works', path: '/how-it-works' },
     { label: 'Visualizations', path: '/visualizations' },
     { label: 'Company', path: '/company' },
     { label: 'Contact', path: '/contact' },
   ];
+
+  clickLink(name: string, label?: string) {
+    this.analytics.trackLink(name);
+  }
 }

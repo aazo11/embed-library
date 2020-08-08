@@ -1,5 +1,6 @@
-import { Component, Input, EventEmitter, Output } from '@angular/core';
+import { Component, Input, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { AnalyticsService } from 'src/app/analytics.service';
 
 @Component({
   selector: 'app-button',
@@ -14,11 +15,15 @@ export class ButtonComponent {
 
   @Output() change = new EventEmitter();
 
+  @ViewChild('btn') btnElement: ElementRef;
+
   constructor (
     private router: Router,
+    private analytics: AnalyticsService
   ) {}
 
   handleClick() {
+    this.analytics.trackLink(this.btnElement.nativeElement.textContent, 'Button');
     if (this.url) {
       this.router.navigate([this.url]);
     } else {

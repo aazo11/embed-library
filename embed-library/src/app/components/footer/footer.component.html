@@ -16,25 +16,25 @@
       </div>
     </div>
     <div class="socials row">
-      <a class="row" href="www.facebook.com">
+      <a class="row" href="https://www.facebook.com" (click)="clickSocial('facebook')">
         <img src="assets/images/icons/facebook.svg" />
       </a>
-      <a class="row" href="www.twitter.com">
+      <a class="row" href="https://www.twitter.com" (click)="clickSocial('twitter')">
         <img src="assets/images/icons/twitter.svg" />
       </a>
-      <a class="row" href="www.twitter.com">
+      <a class="row" href="https://www.twitter.com" (click)="clickSocial('share_link')">
         <img src="assets/images/icons/link.svg" />
       </a>
-      <a class="row" href="www.twitter.com">
+      <a class="row" href="https://www.twitter.com" (click)="clickSocial('email')">
         <img src="assets/images/icons/mail.svg" />
       </a>
     </div>
     <div class="links row">
       <span>© HiGeorge 2020</span>
       <span>|</span>
-      <a>Privacy Policy</a>
+      <a (click)="clickLink('privacy_policy')">Privacy Policy</a>
       <span>|</span>
-      <a>Terms of Service</a>
+      <a (click)="clickLink('terms_of_service')">Terms of Service</a>
     </div>
   </div>
 </div>
