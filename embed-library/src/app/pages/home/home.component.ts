@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AnalyticsService } from 'src/app/analytics.service';
 
 @Component({
   selector: 'app-home-page',
@@ -14,5 +15,11 @@ export class HomeComponent {
     'eye'
   ];
 
-  constructor() { }
+  constructor(
+    private analytics: AnalyticsService
+  ) { }
+
+  trackClick(name, label?) {
+    this.analytics.trackLink(name, label);
+  }
 }

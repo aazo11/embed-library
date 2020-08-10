@@ -2,10 +2,10 @@
   <a class="close" [mat-dialog-close]="true">
     <mat-icon>close</mat-icon>
   </a>
-  <div mat-dialog-title>Add visualization to your web</div>
+  <div mat-dialog-title>Add visualization to your website</div>
   <div class="description">
     To add visualization to your website copy the code below and paste it into your editor. Need help?
-    <a>Let us know</a>
+    <a (click)="clickLink('need_help_embedding', this.src)">Let us know</a>
   </div>
   <div class="options">
     <div class="label">Options</div>
@@ -25,6 +25,6 @@
   <div class="embedCodes">
     <div class="code">{{embedCodeHTML}}</div>
     <button (click)="copy()" ngxClipboard [cbContent]="embedCodeHTML">Copy embed code</button>
-    <a>Email me the code</a>
+    <a (click)="clickLink('email_embed_code', this.src)">Email me the code</a>
   </div>
 </div>

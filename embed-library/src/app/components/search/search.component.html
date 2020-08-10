@@ -3,7 +3,7 @@
     <mat-label>Keyword Search</mat-label>
     <input matInput #tagsEl (input)="searchByTags(tagsEl.value)" [value]="_params.value.tags || ''">
     <mat-hint>
-      Not getting results? <a>Request a visualization</a>
+      Not getting results? <a (click)="requestViz()">Request a visualization</a>
     </mat-hint>
   </mat-form-field>
 

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { AnalyticsService } from 'src/app/analytics.service';
 
 @Component({
   selector: 'app-footer',
@@ -6,4 +7,15 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
+  constructor(
+    private analytics: AnalyticsService
+  ) {}
+
+  clickSocial(site: string) {
+    this.analytics.trackLink('social_link', site);
+  }
+
+  clickLink(name: string) {
+    this.analytics.trackLink(name);
+  }
 }

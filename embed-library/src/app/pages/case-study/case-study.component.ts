@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { contents } from './constants';
+import { AnalyticsService } from 'src/app/analytics.service';
 
 @Component({
   selector: 'app-case-study',
@@ -12,6 +13,7 @@ export class CaseStudyComponent implements OnInit{
 
   constructor(
     private route: ActivatedRoute,
+    private analytics: AnalyticsService
   ) { }
 
   ngOnInit() {
@@ -25,5 +27,9 @@ export class CaseStudyComponent implements OnInit{
 
   imageUrl(title): string {
     return `assets/images/case-study/${this.brand}/${title}.png`;
+  }
+
+  trackClick() {
+    this.analytics.trackLink('view_article', this.brand);
   }
 }

@@ -13,7 +13,7 @@
             </div>
             <div class="links row">
               <app-button url="/" color="blue">Contact us to start</app-button>
-              <a class="row link-red" [routerLink]="['/how-it-works']">
+              <a class="row link-red" (click)="trackClick('homepage_how_it_works')" [routerLink]="['/how-it-works']">
                 How it works
                 <mat-icon aria-hidden="false">arrow_right_alt</mat-icon>
               </a>
@@ -30,6 +30,7 @@
               *ngFor="let logo of logos"
               class="logo row justify-center"
               [routerLink]="['/case-study', logo]"
+              (click)="trackClick('case_study', logo)"
             >
               <img [src]="'assets/images/logos/' + logo + '.png'">
             </a>
