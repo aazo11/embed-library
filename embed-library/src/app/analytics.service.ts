@@ -25,6 +25,11 @@ export class AnalyticsService {
     this.analyticsEventEmitter('link_click', name, label, value, props);
   }
 
+  public trackPageview(page_path) {
+    gtag('config', 'UA-167844505-2', { page_path, transport_type: 'beacon' });
+    gtag('send', 'pageview');
+  }
+
   public analyticsEventEmitter(
     eventName: string,
     eventCategory?: string,

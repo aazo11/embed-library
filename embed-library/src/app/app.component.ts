@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { AnalyticsService } from './analytics.service';
 
@@ -7,16 +7,21 @@ import { AnalyticsService } from './analytics.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'embed-library';
 
   constructor(
     private router: Router,
     private analyticsService: AnalyticsService
   ) {
-    router.events.subscribe(val => {
-      if (val instanceof NavigationEnd) {
-        analyticsService.analyticsEventEmitter('Page View');
+
+  }
+
+  ngOnInit(): void {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.analyticsService.analyticsEventEmitter('Page View');
+        this.analyticsService.trackPageview(event.urlAfterRedirects);
       }
     });
   }
