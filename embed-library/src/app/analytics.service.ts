@@ -37,7 +37,6 @@ export class AnalyticsService {
     eventValue?: number,
     extraProperties: any = {}
   ) {
-    eventName = '[TEST] ' + eventName;
     gtag('event', eventName, {
       event_category: eventCategory,
       event_label: eventLabel,
