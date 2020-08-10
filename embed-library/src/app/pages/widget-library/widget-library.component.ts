@@ -4,6 +4,7 @@ import { fromEvent } from 'rxjs'
 import { MatSnackBar } from '@angular/material/snack-bar'
 import { debounceTime } from 'rxjs/operators';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AnalyticsService } from 'src/app/analytics.service';
 
 @Component({
   selector: 'app-widget-library',
@@ -20,6 +21,7 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
     private snackBar: MatSnackBar,
     private router: Router,
     private activatedRoute: ActivatedRoute,
+    private analytics: AnalyticsService
   ) { }
 
   ngOnInit() {
@@ -36,6 +38,7 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
       .subscribe(() => {
         if (window.scrollY + document.documentElement.offsetHeight >= 0.85 * document.documentElement.scrollHeight) {
           this.limit += 2
+          this.analytics.analyticsEventEmitter('library_scroll', undefined, undefined, this.limit, { num: this.limit });
         }
       });
   }
@@ -51,7 +54,11 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
     this.router.navigate([], { queryParams });
   }
 
-  getJSON(list: string){
+  getJSON(list: string) {
     return JSON.parse(list)
+  }
+
+  trackClick(name, label?) {
+    this.analytics.trackLink(name, label);
   }
 }

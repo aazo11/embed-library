@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AnalyticsService } from 'src/app/analytics.service';
 
 @Component({
   selector: 'app-company',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./company.component.scss']
 })
 export class CompanyComponent {
-  constructor() { }
+  constructor(
+    private analytics: AnalyticsService
+  ) { }
+
+  trackClick(name: string, label?: string) {
+    this.analytics.trackLink(name, label);
+  }
 }

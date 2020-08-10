@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { AnalyticsService } from 'src/app/analytics.service';
 
 @Component({
   selector: 'app-contact',
@@ -7,9 +8,11 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit{
-  contactForm: any
+  contactForm: FormGroup;
 
-  constructor() { }
+  constructor(
+    private analytics: AnalyticsService
+  ) { }
 
   ngOnInit() {
     this.contactForm = new FormGroup({
@@ -26,6 +29,7 @@ export class ContactComponent implements OnInit{
   }
 
   submit() {
+    this.analytics.analyticsEventEmitter('contact_form_submit', undefined, undefined, undefined, this.contactForm.value);
     console.log('submit', this.contactForm.value);
   }
 }
