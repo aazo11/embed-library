@@ -24,16 +24,24 @@
           </div>
         </div>
         <div class="col">
-          <div class="subtitle row">See case studies</div>
+          <div class="subtitle row">Our Partners</div>
           <div class="logos row justify-center">
-            <a
+            <!--<a
               *ngFor="let logo of logos"
               class="logo row justify-center"
               [routerLink]="['/case-study', logo]"
               (click)="trackClick('case_study', logo)"
             >
               <img [src]="'assets/images/logos/' + logo + '.png'">
-            </a>
+          </a> -->
+           <div
+              *ngFor="let logo of logos"
+              class="logo row justify-center"
+              
+              (click)="trackClick('case_study', logo)"
+            >
+              <img [src]="'assets/images/logos/' + logo + '.png'">
+        </div> 
           </div>
         </div>
       </div>

@@ -32,6 +32,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { ClipboardModule } from 'ngx-clipboard';
 import { CachedSrcDirective } from './cached-src.directive';
+import { PrivacyComponent } from 'src/app/pages/privacy/privacy.component';
+import { TosComponent } from 'src/app/pages/tos/tos.component';
 
 
 @NgModule({
@@ -52,7 +54,9 @@ import { CachedSrcDirective } from './cached-src.directive';
     WidgetComponent,
     SearchComponent,
     WidgetDialogComponent,
-    CachedSrcDirective
+    CachedSrcDirective,
+    PrivacyComponent,
+    TosComponent
   ],
   imports: [
     BrowserModule,
