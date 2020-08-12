@@ -19,7 +19,7 @@ export class ContactComponent implements OnInit{
 
   ngOnInit() {
     const title = 'Contact';
-    const description = 'Dynamic Hello Angular Lovers description!';
+    const description = 'Have questions or need customization? We are here to help.';
     this.titleService.setTitle(`${title} - HiGeorge for Publishers Library`);
     this.metaService.updateTag({ name: 'description', content: description });
 

@@ -16,7 +16,7 @@ export class CompanyComponent implements OnInit {
 
   ngOnInit() {
     const title = 'Company';
-    const description = 'Dynamic Hello Angular Lovers description!';
+    const description = 'Our mission -- help newsrooms make use of the world\'s data.';
     this.titleService.setTitle(`${title} - HiGeorge for Publishers Library`);
     this.metaService.updateTag({ name: 'description', content: description });
   }

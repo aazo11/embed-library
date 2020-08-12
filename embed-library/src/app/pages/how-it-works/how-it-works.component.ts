@@ -14,7 +14,7 @@ export class HowItWorksComponent implements OnInit {
 
   ngOnInit() {
     const title = 'How it works';
-    const description = 'Dynamic Hello Angular Lovers description!';
+    const description = 'See how you can easily complement your stories with interactive data visualizations and increase reader engagement.';
     this.titleService.setTitle(`${title} - HiGeorge for Publishers Library`);
     this.metaService.updateTag({ name: 'description', content: description });
   }

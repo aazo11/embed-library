@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     const title = 'Home';
-    const description = 'Dynamic Hello Angular Lovers description!';
+    const description = 'Add data visualizations to all your articles. Increase engagement. No Data background required.';
     this.titleService.setTitle(`${title} - HiGeorge for Publishers Library`);
     this.metaService.updateTag({ name: 'description', content: description });
   }

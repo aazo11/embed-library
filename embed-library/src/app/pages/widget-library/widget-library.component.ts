@@ -29,7 +29,7 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     const title = 'Visualizations';
-    const description = 'Dynamic Hello Angular Lovers description!';
+    const description = 'Expand your breadth of coverage using AI-powered visual journalism. No strings attached.';
     this.titleService.setTitle(`${title} - HiGeorge for Publishers Library`);
     this.metaService.updateTag({ name: 'description', content: description });
 
