@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AnalyticsService } from 'src/app/analytics.service';
+import {ContactusService} from 'src/app/contactus.service';
 
 @Component({
   selector: 'app-contact',
@@ -14,7 +15,8 @@ export class ContactComponent implements OnInit{
   constructor(
     private analytics: AnalyticsService,
     private titleService: Title,
-    private metaService: Meta
+    private metaService: Meta,
+    private contactusService: ContactusService
   ) { }
 
   ngOnInit() {
@@ -38,6 +40,10 @@ export class ContactComponent implements OnInit{
 
   submit() {
     this.analytics.analyticsEventEmitter('contact_form_submit', undefined, undefined, undefined, this.contactForm.value);
+    this.contactusService.sendContactUsNote(this.contactForm.get('email').value, 
+                                            this.contactForm.get('name').value,
+                                            this.contactForm.get('subject').value,
+                                            this.contactForm.get('message').value).subscribe(result => console.log(result))
     console.log('submit', this.contactForm.value);
   }
 }
