@@ -17,15 +17,24 @@
     text-decoration: none;
     text-transform: uppercase;
     background-color: transparent;
+    transition: background-color 300ms linear, color 300ms linear;
 
     &.blue {
       border-color: $color-button-blue;
       color: $color-button-blue;
+      &:hover {
+        color: white;
+        background-color: $color-button-blue;
+      }
     }
 
     &.white {
       border-color: white;
       color: white;
+      &:hover {
+        color: $color-button-blue;
+        background-color: white;
+      }
     }
   }
 }

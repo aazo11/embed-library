@@ -9,6 +9,10 @@
   text-decoration: none;
   text-transform: uppercase;
   color: $color-title-purple;
+  
+  &:hover {
+    color: $color-text-red;
+  }
 }
 
 :host {
