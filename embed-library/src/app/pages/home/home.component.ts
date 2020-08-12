@@ -11,7 +11,6 @@ export class HomeComponent implements OnInit {
   hoverLogo: string = null;
 
   logos = [
-    'forbes',
     'advocate',
     'mission-local',
     'bkr',
