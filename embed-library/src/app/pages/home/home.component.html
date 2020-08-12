@@ -37,11 +37,12 @@
            <div
               *ngFor="let logo of logos"
               class="logo row justify-center"
-              
               (click)="trackClick('case_study', logo)"
+              (mouseenter)="setHoverLogo(logo)"
+              (mouseleave)="setHoverLogo(null)"
             >
-              <img [src]="'assets/images/logos/' + logo + '.png'">
-        </div> 
+              <img [src]="logoUrl(logo)">
+            </div>
           </div>
         </div>
       </div>
@@ -60,15 +61,15 @@
             <app-button url="/how-it-works">See how it works</app-button>
           </div>
           <div class="image-1 row">
-            <img src="assets/images/home/4.jpg" />
+            <img src="assets/images/home/4.png" />
           </div>
         </div>
         <div class="col">
           <div class="image-2 row">
-            <img src="assets/images/home/2.jpg" />
+            <img src="assets/images/home/2.png" />
           </div>
           <div class="image-3 row">
-            <img src="assets/images/home/3.jpg" />
+            <img src="assets/images/home/3.png" />
           </div>
         </div>
       </div>

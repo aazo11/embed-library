@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Title, Meta } from '@angular/platform-browser';
 import { EmbedService } from 'src/app/embed.service'
 import { fromEvent } from 'rxjs'
 import { MatSnackBar } from '@angular/material/snack-bar'
@@ -21,10 +22,17 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
     private snackBar: MatSnackBar,
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private analytics: AnalyticsService
+    private analytics: AnalyticsService,
+    private titleService: Title,
+    private metaService: Meta
   ) { }
 
   ngOnInit() {
+    const title = 'Visualizations';
+    const description = 'Dynamic Hello Angular Lovers description!';
+    this.titleService.setTitle(`${title} - HiGeorge for Publishers Library`);
+    this.metaService.updateTag({ name: 'description', content: description });
+
     this.activatedRoute.queryParams.subscribe(params => {
       this.queryParams = params;
       this.embedService.getEmbeds(this.queryParams).subscribe((list) => {
