@@ -1,14 +1,23 @@
 @import '../../../assets/mixin';
 
+
+
+
 :host {
   .mat-dialog-content {
     position: relative;
     display: flex;
     flex-direction: column;
     margin: 0;
-    padding: 45px 60px 60px;
+    padding: 45px 60px 20px;
     border: 1px solid #CECCF5;
     background-color: #ECECFA;
+
+
+    .button-dialog{
+      text-align:center;
+      margin-top: 25px;
+    }
 
     .close {
       position: absolute;
