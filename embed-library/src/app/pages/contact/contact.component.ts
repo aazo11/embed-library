@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog'
 import { AnalyticsService } from 'src/app/analytics.service';
-import {ContactusService} from 'src/app/contactus.service';
+import { ContactusService } from 'src/app/contactus.service';
+import { ContactSuccessDialogComponent } from 'src/app/components/contact-success-dialog/contact-success-dialog.component';
 
 @Component({
   selector: 'app-contact',
@@ -16,6 +18,7 @@ export class ContactComponent implements OnInit{
     private analytics: AnalyticsService,
     private titleService: Title,
     private metaService: Meta,
+    private dialog: MatDialog,
     private contactusService: ContactusService
   ) { }
 
@@ -39,11 +42,28 @@ export class ContactComponent implements OnInit{
   }
 
   submit() {
+    if (!this.contactForm.valid) return;
+
     this.analytics.analyticsEventEmitter('contact_form_submit', undefined, undefined, undefined, this.contactForm.value);
-    this.contactusService.sendContactUsNote(this.contactForm.get('email').value, 
-                                            this.contactForm.get('name').value,
-                                            this.contactForm.get('subject').value,
-                                            this.contactForm.get('message').value).subscribe(result => console.log(result))
+    this.contactusService.sendContactUsNote(
+      this.contactForm.get('email').value, 
+      this.contactForm.get('name').value,
+      this.contactForm.get('subject').value,
+      this.contactForm.get('message').value
+    ).subscribe(
+      result => {
+        console.log(result);
+        this.openDialog();
+      }
+    );
+
     console.log('submit', this.contactForm.value);
+  }
+
+  openDialog() {
+    this.dialog.open(ContactSuccessDialogComponent, {
+      data: { },
+      width: '600px'
+    });
   }
 }

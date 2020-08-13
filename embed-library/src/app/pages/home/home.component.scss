@@ -176,7 +176,7 @@
 
     .section-three {
       position: relative;
-      padding: 80px 24px 0;
+      padding: 60px 24px 0;
       background-color: $color-bg-blue;
 
       &:before,
@@ -235,8 +235,11 @@
         }
 
         .image {
-          margin-top: -160px;
+          margin-top: -100px;
           z-index: 10;
+          img {
+            max-width: 760px;
+          }
         }
       }
     }
@@ -380,11 +383,8 @@
             height: 130px;
             border-top: 1px solid white;
 
+            &:first-child,
             &:nth-child(3) {
-              display: none;
-            }
-
-            &:first-child {
               border-left-width: 0;
             }
 
