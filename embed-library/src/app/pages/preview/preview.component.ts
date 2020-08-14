@@ -7,8 +7,11 @@ import { DomSanitizer } from '@angular/platform-browser';
   templateUrl: './preview.component.html',
   styleUrls: ['./preview.component.scss']
 })
-export class PreviewComponent implements OnInit{
-  url: any;
+export class PreviewComponent implements OnInit {
+  ids: string[];
+  queryParams: URLSearchParams[];
+  previewHeights: string[];
+  previewShadow = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -16,7 +19,34 @@ export class PreviewComponent implements OnInit{
   ) { }
 
   ngOnInit() {
-    const { id } = this.route.snapshot.params;
-    this.url = `https://callyourcongressperson.com/datainteractive/${id}` + window.location.search;
+    const originalQueryParams = this.route.snapshot.queryParamMap;
+
+    this.ids = originalQueryParams.get('ids').split(',');
+    this.queryParams = this.ids.map(i => new URLSearchParams());
+
+    this.previewHeights = this.ids.map(i => '700');
+    if (originalQueryParams.has('previewHeights')) {
+      originalQueryParams.get('previewHeights').split(',').forEach((v, i) => {
+        if (v) {
+          this.previewHeights[i] = v;
+        }
+      });
+    }
+
+    this.previewShadow = !!Number.parseInt(originalQueryParams.get('previewShadow'), 10);
+
+    for (const key of originalQueryParams.keys) {
+      if (key === 'ids' || key.startsWith('preview')) {
+        continue;
+      }
+      const values = originalQueryParams.get(key).split(',');
+      for (let i = 0; i < values.length; i++) {
+        if (values[i]) {
+          this.queryParams[i].append(key, values[i]);
+        }
+      }
+    }
+
+
   }
 }

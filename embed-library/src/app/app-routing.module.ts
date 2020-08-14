@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'visualizations', component: WidgetLibraryComponent },
   { path: 'company', component: CompanyComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'preview/:id', component: PreviewComponent },
+  { path: 'preview', component: PreviewComponent },
   { path: 'case-study/:brand', component: CaseStudyComponent },
   { path: 'privacy', component: PrivacyComponent },
   { path: 'tos', component: TosComponent }
