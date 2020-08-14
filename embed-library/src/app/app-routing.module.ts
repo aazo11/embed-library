@@ -8,6 +8,8 @@ import { CompanyComponent } from 'src/app/pages/company/company.component';
 import { ContactComponent } from 'src/app/pages/contact/contact.component';
 import { PreviewComponent } from 'src/app/pages/preview/preview.component';
 import { CaseStudyComponent } from 'src/app/pages/case-study/case-study.component';
+import { PrivacyComponent } from 'src/app/pages/privacy/privacy.component';
+import { TosComponent } from 'src/app/pages/tos/tos.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,7 +18,9 @@ const routes: Routes = [
   { path: 'company', component: CompanyComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'preview/:id', component: PreviewComponent },
-  { path: 'case-study/:brand', component: CaseStudyComponent }
+  { path: 'case-study/:brand', component: CaseStudyComponent },
+  { path: 'privacy', component: PrivacyComponent },
+  { path: 'tos', component: TosComponent }
 ];
 
 @NgModule({

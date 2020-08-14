@@ -1,6 +1,9 @@
 @import '../../../assets/colors';
 @import '../../../assets/breakpoints';
 
+
+
+
 :host {
   .title {
     font-family: PlayfairDisplay-Bold;
@@ -15,6 +18,8 @@
     line-height: 29px;
     color: $color-text-blue;
   }
+
+  
 
   .page-title {
     font-family: PlayfairDisplay-Bold;
@@ -129,6 +134,7 @@
 
           .desc {
             margin-top: 24px;
+            color: $color-text-purple;
           }
         }
 

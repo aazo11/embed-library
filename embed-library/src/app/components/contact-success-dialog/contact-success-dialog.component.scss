@@ -1,0 +1,63 @@
+@import '../../../assets/mixin';
+
+
+
+
+:host {
+  .mat-dialog-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 45px 60px 20px;
+    border: 1px solid #CECCF5;
+    background-color: #ECECFA;
+
+
+    .button-dialog{
+      text-align:center;
+      margin-top: 25px;
+    }
+
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 22px;
+    }
+
+    .mat-dialog-title {
+      font-family: "Lato-Bold";
+      font-size: 23px;
+      line-height: 31px;
+      color: #3931D8;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .description {
+      font-family: "Lato";
+      font-size: 16px;
+      line-height: 24px;
+      color: #66709D;
+      margin-bottom: 11px;
+    }
+  }
+
+  @include sm {
+    .mat-dialog-content {
+      padding: 20px;
+      
+      .close {
+        display: none;
+      }
+
+      .mat-dialog-title {
+        font-size: 21px;
+      }
+
+      .description {
+        text-align: center;
+      }
+    }
+  }
+}

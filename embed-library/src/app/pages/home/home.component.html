@@ -5,14 +5,14 @@
       <div class="container col">
         <div class="section-content row">
           <div class="col">
-            <h2>Add Data Visualizations to All Your Articles
+            <h2>Add Data Visualizations to Your Articles
             </h2>
             <div class="desc">
               HiGeorge creates data visualizations that you can drag-and-drop into articles. No data background required. 
               We make sense of data so that you don’t have to. 
             </div>
             <div class="links row">
-              <app-button url="/" color="blue">Contact us to start</app-button>
+              <app-button url="/contact" color="blue">Contact us to start</app-button>
               <a class="row link-red" (click)="trackClick('homepage_how_it_works')" [routerLink]="['/how-it-works']">
                 How it works
                 <mat-icon aria-hidden="false">arrow_right_alt</mat-icon>
@@ -24,16 +24,25 @@
           </div>
         </div>
         <div class="col">
-          <div class="subtitle row">See case studies</div>
+          <div class="subtitle row">Our Partners</div>
           <div class="logos row justify-center">
-            <a
+            <!--<a
               *ngFor="let logo of logos"
               class="logo row justify-center"
               [routerLink]="['/case-study', logo]"
               (click)="trackClick('case_study', logo)"
             >
               <img [src]="'assets/images/logos/' + logo + '.png'">
-            </a>
+          </a> -->
+           <div
+              *ngFor="let logo of logos"
+              class="logo row justify-center"
+              (click)="trackClick('case_study', logo)"
+              (mouseenter)="setHoverLogo(logo)"
+              (mouseleave)="setHoverLogo(null)"
+            >
+              <img [src]="logoUrl(logo)">
+            </div>
           </div>
         </div>
       </div>
@@ -52,15 +61,15 @@
             <app-button url="/how-it-works">See how it works</app-button>
           </div>
           <div class="image-1 row">
-            <img src="assets/images/home/4.jpg" />
+            <img src="assets/images/home/4.png" />
           </div>
         </div>
         <div class="col">
           <div class="image-2 row">
-            <img src="assets/images/home/2.jpg" />
+            <img src="assets/images/home/2.png" />
           </div>
           <div class="image-3 row">
-            <img src="assets/images/home/3.jpg" />
+            <img src="assets/images/home/3.png" />
           </div>
         </div>
       </div>
@@ -89,7 +98,7 @@
           </div>
         </div>
         <div class="image row">
-          <img src="assets/images/home/5.svg">
+          <img src="assets/images/home/5.png">
         </div>
       </div>
     </div>
@@ -98,7 +107,7 @@
       <div class="slim-contents">
         <div class="col flex-1">
           <div class="subtitle">Why us</div>
-          <h3>Loved by Journalists, Engaging for readers</h3>
+          <h3>Loved by Journalists, Engaging for Readers</h3>
           <div class="desc">
             HiGeorge believes in the democratization of data visualizations. 
             We are committed to helping newsrooms enhance their existing reporting and further reader understanding.
@@ -107,12 +116,12 @@
         </div>
         <div class="col flex-1">
           <div class="tip col align-start">
-            <img src="assets/images/home/money.svg" />
+            <img src="assets/images/home/hero.svg" />
             <h5>Increase Engagement</h5>
             <p>Readers are able to interact with our visualizations, thereby increasing engagement and pageviews</p>
           </div>
           <div class="tip col align-start">
-            <img src="assets/images/home/profile.svg" />
+            <img src="assets/images/home/rocket.svg" />
             <h5>Easy to Deploy</h5>
             <p>
               Embed into WordPress (or any other CMS) with a simple copy/paste
@@ -121,7 +130,7 @@
         </div>
         <div class="col flex-1">
           <div class="tip col align-start">
-            <img src="assets/images/home/engagement.svg" />
+            <img src="assets/images/home/ai-powered.svg" />
             <h5>AI-Powered Reporting</h5>
             <p>Increase your breadth of coverage without additional resources by leveraging the power of AI</p>
           </div>
