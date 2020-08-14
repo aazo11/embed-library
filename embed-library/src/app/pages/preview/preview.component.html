@@ -5,7 +5,7 @@
       <div class="title">Data Visualizations for Newsrooms</div>
     </div>
 
-    <div class="frame-wrapper" [ngClass]="{'shadow-container': previewShadow}" *ngFor="let id of ids; index as i">
+    <div class="frame-wrapper shadow-container" *ngFor="let id of ids; index as i">
       <iframe [cachedSrc]="'https://callyourcongressperson.com/datainteractive/' + id + '?' + queryParams[i].toString()" width="100%" [height]="previewHeights[i] + 'px'"></iframe>
     </div>
     

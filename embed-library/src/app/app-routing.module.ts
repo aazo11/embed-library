@@ -18,13 +18,14 @@ const routes: Routes = [
   { path: 'company', component: CompanyComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'preview', component: PreviewComponent },
+  { path: 'preview/:collection', component: PreviewComponent },
   { path: 'case-study/:brand', component: CaseStudyComponent },
   { path: 'privacy', component: PrivacyComponent },
   { path: 'tos', component: TosComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
