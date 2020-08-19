@@ -32,9 +32,10 @@
 
     .shadow-container {
       background-color: rgb(247, 249, 253);
-      border-radius: 10px;
+      border-radius: 4px;
       padding: 10px 20px;
-      box-shadow: 0 0 10px 5px #00000057;
+      border: 1px solid #DBE6FA;
+      box-shadow: 1px 1px 12px 6px rgba(57,49,216,0.1);
     }
 
     @include sm {
