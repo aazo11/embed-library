@@ -14,7 +14,8 @@ export class HomeComponent implements OnInit {
     'advocate',
     'mission-local',
     'bkr',
-    'eye'
+    'eye',
+    'NCHealth'
   ];
 
   constructor(
