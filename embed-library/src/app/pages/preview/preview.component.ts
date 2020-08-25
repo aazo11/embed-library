@@ -25,12 +25,12 @@ export class PreviewComponent implements OnInit {
     comp.ids = [];
     comp.previewHeights = [];
     if (params.get('county')) {
-      comp.ids.push('5f20ed3eaaff4e1186cd46e3', '5f2851667db7754c3cf2780a', '5f3710a103614b2c289f8bc0');
-      comp.previewHeights.push('700', '700', '450');
+      comp.ids.push('5f3710a103614b2c289f8bc0', '5f20ed3eaaff4e1186cd46e3', '5f2851667db7754c3cf2780a');
+      comp.previewHeights.push('430', '700', '700');
     }
 
-    comp.ids.push('5f2851397db7754c3cf27808', '5f28514c7db7754c3cf27809', '5f31ffe2de59950c38c8ffa3', '5f3710a103614b2c289f8bc0');
-    comp.previewHeights.push('700', '700', '775', '450');
+    comp.ids.push('5f3710a103614b2c289f8bc0', '5f2851397db7754c3cf27808', '5f28514c7db7754c3cf27809', '5f31ffe2de59950c38c8ffa3', '5f3c3311d12d831e4684b580');
+    comp.previewHeights.push('430', '700', '700', '775', '700');
 
     comp.queryParams = comp.ids.map(i => new URLSearchParams());
     for (const key of params.keys) {
@@ -45,16 +45,16 @@ export class PreviewComponent implements OnInit {
     }
 
     if (params.get('county')) {
-      comp.queryParams[2].set('homepageMode', '1');
-      comp.queryParams[2].set('noCTA', '1');
-      comp.queryParams[2].set('noGraph', '1');
-      comp.queryParams[6].set('homepageMode', '1');
-      comp.queryParams[6].set('noCTA', '1');
-      comp.queryParams[6].set('noGraph', '1');
-    } else {
+      comp.queryParams[0].set('homepageMode', '1');
+      comp.queryParams[0].set('noCTA', '1');
+      comp.queryParams[0].set('noGraph', '1');
       comp.queryParams[3].set('homepageMode', '1');
       comp.queryParams[3].set('noCTA', '1');
       comp.queryParams[3].set('noGraph', '1');
+    } else {
+      comp.queryParams[0].set('homepageMode', '1');
+      comp.queryParams[0].set('noCTA', '1');
+      comp.queryParams[0].set('noGraph', '1');
     }
   }
 
