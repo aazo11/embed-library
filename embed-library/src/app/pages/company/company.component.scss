@@ -1,9 +1,6 @@
 @import '../../../assets/colors';
 @import '../../../assets/breakpoints';
 
-
-
-
 :host {
   .title {
     font-family: PlayfairDisplay-Bold;
@@ -178,6 +175,78 @@
     .section-five {
       padding: 0 24px;
       margin-bottom: 30px;
+    }
+
+    .section-advisors {
+      padding: 60px 24px;
+      .title {
+        text-align: center;
+      }
+      .desc {
+        text-align: center;
+      }
+      .advisors {
+        padding-top: 20px;
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .advisor {
+          color: $color-title-blue;
+          width: 240px;
+          margin: 10px;
+          align-items: center;
+
+          .avatar {
+            display: block;
+            width: 150px;
+            height: 150px;
+            background-size: cover;
+            border-radius: 50%;
+          }
+
+          .name {
+            font-family: Lato-Bold;
+            font-size: 18px;
+            line-height: 29px;
+          }
+
+          .position {
+            font-size: 18px;
+            line-height: 29px;
+            font-family: Lato;
+          }
+
+          .company {
+            font-size: 14px;
+            line-height: 22px;
+            font-style: italic;
+            font-family: Lato;
+          }
+
+          #jon-tien {
+            background-image: url('src/assets/images/company/jon-tien.jpg');
+          }
+
+          #colin-mutchler {
+            background-image: url('src/assets/images/company/colin-mutchler.jpg');
+          }
+
+          #patrick-lee {
+            background-image: url('src/assets/images/company/patrick-lee.jpg');
+          }
+
+          #regina-buckley {
+            background-image: url('src/assets/images/company/regina-buckley.jpg');
+          }
+
+          #ryan-singel {
+            background-image: url('src/assets/images/company/ryan-singel.jpg');
+          }
+        }
+      }
     }
   }
 
