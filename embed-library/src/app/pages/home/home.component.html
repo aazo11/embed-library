@@ -24,7 +24,7 @@
           </div>
         </div>
         <div class="col">
-          <div class="subtitle row">Our Partners</div>
+          <div class="subtitle row">SEE CASE STUDIES</div>
           <div class="logos row justify-center">
             <!--<a
               *ngFor="let logo of logos"
@@ -37,7 +37,7 @@
            <div
               *ngFor="let logo of logos"
               class="logo row justify-center"
-              (click)="trackClick('case_study', logo)"
+              (click)="goToCaseStudy('case_study', logo)"
               (mouseenter)="setHoverLogo(logo)"
               (mouseleave)="setHoverLogo(null)"
             >

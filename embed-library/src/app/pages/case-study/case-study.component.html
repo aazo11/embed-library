@@ -12,8 +12,7 @@
         <div class="section-content col">
           <div class="title">{{ content.post }}</div>
           <div class="desc">
-            Pick from different visualization styles and options.
-            Our library has many visualizations based on current on going topics. 
+            {{content.postText}}
           </div>
         </div>
         <div class="image">
@@ -29,8 +28,7 @@
         <div class="section-content col">
           <div class="title">{{ content.graph }}</div>
           <div class="desc">
-            Easily add our dynamic visualizations to your articles or 
-            use a share link to share any visualization directly to social media.
+           {{content.graphText}}
           </div>
         </div>
       </div>
@@ -39,12 +37,9 @@
       <div class="contents row align-start">
         <div class="section-left col">
           <div class="section-content">
-            <div class="title">Deployment</div>
+            <div class="title">{{ content.deployment }}</div>
             <div class="desc">
-              The visualizations are embeded with a simple embed code that
-              automatically pulls the latest data into the visualization.
-              This is crucial as the data is updated daily so their viewers
-              alway got the latest information. 
+              {{content.deploymentText}}
             </div>
             <div class="links row">
               <a class="row justify-center" (click)="trackClick()" [href]="content.url" target="_blank">Visit the article</a>
