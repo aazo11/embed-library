@@ -14,7 +14,8 @@ export class HomeComponent implements OnInit {
   logos = [
     'advocate',
     'mission-local',
-    'eye'
+    'eye',
+    'rochester'
   ];
 
   constructor(
