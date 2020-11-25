@@ -14,6 +14,10 @@ export class CompanyComponent implements OnInit {
     private metaService: Meta
   ) { }
 
+  get selected() {
+    return location.hash === '#advisors' ? 3 : 2;
+  }
+
   ngOnInit() {
     const title = 'Company';
     const description = 'Our mission -- help newsrooms make use of the world\'s data.';

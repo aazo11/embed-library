@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: 'how-it-works', component: HowItWorksComponent },
   { path: 'visualizations', component: WidgetLibraryComponent },
   { path: 'company', component: CompanyComponent },
+  { path: 'advisors', redirectTo: '/company#advisors' },
   { path: 'contact', component: ContactComponent },
   { path: 'preview', component: PreviewComponent },
   { path: 'preview/:collection', component: PreviewComponent },
@@ -25,7 +26,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})],
+  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled', anchorScrolling: 'enabled'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
