@@ -6,6 +6,7 @@ import { MatSnackBar } from '@angular/material/snack-bar'
 import { debounceTime } from 'rxjs/operators';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AnalyticsService } from 'src/app/analytics.service';
+import { TOPICS } from 'src/app/helpers/constants';
 
 @Component({
   selector: 'app-widget-library',
@@ -14,8 +15,10 @@ import { AnalyticsService } from 'src/app/analytics.service';
 })
 export class WidgetLibraryComponent implements OnInit, OnDestroy {
   embedList: any[] = []
-  queryParams: any = {};
+  queryParams: any;
   limit = 2
+  width = window.innerWidth
+  widgetTitle = 'COVID'
 
   constructor(
     private embedService: EmbedService,
@@ -35,10 +38,7 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
 
     this.activatedRoute.queryParams.subscribe(params => {
       this.queryParams = params;
-      this.embedService.getEmbeds(this.queryParams).subscribe((list) => {
-        this.embedList = list
-        this.limit = 2
-      })
+      this.load();
     });
 
     fromEvent(window, 'scroll')
@@ -48,6 +48,12 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
           this.limit += 2
           this.analytics.analyticsEventEmitter('library_scroll', undefined, undefined, this.limit, { num: this.limit });
         }
+      });
+
+    fromEvent(window, 'resize')
+      .pipe(debounceTime(500))
+      .subscribe(() => {
+        this.width = window.innerWidth
       });
   }
 
@@ -68,5 +74,16 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
 
   trackClick(name, label?) {
     this.analytics.trackLink(name, label);
+  }
+
+  load() {
+    const value = (this.queryParams.topic || 'COVID').trim();
+    const topic = TOPICS.find(t => t.value === value);
+    this.widgetTitle = topic.label;
+
+    this.embedService.getEmbeds(this.queryParams).subscribe((list) => {
+      this.embedList = list.visualizations;
+      this.limit = 2
+    })
   }
 }

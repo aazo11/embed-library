@@ -1,27 +1,8 @@
 <div class="search">
-  <mat-form-field class="example-full-width">
-    <mat-label>Keyword Search</mat-label>
-    <input matInput #tagsEl (input)="searchByTags(tagsEl.value)" [value]="_params.value.tags || ''">
-    <mat-hint>
-      Not getting results? <a style="text-decoration:none" href="/contact" (click)="requestViz()">Request a visualization</a>
-    </mat-hint>
-  </mat-form-field>
-
   <mat-form-field>
-    <mat-label>Specific Issue</mat-label>
-    <mat-select (selectionChange)="searchByStoryline($event)" [value]="_params.value.storyline">
-      <mat-option>All</mat-option>
-      <mat-option *ngFor="let op of searchOptions.storylines" [value]="op.value">
-        {{op.label}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-label>Limit by location</mat-label>
-    <mat-select (selectionChange)="searchByLocation($event)" [value]="_params.value.location">
-      <mat-option>All</mat-option>
-      <mat-option *ngFor="let op of searchOptions.locations" [value]="op.value">
+    <mat-label>TOPIC</mat-label>
+    <mat-select (selectionChange)="searchByTopic($event)" [value]="_params.value.topic">
+      <mat-option *ngFor="let op of searchOptions.topic" [value]="op.value">
         {{op.label}}
       </mat-option>
     </mat-select>

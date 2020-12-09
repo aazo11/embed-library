@@ -2,35 +2,41 @@
 <div class="component">
   <div class="headerText">
     <div class="title">Data Visualization Library</div>
-    <div class="subtitle">Expand your breadth of coverage using AI-powered visual journalism.</div>
+    <div class="subtitle">Enhance your coverage with engaging, ready-to-use data visualizations.</div>
     <ul class="description">
       <li>
-        Can be freely used on any publisher websites
+        No coding or manual work required - we completely automate the data content work flow
       </li>
       <li>
-        No strings attached. Transform your readers into active participants by allowing them to interact with your content
+        All visualizations are located for your readers
       </li>
       <li>
-        Can be adapted to all storylines. Having trouble? We can help!
+        Seemlessly embed visualizations with a quick copty/paste
+      </li>
+      <li>
+        Don't see a visualizatin that you need?
         <a style="text-decoration:none" (click)="trackClick('library_help_find')" href="/contact">
-          Help me find the right visualization
-          <mat-icon class="md-18">arrow_forward</mat-icon>
+          Send a Request!
         </a>
       </li>
     </ul>
   </div>
 
-  <div class="searchContainer">
-    <div class="searchBar">
-      <div class="searchTitle">Find visualization that matches your story</div>
-      <app-search (update)="updateSearchParams($event)" [params]="queryParams"></app-search>
+  <div class="container">
+    <div class="searchContainer">
+      <div class="searchBar">
+        <div class="searchTitle">Find the perfect visualization for your story</div>
+        <app-search (update)="updateSearchParams($event)" [params]="queryParams"></app-search>
+        <div class="searchTitle">Ready to delploy?</div>
+        <a href="/contact">CONTACT US</a>
+      </div>
     </div>
-  </div>
 
-  <div class="list">
-    <div *ngFor="let embed of embedList; let idx = index;" class="widget-box">
-      <div class="widget-content" *ngIf="idx < limit">
-        <app-widget [campaign]="getJSON(embed)"></app-widget>
+    <div class="list">
+      <div *ngFor="let embed of embedList; let idx = index;" class="widget-box">
+        <div class="widget-content" *ngIf="idx < limit">
+          <app-widget [title]="widgetTitle" [campaign]="embed" [mobile]="width < 1058"></app-widget>
+        </div>
       </div>
     </div>
   </div>
