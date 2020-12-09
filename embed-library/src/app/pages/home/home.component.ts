@@ -15,7 +15,8 @@ export class HomeComponent implements OnInit {
     'advocate',
     'mission-local',
     'eye',
-    'rochester'
+    'rochester',
+    'wasau'
   ];
 
   constructor(

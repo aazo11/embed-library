@@ -55,5 +55,16 @@ export const contents = {
     url: 'https://rochesterbeacon.com/covid-19-dashboard/',
     logoHeight: 80
 
+  },
+
+  wasau:{
+    post: 'Before HiGeorge',
+    postText: 'Shereen Siewart, the Founder and Publisher of Wausau Pilot & Review, believes “stories that are important are stronger with data interactives.” However, as she had to dedicate significant time and effort to updating numbers every day, she was unable to use much data content.',
+    graph: 'Transitioning to HiGeorge',
+    graphText:'Transitioning to HiGeorge was “completely seamless,” as all visualizations could be implemented with a quick copy-and-paste into WordPress. Shereen notes that the team is also “easy to work with” and responsive to any questions or concerns.',
+    deployment: "With HiGeorge",
+    deploymentText: 'Shereen says HiGeorge is a valuable addition, both for readers and for the Wausau Pilot team. HiGeorge has completely automated the data content workflow so she can now “chase other important stories, rather than update and track data for existing stories.”',
+    url: 'https://wausaupilotandreview.com/covid-19-resources/ ',
+    logoHeight: 30
   }
 };
