@@ -1,19 +1,30 @@
-<div class="container" *ngIf="campaign">
-  <div class="info">
-    <div class="title">{{campaign.embedTitleInLibrary}}</div>
-    <div class="subtitle">{{campaign.embedSubtitleInLibrary}}</div>
-    <div class="guide">
-      <mat-icon>arrow_right_alt</mat-icon>
-      <span>
-        <a (click)="requestViz()">Request</a> for interactive version with dropdown for reader to select their city.
-      </span>
-    </div>
-    <button (click)="openDialog()">Use this graph</button>
+<div class="container" [ngClass]="mobile ? 'mobile' : 'desktop'" *ngIf="campaign">
+  <div class="title">
+    <div>{{title}}</div>
+    <div class="subtitle" *ngIf="parameters.length > 0">Available for all counties and states</div>
   </div>
-  <div class="widget">
-    <div class="label">What your readers will see</div>
-    <div class="iframeWrapper">
-      <iframe style="display:block;" [cachedSrc]="iframeSRC" frameBorder="0"></iframe>
+  <iframe style="display:block;" [cachedSrc]="iframeSRC" frameBorder="0" [height]="height"></iframe>
+  <div class="location" [ngClass]="'fields-' + parameters.length">
+    <mat-form-field *ngIf="parameters.includes('state')">
+      <mat-label>State</mat-label>
+      <mat-select (selectionChange)="selectState($event)" [value]="state ? state.abbr : ''">
+        <mat-option *ngFor="let item of states" [value]="item.abbr">
+          {{item.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field *ngIf="parameters.includes('county')">
+      <mat-label>County</mat-label>
+      <mat-select (selectionChange)="selectCounty($event)" [value]="county">
+        <mat-option *ngFor="let item of counties" [value]="item">
+          {{item}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="tags" *ngIf="campaign.categories.length > 0">
+    <div class="tag" *ngFor="let item of campaign.categories">
+      {{item}}
     </div>
   </div>
 </div>

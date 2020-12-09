@@ -133,3 +133,7 @@ a {
 .pointer {
   cursor: pointer;
 }
+
+.location > mat-form-field > .mat-form-field-wrapper {
+  margin-bottom: -1em;
+}
