@@ -38,6 +38,9 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
 
     this.activatedRoute.queryParams.subscribe(params => {
       this.queryParams = params;
+      if(Object.keys(this.queryParams).length === 0 ){
+        this.queryParams = {topic: "COVID-19"}
+      }
       this.load();
     });
 

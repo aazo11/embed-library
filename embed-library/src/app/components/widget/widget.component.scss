@@ -24,6 +24,10 @@
       margin-top: 15px;
     }
 
+    .noLocationString{
+      text-align: center;
+    }
+
     .tags {
       display: flex;
       flex-wrap: wrap;
@@ -51,6 +55,18 @@
           top: -40px;
         }
       }
+      .noLocationString {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 300px;
+        text-align: right;
+        font-weight: 350;
+        padding-top: 30px;
+       
     }
+
+      
   }
+}
 }
