@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http'
 })
 export class EmbedService {
   private CYCServerURL = 'https://coreservices.hi-george.com/api/datainteractive' // Static server url base path
-  private mockSearverUrl = 'https://b02e72dd-7f83-435a-a502-deadf6327a2e.mock.pstmn.io/visualization';
+  private mockSearverUrl = 'https://coreservices.hi-george.com/api/v1/visualizations';
   constructor(private http: HttpClient) { }
 
   getEmbeds(searchParams: any = {}): Observable<any> {

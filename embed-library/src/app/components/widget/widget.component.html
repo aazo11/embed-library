@@ -1,10 +1,7 @@
 <div class="container" [ngClass]="mobile ? 'mobile' : 'desktop'" *ngIf="campaign">
-  <div class="title">
-    <div>{{title}}</div>
-    <div class="subtitle" *ngIf="parameters.length > 0">Available for all counties and states</div>
-  </div>
+  
   <iframe style="display:block;" [cachedSrc]="iframeSRC" frameBorder="0" [height]="height"></iframe>
-  <div class="location" [ngClass]="'fields-' + parameters.length">
+  <div *ngIf="parameters.length != 0;else avalableString" class="location" [ngClass]="'fields-' + parameters.length">
     <mat-form-field *ngIf="parameters.includes('state')">
       <mat-label>State</mat-label>
       <mat-select (selectionChange)="selectState($event)" [value]="state ? state.abbr : ''">
@@ -22,6 +19,7 @@
       </mat-select>
     </mat-form-field>
   </div>
+  <ng-template #avalableString><div class="location">Available for all geographies. Contact Us.</div></ng-template>
   <div class="tags" *ngIf="campaign.categories.length > 0">
     <div class="tag" *ngFor="let item of campaign.categories">
       {{item}}

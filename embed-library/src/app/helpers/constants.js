@@ -1,15 +1,15 @@
 export const TOPICS = [
   {
-    label: 'COVID',
-    value: 'COVID',
+    label: 'COVID-19',
+    value: 'COVID-19',
   },
   {
-    label: 'Crime and Policing',
-    value: 'Crime',
+    label: 'Criminal Justice',
+    value: 'Criminal Justice',
   },
   {
     label: 'Election 2020',
-    value: 'Election2020',
+    value: 'Election 2020',
   },
 ];
 
@@ -217,15 +217,8 @@ export const STATES = [
   {
     "name": "Wyoming",
     "abbr": "WY"
-  },
-  {
-    "name": "Puerto Rico",
-    "abbr": "PR"
-  },
-  {
-    "name": "Virgin Islands",
-    "abbr": "VI"
   }
+  
 ];
 
 export const COUNTIES = {

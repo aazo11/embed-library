@@ -18,7 +18,7 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
   queryParams: any;
   limit = 2
   width = window.innerWidth
-  widgetTitle = 'COVID'
+  widgetTitle = ''
 
   constructor(
     private embedService: EmbedService,
