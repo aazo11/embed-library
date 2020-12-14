@@ -64,6 +64,7 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
   }
 
   updateSearchParams(params) {
+    console.log(params)
     const queryParams = {};
     Object.keys(params).forEach(key => {
       if (params[key]) queryParams[key] = params[key];

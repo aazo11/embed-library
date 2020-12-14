@@ -19,13 +19,30 @@ export class SearchComponent implements OnInit {
         value: 'COVID-19',
       },
       {
+        label: 'Campaign Finance',
+        value: 'Campaign Finance',
+      },
+      {
         label: 'Criminal Justice',
         value: 'Criminal Justice',
       },
       {
-        label: 'Election 2020',
-        value: 'Election 2020',
+        label: 'Election Polls',
+        value: 'Polling',
       },
+      
+      {
+        label: 'Police Statistics',
+        value: 'Policing',
+      },
+      {
+        label: 'Real Estate',
+        value: 'Real Estate',
+      },
+      {
+        label: 'Voter Registration',
+        value: 'Voter Registration',
+      }
     ]
   };
 
