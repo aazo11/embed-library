@@ -14,7 +14,7 @@
         Seemlessly embed visualizations with a quick copty/paste
       </li>
       <li>
-        Don't see a visualizatin that you need?
+        Don't see a visualization that you need?
         <a style="text-decoration:none" (click)="trackClick('library_help_find')" href="/contact">
           Send a Request!
         </a>
@@ -32,12 +32,17 @@
       </div>
     </div>
 
-    <div class="list">
+    <div *ngIf="embedList.length !=0;else comingSoonText" class="list" >
       <div *ngFor="let embed of embedList; let idx = index;" class="widget-box">
         <div class="widget-content" *ngIf="idx < limit">
           <app-widget [title]="widgetTitle" [campaign]="embed" [mobile]="width < 1058"></app-widget>
         </div>
       </div>
     </div>
+    <ng-template #comingSoonText>
+      <div class="comingSoon">
+      Coming Soon
+    </div>
+    </ng-template>
   </div>
 </div>

@@ -122,6 +122,15 @@
       }
     }
 
+    .comingSoon {
+      padding: 50px 0;
+      border-bottom: 1px solid #D4D7E8;
+      margin: auto;
+      font-weight: 400;
+      font-size: 1.8em;
+      color: #130F67;
+    }
+
     @include sm {
       .headerText {
         padding: 50px 30px;

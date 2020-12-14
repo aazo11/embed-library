@@ -30,6 +30,10 @@ export class SearchComponent implements OnInit {
         label: 'Election Polls',
         value: 'Polling',
       },
+      {
+        label: 'Government Spending',
+        value: 'Government Spending',
+      },
       
       {
         label: 'Police Statistics',

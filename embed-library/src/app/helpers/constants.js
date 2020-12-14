@@ -15,6 +15,10 @@ export const TOPICS = [
     label: 'Election Polls',
     value: 'Polling',
   },
+  {
+    label: 'Government Spending',
+    value: 'Government Spending',
+  },
   
   {
     label: 'Police Statistics',
