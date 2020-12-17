@@ -52,7 +52,7 @@ export const contents = {
     graphText: 'The Rochester Beacon has enjoyed working with the HiGeorge team. Any requests are promptly addressed and coverage is continuously expanding. Smriti notes that, above all, the team has an “infectious appetite for growth.”',
     deployment: "With HiGeorge",
     deploymentText: 'Since implementing HiGeorge, the Rochester Beacon has been able to “tell more stories by the numbers.” Smriti says HiGeorge has given Rochester Beacon “an opportunity to display data, in some cases interactively, on issues and trends that are of interest to readers.”',
-    url: 'https://rochesterbeacon.com/covid-19-dashboard/',
+    url: 'https://rochesterbeacon.com/crime-dashboard/',
     logoHeight: 80
 
   },
