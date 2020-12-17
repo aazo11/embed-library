@@ -1,4 +1,6 @@
-import { Injectable } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Inject } from '@angular/core';
+import { Injectable, PLATFORM_ID } from '@angular/core';
 import * as Bowser from 'bowser';
 declare let gtag: (...args) => void;
 declare var amplitude: any;
@@ -9,15 +11,19 @@ declare var amplitude: any;
 export class AnalyticsService {
   platform: Bowser.Parser.ParsedResult;
 
-  constructor() {
-    this.platform = Bowser.parse(window.navigator.userAgent);
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    if(isPlatformBrowser(this.platformId)) {
+      this.platform = Bowser.parse(window.navigator.userAgent);
+    }
   }
 
   private getQueryProperties() {
     const obj = {};
-    new URLSearchParams(window.location.search).forEach((v, k) => {
-      obj['Query ' + k] = v;
-    });
+    if(isPlatformBrowser(this.platformId)) {
+      new URLSearchParams(window.location.search).forEach((v, k) => {
+        obj['Query ' + k] = v;
+      });
+    }
     return obj;
   }
 
@@ -26,8 +32,10 @@ export class AnalyticsService {
   }
 
   public trackPageview(page_path) {
-    gtag('config', 'UA-167844505-2', { page_path, transport_type: 'beacon' });
-    gtag('send', 'pageview');
+    if(isPlatformBrowser(this.platformId)) {
+      gtag('config', 'UA-167844505-2', { page_path, transport_type: 'beacon' });
+      gtag('send', 'pageview');
+    }
   }
 
   public analyticsEventEmitter(
@@ -37,30 +45,33 @@ export class AnalyticsService {
     eventValue?: number,
     extraProperties: any = {}
   ) {
-    gtag('event', eventName, {
-      event_category: eventCategory,
-      event_label: eventLabel,
-      value: eventValue
-    });
+    if(isPlatformBrowser(this.platformId)) {
+      gtag('event', eventName, {
+        event_category: eventCategory,
+        event_label: eventLabel,
+        value: eventValue
+      });
 
-    amplitude.getInstance().logEvent(eventName, Object.assign({
-      page: window.location.pathname,
-      ...this.getQueryProperties(),
-      category: eventCategory,
-      label: eventLabel,
-      value: eventValue,
 
-      userAgent: window.navigator.userAgent,
-      browser: this.platform.browser.name,
-      browserVersion: this.platform.browser.version,
-      os: this.platform.os.name,
-      osVersion: this.platform.os.version,
-      osVersionName: this.platform.os.versionName,
-      engine: this.platform.engine.name,
-      engineVersion: this.platform.engine.version,
-      deviceType: this.platform.platform.type,
-      deviceModel: this.platform.platform.model,
-      deviceVendor: this.platform.platform.vendor
-    }, extraProperties));
+      amplitude.getInstance().logEvent(eventName, Object.assign({
+        page: isPlatformBrowser(this.platformId)?window.location.pathname: '',
+        ...this.getQueryProperties(),
+        category: eventCategory,
+        label: eventLabel,
+        value: eventValue,
+
+        userAgent: isPlatformBrowser(this.platformId)?window.navigator.userAgent: '',
+        browser: this.platform.browser.name,
+        browserVersion: this.platform.browser.version,
+        os: this.platform.os.name,
+        osVersion: this.platform.os.version,
+        osVersionName: this.platform.os.versionName,
+        engine: this.platform.engine.name,
+        engineVersion: this.platform.engine.version,
+        deviceType: this.platform.platform.type,
+        deviceModel: this.platform.platform.model,
+        deviceVendor: this.platform.platform.vendor
+      }, extraProperties));
+    }
   }
 }
