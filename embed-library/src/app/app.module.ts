@@ -60,7 +60,7 @@ import { CachedSrcDirective } from './cached-src.directive';
     CachedSrcDirective
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { EmbedService } from 'src/app/embed.service'
 import { fromEvent } from 'rxjs'
@@ -7,6 +7,7 @@ import { debounceTime } from 'rxjs/operators';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AnalyticsService } from 'src/app/analytics.service';
 import { TOPICS } from 'src/app/helpers/constants';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-widget-library',
@@ -17,7 +18,7 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
   embedList: any[] = []
   queryParams: any;
   limit = 2
-  width = window.innerWidth
+  width: number
   widgetTitle = ''
 
   constructor(
@@ -27,10 +28,14 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     private analytics: AnalyticsService,
     private titleService: Title,
-    private metaService: Meta
+    private metaService: Meta,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) { }
 
   ngOnInit() {
+    if(isPlatformBrowser(this.platformId)) {
+      this.width = window.innerWidth
+    }
     const title = 'Visualizations';
     const description = 'Expand your breadth of coverage using AI-powered visual journalism. No strings attached.';
     this.titleService.setTitle(`${title} - HiGeorge for Publishers Library`);
@@ -43,7 +48,7 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
       }
       this.load();
     });
-
+    if(isPlatformBrowser(this.platformId)) {
     fromEvent(window, 'scroll')
       .pipe(debounceTime(500))
       .subscribe(() => {
@@ -58,6 +63,7 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
       .subscribe(() => {
         this.width = window.innerWidth
       });
+    }
   }
 
   ngOnDestroy() {

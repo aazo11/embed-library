@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { AnalyticsService } from 'src/app/analytics.service';
 
@@ -11,11 +12,15 @@ export class CompanyComponent implements OnInit {
   constructor(
     private analytics: AnalyticsService,
     private titleService: Title,
-    private metaService: Meta
+    private metaService: Meta,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) { }
 
   get selected() {
-    return location.hash === '#advisors' ? 3 : 2;
+    if(isPlatformBrowser(this.platformId)) {
+      return location.hash === '#advisors' ? 3 : 2;
+    }
+    return 2;
   }
 
   ngOnInit() {
