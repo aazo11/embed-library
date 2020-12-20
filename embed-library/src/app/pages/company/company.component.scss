@@ -95,9 +95,10 @@
               img {
                 margin-right: 60px;
                 display: block;
-                width: 130px;
-                height: 130px;
+                width: 150px;
+                height: 150px;
                 border-radius: 50%;
+                object-fit: cover;
               }
 
               .name,
