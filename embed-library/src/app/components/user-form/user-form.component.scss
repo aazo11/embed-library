@@ -1,0 +1,17 @@
+@import '../../../assets/mixin';
+
+:host {
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mat-form-field {
+    margin-bottom: 20px;
+  }
+
+  .action {
+    display: flex;
+    justify-content: center;
+  }
+}

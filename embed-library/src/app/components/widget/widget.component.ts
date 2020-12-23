@@ -15,6 +15,7 @@ export class WidgetComponent implements OnInit {
   @Input() mobile: boolean
   @Input() title: string
   @Input() contactForAvailability: boolean
+  @Input() pure: boolean
 
   embedCodeHTML: string
 

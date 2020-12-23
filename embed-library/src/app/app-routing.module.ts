@@ -10,6 +10,7 @@ import { PreviewComponent } from 'src/app/pages/preview/preview.component';
 import { CaseStudyComponent } from 'src/app/pages/case-study/case-study.component';
 import { PrivacyComponent } from 'src/app/pages/privacy/privacy.component';
 import { TosComponent } from 'src/app/pages/tos/tos.component';
+import { DemoComponent } from 'src/app/pages/demo/demo.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'preview/:collection', component: PreviewComponent },
   { path: 'case-study/:brand', component: CaseStudyComponent },
   { path: 'privacy', component: PrivacyComponent },
+  { path: 'demo', component: DemoComponent },
   { path: 'tos', component: TosComponent }
 ];
 

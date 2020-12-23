@@ -33,7 +33,7 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-    if(isPlatformBrowser(this.platformId)) {
+    if (isPlatformBrowser(this.platformId)) {
       this.width = window.innerWidth
     }
     const title = 'Visualizations';
@@ -43,26 +43,26 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
 
     this.activatedRoute.queryParams.subscribe(params => {
       this.queryParams = params;
-      if(Object.keys(this.queryParams).length === 0 ){
-        this.queryParams = {topic: "COVID-19"}
+      if (Object.keys(this.queryParams).length === 0) {
+        this.queryParams = { topic: "COVID-19" }
       }
       this.load();
     });
-    if(isPlatformBrowser(this.platformId)) {
-    fromEvent(window, 'scroll')
-      .pipe(debounceTime(500))
-      .subscribe(() => {
-        if (window.scrollY + document.documentElement.offsetHeight >= 0.85 * document.documentElement.scrollHeight) {
-          this.limit += 2
-          this.analytics.analyticsEventEmitter('library_scroll', undefined, undefined, this.limit, { num: this.limit });
-        }
-      });
+    if (isPlatformBrowser(this.platformId)) {
+      fromEvent(window, 'scroll')
+        .pipe(debounceTime(500))
+        .subscribe(() => {
+          if (window.scrollY + document.documentElement.offsetHeight >= 0.85 * document.documentElement.scrollHeight) {
+            this.limit += 2
+            this.analytics.analyticsEventEmitter('library_scroll', undefined, undefined, this.limit, { num: this.limit });
+          }
+        });
 
-    fromEvent(window, 'resize')
-      .pipe(debounceTime(500))
-      .subscribe(() => {
-        this.width = window.innerWidth
-      });
+      fromEvent(window, 'resize')
+        .pipe(debounceTime(500))
+        .subscribe(() => {
+          this.width = window.innerWidth
+        });
     }
   }
 
