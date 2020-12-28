@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AnalyticsService } from 'src/app/analytics.service';
 import { Title, Meta } from '@angular/platform-browser';
-import {Router} from '@angular/router'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-home-page',
@@ -33,14 +33,14 @@ export class HomeComponent implements OnInit {
     this.metaService.updateTag({ name: 'description', content: description });
   }
 
-  goToCaseStudy(name, label?){
+  goToCaseStudy(name, label?) {
     this.analytics.trackLink(name, label);
-    this.router.navigateByUrl('/case-study/'+ label)
+    this.router.navigateByUrl('/case-study/' + label)
   }
 
   trackClick(name, label?) {
     this.analytics.trackLink(name, label);
-    
+
   }
 
   setHoverLogo(logo) {

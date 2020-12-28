@@ -1,0 +1,26 @@
+<form (submit)="handleSubmit($event)">
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input type="text" matInput [formControl]="nameFormControl" [errorStateMatcher]="matcher">
+    <mat-error *ngIf="nameFormControl.invalid">
+      Name is required
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Company</mat-label>
+    <input type="text" matInput [formControl]="companyFormControl" [errorStateMatcher]="matcher">
+    <mat-error *ngIf="companyFormControl.invalid">
+      Company is required
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher">
+    <mat-error *ngIf="emailFormControl.invalid">
+      Email is invalid
+    </mat-error>
+  </mat-form-field>
+  <div class="action">
+    <app-button type="submit">Submit</app-button>
+  </div>
+</form>

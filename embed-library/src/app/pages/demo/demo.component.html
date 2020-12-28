@@ -1,0 +1,46 @@
+<app-header [active]="1"></app-header>
+<div class="component">
+  <div class="headerText" *ngIf="!submitted">
+    <div class="title">Demo Our Visualizations</div>
+    <div class="subtitle">
+      Get free demo of our ready-to-use Visualizations <br />
+      customied to your top storylines and locations
+    </div>
+    <div class="subtitle">
+      No strings attached - freely embed and publish in your stories.
+    </div>
+  </div>
+
+  <div class="container" *ngIf="!submitted">
+    <div class="searchContainer" *ngIf="visualizations.length === 0">
+      <div class="searchBar searchBox">
+        <div class="searchTitle">Where are you located?</div>
+        <app-location-search (submit)="setLocation($event)"></app-location-search>
+      </div>
+    </div>
+
+    <div class="widgets-wrapper" *ngIf="visualizations.length > 0">
+      <div class="searchBox">
+        <div class="searchTitle">Ready to Deploy? We'll send all embed codes to your email.</div>
+        <app-user-form (submit)="setUserInfo($event)"></app-user-form>
+      </div>
+      <div class="widget-list">
+        <div class="widget" *ngFor="let widget of visualizations">
+          <iframe style="display:block;" [cachedSrc]="widget.url" frameBorder="0"
+            [height]="isMobile ? widget.heightMobile : widget.heightDesktop"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="headerText" *ngIf="submitted">
+    <div class="title">Thank you!</div>
+    <div class="subtitle">
+      You ready-to-use embed codes have been sent your email.
+    </div>
+    <div class="subtitle">
+      If you have any questions about your demo, please don't
+      hesitate to reach out at <a href="mailto: hello@reconnectinglabs.com">hello@reconnectinglabs.com</a>.
+    </div>
+  </div>
+</div>

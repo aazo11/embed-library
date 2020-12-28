@@ -1,0 +1,21 @@
+<div class="search">
+  <mat-form-field>
+    <mat-label>State</mat-label>
+    <mat-select (selectionChange)="setState($event)" [value]="state">
+      <mat-option *ngFor="let item of stateOptions" [value]="item.name">
+        {{item.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>County</mat-label>
+    <mat-select (selectionChange)="setCounty($event)" [value]="county" [disabled]="countyOptions.length === 0">
+      <mat-option *ngFor="let item of countyOptions" [value]="item">
+        {{item}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="action">
+    <app-button (change)="handleSubmit()">Submit</app-button>
+  </div>
+</div>

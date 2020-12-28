@@ -13,6 +13,7 @@ import { PreviewComponent } from 'src/app/pages/preview/preview.component';
 import { CaseStudyComponent } from 'src/app/pages/case-study/case-study.component';
 import { PrivacyComponent } from 'src/app/pages/privacy/privacy.component';
 import { TosComponent } from 'src/app/pages/tos/tos.component';
+import { DemoComponent } from 'src/app/pages/demo/demo.component';
 
 import { WidgetComponent } from 'src/app/components/widget/widget.component';
 import { SearchComponent } from 'src/app/components/search/search.component';
@@ -22,6 +23,8 @@ import { FooterComponent } from 'src/app/components/footer/footer.component';
 import { ButtonComponent } from 'src/app/components/button/button.component';
 import { TouchPanelComponent } from 'src/app/components/touch-panel/touch-panel.component';
 import { ContactSuccessDialogComponent } from 'src/app/components/contact-success-dialog/contact-success-dialog.component';
+import { LocationSearchComponent } from 'src/app/components/location-search/location-search.component';
+import { UserFormComponent } from './components/user-form/user-form.component';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -48,6 +51,7 @@ import { CachedSrcDirective } from './cached-src.directive';
     CaseStudyComponent,
     PrivacyComponent,
     TosComponent,
+    DemoComponent,
 
     HeaderComponent,
     FooterComponent,
@@ -57,6 +61,8 @@ import { CachedSrcDirective } from './cached-src.directive';
     SearchComponent,
     WidgetDialogComponent,
     ContactSuccessDialogComponent,
+    LocationSearchComponent,
+    UserFormComponent,
     CachedSrcDirective
   ],
   imports: [
