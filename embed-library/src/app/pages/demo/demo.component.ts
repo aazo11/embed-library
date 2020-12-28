@@ -31,6 +31,8 @@ export class DemoComponent implements OnInit {
         .subscribe(() => {
           this.isMobile = window.innerWidth < 768;
         });
+
+      this.isMobile = window.innerWidth < 768;
     }
   }
 
