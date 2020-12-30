@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError  } from 'rxjs';
 import {tap, map, catchError} from 'rxjs/operators';
+import {serverURL} from 'src/app/models/settings'
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class ContactusService {
   constructor(private http:HttpClient) { }
 
   sendContactUsNote(email:string, name:string, subject: string, message:string){
-    const url = "https://coreservices.hi-george.com/api/contactus"
+    const url = serverURL + "/contactus"
 
     const config = { headers: new HttpHeaders().set('Content-Type', 'application/json') };
     const data = {'email': email, 'name': name, 'subject': subject, 'messageBody': message};

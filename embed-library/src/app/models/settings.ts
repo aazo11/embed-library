@@ -1,0 +1,1 @@
+export const serverURL = "https://dev.api.hi-george.com/api/v1"

@@ -2,13 +2,15 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs'
 import { catchError } from 'rxjs/operators'
 import { HttpClient } from '@angular/common/http'
+import {serverURL} from 'src/app/models/settings'
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmbedService {
-  private CYCServerURL = 'https://coreservices.hi-george.com/api/datainteractive' // Static server url base path
-  private mockSearverUrl = 'https://coreservices.hi-george.com/api/v1/visualizations';
+  //private CYCServerURL = 'https://coreservices.hi-george.com/api/datainteractive' // Static server url base path
+  //private mockSearverUrl = 'https://coreservices.hi-george.com/api/v1/visualizations';
+  private url = serverURL + '/visualizations'
   constructor(private http: HttpClient) { }
 
   getEmbeds(searchParams: any = {}): Observable<any> {
@@ -17,7 +19,7 @@ export class EmbedService {
       if (!searchParams[key]) continue
       params.push(`${key}=${searchParams[key]}`)
     }
-    const url = `${this.mockSearverUrl}?${params.join('&')}`
+    const url = `${this.url}?${params.join('&')}`
     return this.http.get<any>(url).pipe(
       catchError(this.handleError('getCampaign', null)),
     )
