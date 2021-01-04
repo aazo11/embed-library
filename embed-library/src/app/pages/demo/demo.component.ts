@@ -27,7 +27,7 @@ export class DemoComponent implements OnInit {
     this.submitted = false;
     this.location = null;
 
-    this.analytics.analyticsEventEmitter('landed_on_demo_page', undefined, undefined, undefined, undefined);
+    this.analytics.analyticsEventEmitter('landed_on_demo_page', 'demo', undefined, undefined, undefined);
 
     if (isPlatformBrowser(this.platformId)) {
       fromEvent(window, 'resize')
@@ -43,7 +43,7 @@ export class DemoComponent implements OnInit {
   setLocation(location) {
     this.location = location;
 
-    this.analytics.analyticsEventEmitter('selected_location', undefined, undefined, undefined, location);
+    this.analytics.analyticsEventEmitter('selected_location', 'demo', undefined, undefined, location);
     this.demoService.getEmbeds({
       ...this.location,
       partnerCode: this.partnerCode
@@ -53,7 +53,7 @@ export class DemoComponent implements OnInit {
   }
 
   setUserInfo(userInfo) {
-    this.analytics.analyticsEventEmitter('selected_location', undefined, undefined, undefined, userInfo);
+    this.analytics.analyticsEventEmitter('selected_location', 'demo', undefined, undefined, userInfo);
     this.demoService.submitInfo({
       ...userInfo,
       ...this.location,
