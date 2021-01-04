@@ -20,6 +20,14 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
   limit = 2
   width: number
   widgetTitle = ''
+  searchOptions = {
+    topic: [
+      {
+        label: 'COVID-19',
+        value: 'COVID-19',
+      }
+    ]
+  };
 
   constructor(
     private embedService: EmbedService,
@@ -40,6 +48,10 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
     const description = 'Expand your breadth of coverage using AI-powered visual journalism. No strings attached.';
     this.titleService.setTitle(`${title} - HiGeorge for Publishers Library`);
     this.metaService.updateTag({ name: 'description', content: description });
+
+    this.embedService.getTopics().subscribe((list) => {
+      this.searchOptions.topic = list.map(s => ({label: s, value: s}));
+    });
 
     this.activatedRoute.queryParams.subscribe(params => {
       this.queryParams = params;
@@ -88,7 +100,7 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
 
   load() {
     const value = (this.queryParams.topic || 'COVID').trim();
-    const topic = TOPICS.find(t => t.value === value);
+    const topic = this.searchOptions.topic.find(t => t.value === value);
     this.widgetTitle = topic.label;
 
     this.embedService.getEmbeds(this.queryParams).subscribe((list) => {
