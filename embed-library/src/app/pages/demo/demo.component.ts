@@ -12,7 +12,7 @@ import { debounceTime } from 'rxjs/operators';
 export class DemoComponent implements OnInit {
   submitted = false;
   location = null;
-  partnerCode = 123;
+  partnerCode = '123';
   visualizations = [];
   isMobile = false;
 
