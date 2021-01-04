@@ -3,6 +3,7 @@ import { DemoService } from 'src/app/demo.service';
 import { isPlatformBrowser } from '@angular/common';
 import { fromEvent } from 'rxjs'
 import { debounceTime } from 'rxjs/operators';
+import {AnalyticsService} from 'src/app/analytics.service'
 
 @Component({
   selector: 'app-demo-page',
@@ -18,12 +19,15 @@ export class DemoComponent implements OnInit {
 
   constructor(
     private demoService: DemoService,
+    private analytics: AnalyticsService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) { }
 
   ngOnInit() {
     this.submitted = false;
     this.location = null;
+
+    this.analytics.analyticsEventEmitter('landed_on_demo_page', undefined, undefined, undefined, undefined);
 
     if (isPlatformBrowser(this.platformId)) {
       fromEvent(window, 'resize')
@@ -39,6 +43,7 @@ export class DemoComponent implements OnInit {
   setLocation(location) {
     this.location = location;
 
+    this.analytics.analyticsEventEmitter('selected_location', undefined, undefined, undefined, location);
     this.demoService.getEmbeds({
       ...this.location,
       partnerCode: this.partnerCode
@@ -48,6 +53,7 @@ export class DemoComponent implements OnInit {
   }
 
   setUserInfo(userInfo) {
+    this.analytics.analyticsEventEmitter('selected_location', undefined, undefined, undefined, userInfo);
     this.demoService.submitInfo({
       ...userInfo,
       ...this.location,
