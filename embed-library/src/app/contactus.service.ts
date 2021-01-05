@@ -12,7 +12,7 @@ export class ContactusService {
   constructor(private http:HttpClient) { }
 
   sendContactUsNote(email:string, name:string, subject: string, message:string){
-    const url = serverURL + "/contactus"
+    const url =  "https://api.hi-george.com/api/contactus"
 
     const config = { headers: new HttpHeaders().set('Content-Type', 'application/json') };
     const data = {'email': email, 'name': name, 'subject': subject, 'messageBody': message};
