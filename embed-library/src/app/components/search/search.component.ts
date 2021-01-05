@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, skip } from 'rxjs/operators';
 import { AnalyticsService } from 'src/app/analytics.service';
+import { EmbedService } from 'src/app/embed.service';
 
 @Component({
   selector: 'app-search',
@@ -12,40 +13,12 @@ export class SearchComponent implements OnInit {
   _params = new BehaviorSubject<any>({ topic: 'COVID' });
 
   // constants
+  @Input()
   searchOptions = {
     topic: [
       {
         label: 'COVID-19',
         value: 'COVID-19',
-      },
-      {
-        label: 'Campaign Finance',
-        value: 'Campaign Finance',
-      },
-      {
-        label: 'Criminal Justice',
-        value: 'Criminal Justice',
-      },
-      {
-        label: 'Election Polls',
-        value: 'Polling',
-      },
-      {
-        label: 'Government Spending',
-        value: 'Government Spending',
-      },
-      
-      {
-        label: 'Police Statistics',
-        value: 'Policing',
-      },
-      {
-        label: 'Real Estate',
-        value: 'Real Estate',
-      },
-      {
-        label: 'Voter Registration',
-        value: 'Voter Registration',
       }
     ]
   };

@@ -25,6 +25,12 @@ export class EmbedService {
     )
   }
 
+  getTopics(): Observable<string[]> {
+    return this.http.get<string[]>(serverURL + '/visualization_categories').pipe(
+      catchError(this.handleError('getTopics', null))
+    );
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       // TODO: send the error to remote logging infrastructure
