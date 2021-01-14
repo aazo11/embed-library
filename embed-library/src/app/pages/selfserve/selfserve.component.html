@@ -10,13 +10,19 @@
   </div>
   <div class="container">
     <div class="widgets-wrapper" *ngIf="visualizations.length > 0">
+      <!-- <div class="spinner" *ngIf="loading">
+        <mat-spinner></mat-spinner>
+      </div> -->
       <div class="widget-list">
-        <div class="widget" *ngFor="let widget of visualizations">
-          <iframe style="display:block;" [cachedSrc]="widget.url" frameBorder="0"
-            [height]="isMobile ? widget.heightMobile : widget.heightDesktop"></iframe>
+        <div class="widget" *ngFor="let widget of visualizations; let i = index" [attr.data-index]="i">
+          <div class="loader" [id]='"loading-"+i'>
+            <mat-spinner></mat-spinner>
+          </div>
+          <iframe [id]='"iframe-viz-"+i' style="display:block;" [cachedSrc]="widget.url" frameBorder="0"
+            [height]="isMobile ? widget.heightMobile : widget.heightDesktop" (load)='iframeLoaded(i)'></iframe>
           <div class="embed">
             <input type="text" [value]="getEmbedCode(isMobile ? widget.heightMobile : widget.heightDesktop, widget.url)" class="embed-code" readonly #iframetext>
-            <app-button class="embed-button" (change)="copyEmbed(iframetext)">Copy Embed Code</app-button>
+            <app-button class="embed-button" type="submit" (change)="copyEmbed(iframetext)">Copy Embed Code</app-button>
           </div>
         </div>
       </div>

@@ -19,6 +19,7 @@ export class SelfserveComponent implements OnInit {
   visualizations = [];
   isMobile = false;
   email = '';
+  loading = [];
 
   constructor(
     private demoService: DemoService,
@@ -37,7 +38,6 @@ export class SelfserveComponent implements OnInit {
       partnerCode: this.partnerCode
     }).subscribe((data) => {
       this.visualizations = data.visualizations;
-      console.log(this.visualizations);
     });
 
     if (isPlatformBrowser(this.platformId)) {
@@ -53,8 +53,6 @@ export class SelfserveComponent implements OnInit {
       width: '500px', disableClose: true,
     });
 
-    
-
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       this.visualizations = [];
@@ -68,6 +66,13 @@ export class SelfserveComponent implements OnInit {
       });
     });
     console.log(this.visualizations);
+  }
+
+  iframeLoaded(i) {
+    console.log(i)
+      if (typeof this.loading.length[i] === 'undefined') {
+        document.getElementById("loading-"+i).remove()
+      }
   }
 
   getEmbedCode(height,url) {
@@ -89,6 +94,5 @@ export class SelfserveComponent implements OnInit {
     }).subscribe(data => {
       console.log(data);
     });
-    console.log(this.visualizations);
   }
 }

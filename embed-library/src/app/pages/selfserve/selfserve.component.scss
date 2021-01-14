@@ -15,6 +15,11 @@
       margin-top: 100px;
     }
 
+    .mat-progress-spinner circle, .mat-spinner circle {
+      display: block;
+      stroke: #5A38FD;
+    }
+
     .container {
       width: 100%;
       padding: 0 20px;
@@ -106,6 +111,12 @@
       .widget {
         padding: 10px 0;
         border-top: 1px solid #CECCF5;
+
+        .loader{
+          position:absolute;
+          margin-left: -webkit-calc(50% - 100px);
+          margin-top: 20%;
+        }
 
         &:first-of-type {
           border-top: none;
