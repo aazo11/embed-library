@@ -38,6 +38,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { ClipboardModule } from 'ngx-clipboard';
 import { CachedSrcDirective } from './cached-src.directive';
+import { SelfserveComponent } from './pages/selfserve/selfserve.component';
+import { PopupComponent } from './components/popup/popup.component';
+import { SelfserveSearchComponent } from './components/selfserve-search/selfserve-search.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +66,10 @@ import { CachedSrcDirective } from './cached-src.directive';
     ContactSuccessDialogComponent,
     LocationSearchComponent,
     UserFormComponent,
-    CachedSrcDirective
+    CachedSrcDirective,
+    SelfserveComponent,
+    PopupComponent,
+    SelfserveSearchComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

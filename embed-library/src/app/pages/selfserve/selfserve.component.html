@@ -1,0 +1,19 @@
+<app-header [active]="1"></app-header>
+<div class="component">
+  <div class="headerText">
+    <div class="title">Demo Our Visualizations</div>
+    <div class="subtitle">
+    Interested in other visualizations? Let's chat.</div>
+  </div>
+
+  <div class="container">
+    <div class="widgets-wrapper" *ngIf="visualizations.length > 0">
+      <div class="widget-list">
+        <div class="widget" *ngFor="let widget of visualizations">
+          <iframe style="display:block;" [cachedSrc]="widget.url" frameBorder="0"
+            [height]="isMobile ? widget.heightMobile : widget.heightDesktop"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

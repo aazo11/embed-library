@@ -44,6 +44,7 @@ export class DemoComponent implements OnInit {
     this.location = location;
 
     this.analytics.analyticsEventEmitter('selected_location', 'demo', undefined, undefined, location);
+    console.log(this.partnerCode);
     this.demoService.getEmbeds({
       ...this.location,
       partnerCode: this.partnerCode
