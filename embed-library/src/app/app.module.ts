@@ -36,6 +36,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ClipboardModule } from 'ngx-clipboard';
 import { CachedSrcDirective } from './cached-src.directive';
 import { SelfserveComponent } from './pages/selfserve/selfserve.component';
@@ -85,6 +86,7 @@ import { SelfserveSearchComponent } from './components/selfserve-search/selfserv
     MatDialogModule,
     MatButtonModule,
     MatMenuModule,
+    MatProgressSpinnerModule,
     HttpClientModule,
     ClipboardModule,
   ],

@@ -35,7 +35,9 @@ export class SelfserveSearchComponent implements OnInit {
 
   constructor(private analytics: AnalyticsService) { }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    console.log(STATES);
+  }
 
   setState(e) {
     if (this.state === e.value) return;

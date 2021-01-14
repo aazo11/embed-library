@@ -29,6 +29,7 @@
     "@angular/platform-server": "~9.0.0",
     "@angular/router": "~9.0.0",
     "@nguniversal/express-engine": "^9.0.2",
+    "angular-clipboard-auto": "^1.1.8",
     "bowser": "^2.10.0",
     "express": "^4.17.1",
     "ngx-clipboard": "^13.0.0",

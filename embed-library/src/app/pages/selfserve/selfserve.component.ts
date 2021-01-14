@@ -4,7 +4,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { fromEvent } from 'rxjs'
 import { debounceTime } from 'rxjs/operators';
 import {AnalyticsService} from 'src/app/analytics.service'
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { PopupComponent } from 'src/app/components/popup/popup.component'
 
 @Component({
@@ -37,6 +37,7 @@ export class SelfserveComponent implements OnInit {
       partnerCode: this.partnerCode
     }).subscribe((data) => {
       this.visualizations = data.visualizations;
+      console.log(this.visualizations);
     });
 
     if (isPlatformBrowser(this.platformId)) {
@@ -56,6 +57,7 @@ export class SelfserveComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
+      this.visualizations = [];
       this.location = result[0];
       this.email = result[1];
       this.demoService.getEmbeds({
@@ -65,7 +67,17 @@ export class SelfserveComponent implements OnInit {
         this.visualizations = data.visualizations;
       });
     });
+    console.log(this.visualizations);
+  }
 
+  getEmbedCode(height,url) {
+    return '<iframe style="display:block;" width="100%" height="'+height+'" src="'+url+'" class="hg-data-interactive" frameborder="0" scrolling="no"></iframe>';
+  }
+
+  copyEmbed(inputElement) {
+    inputElement.select();
+    document.execCommand('copy');
+    inputElement.setSelectionRange(0, 0);
   }
 
   setUserInfo() {
@@ -77,5 +89,6 @@ export class SelfserveComponent implements OnInit {
     }).subscribe(data => {
       console.log(data);
     });
+    console.log(this.visualizations);
   }
 }

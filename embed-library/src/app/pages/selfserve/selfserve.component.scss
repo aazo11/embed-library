@@ -9,6 +9,12 @@
     width: 100%;
     max-width: 1482px;
 
+    .spinner{
+      display: flex;
+      justify-content: center;
+      margin-top: 100px;
+    }
+
     .container {
       width: 100%;
       padding: 0 20px;
@@ -107,6 +113,27 @@
 
         iframe {
           width: 100%;
+        }
+
+        .embed{
+          width: 100%;
+          margin-top: 10px;
+          display:flex;
+
+          .embed-code {
+            overflow: hidden;
+            font-family: "Lato" !important;
+            font-size: 16px !important;
+            line-height: 24px !important;
+            width:-webkit-calc(100% - 215px);
+            margin:auto;
+            color: rgba(0,0,0,.42);
+            border-color: rgba(0,0,0,0);
+          }
+  
+          .embed-button {
+            float: right;
+          }
         }
       }
     }

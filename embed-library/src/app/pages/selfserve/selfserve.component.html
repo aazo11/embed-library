@@ -5,13 +5,19 @@
     <div class="subtitle">
     Interested in other visualizations? Let's chat.</div>
   </div>
-
+  <div class="spinner" *ngIf="visualizations.length === 0">
+    <mat-spinner></mat-spinner>
+  </div>
   <div class="container">
     <div class="widgets-wrapper" *ngIf="visualizations.length > 0">
       <div class="widget-list">
         <div class="widget" *ngFor="let widget of visualizations">
           <iframe style="display:block;" [cachedSrc]="widget.url" frameBorder="0"
             [height]="isMobile ? widget.heightMobile : widget.heightDesktop"></iframe>
+          <div class="embed">
+            <input type="text" [value]="getEmbedCode(isMobile ? widget.heightMobile : widget.heightDesktop, widget.url)" class="embed-code" readonly #iframetext>
+            <app-button class="embed-button" (change)="copyEmbed(iframetext)">Copy Embed Code</app-button>
+          </div>
         </div>
       </div>
     </div>
