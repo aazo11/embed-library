@@ -11,6 +11,7 @@ import { CaseStudyComponent } from 'src/app/pages/case-study/case-study.componen
 import { PrivacyComponent } from 'src/app/pages/privacy/privacy.component';
 import { TosComponent } from 'src/app/pages/tos/tos.component';
 import { DemoComponent } from 'src/app/pages/demo/demo.component';
+import { SelfserveComponent } from 'src/app/pages/selfserve/selfserve.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'case-study/:brand', component: CaseStudyComponent },
   { path: 'privacy', component: PrivacyComponent },
   { path: 'demo', component: DemoComponent },
+  { path: 'selfserve', component: SelfserveComponent },
   { path: 'tos', component: TosComponent }
 ];
 
