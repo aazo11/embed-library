@@ -21,6 +21,30 @@ export class SelfserveComponent implements OnInit {
   email = '';
   loading = [];
 
+  defaultEmbed = [
+    '<iframe style="display:block;" width="100%" height="700px" src="https://app.hi-george.com/v1/smartviz/covid/county_cases?state=California&county=San+Francisco&partner=123&start=2020-03-01&tz=America%2FNew_York&theme=higeorge&noCTA=1" class="hg-data-interactive" frameborder="0" scrolling="no"></iframe>',
+    '<iframe style="display:block;" width="100%" height="700px" src="https://app.hi-george.com/v1/smartviz/covid/county_deaths?state=California&county=San+Francisco&partner=123&start=2020-03-01&tz=America%2FNew_York&theme=higeorge&noCTA=1" class="hg-data-interactive" frameborder="0" scrolling="no"></iframe>',
+    '<iframe style="display:block;" width="100%" height="700px" src="https://app.hi-george.com/v1/smartviz/covid/state_cases?state=California&partner=123&start=2020-03-01&tz=America%2FNew_York&theme=higeorge&noCTA=1" class="hg-data-interactive" frameborder="0" scrolling="no"></iframe>',
+    '<iframe style="display:block;" width="100%" height="700px" src="https://app.hi-george.com/v1/smartviz/covid/state_deaths?state=California&partner=123&start=2020-03-01&tz=America%2FNew_York&theme=higeorge&noCTA=1" class="hg-data-interactive" frameborder="0" scrolling="no"></iframe>',
+    '<iframe style="display:block;" width="100%" height="700px" src="https://app.hi-george.com/v1/smartviz/covid/state_tests?state=California&partner=123&start=2020-03-01&tz=America%2FNew_York&theme=higeorge&noCTA=1" class="hg-data-interactive" frameborder="0" scrolling="no"></iframe>',
+    '<iframe style="display:block;" width="100%" height="700px" src="https://app.hi-george.com/v1/smartviz/covid/state_icu?state=California&partner=123&start=2020-03-01&tz=America%2FNew_York&theme=higeorge&noCTA=1" class="hg-data-interactive" frameborder="0" scrolling="no"></iframe>',
+    '<iframe style="display:block;" width="100%" height="700px" src="https://app.hi-george.com/v2/smartviz/newHomeListings?location=San+Francisco+County&stateAbbr=CA&regionType=county&partner=123" class="hg-data-interactive" frameborder="0" scrolling="no"></iframe>',
+    '<iframe style="display:block;" width="100%" height="700px" src="https://app.hi-george.com/v2/smartviz/totalHomeSales?location=San+Francisco+County&stateAbbr=CA&regionType=county&partner=123" class="hg-data-interactive" frameborder="0" scrolling="no"></iframe>',
+    '<iframe style="display:block;" width="100%" height="700px" src="https://app.hi-george.com/v2/smartviz/medianHomePrice?location=San+Francisco+County&stateAbbr=CA&regionType=county&partner=123" class="hg-data-interactive" frameborder="0" scrolling="no"></iframe>'
+  ];
+
+  defaultImg = [
+    'assets/images/selfserve/viz1.png',
+    'assets/images/selfserve/viz2.png',
+    'assets/images/selfserve/viz3.png',
+    'assets/images/selfserve/viz4.png',
+    'assets/images/selfserve/viz5.png',
+    'assets/images/selfserve/viz6.png',
+    'assets/images/selfserve/viz7.png',
+    'assets/images/selfserve/viz8.png',
+    'assets/images/selfserve/viz9.png',
+  ];
+
   constructor(
     private demoService: DemoService,
     private analytics: AnalyticsService,
@@ -54,6 +78,7 @@ export class SelfserveComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
+      this.submitted = true;
       console.log('The dialog was closed');
       this.visualizations = [];
       this.location = result[0];
