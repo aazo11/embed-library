@@ -83,6 +83,7 @@ export class SelfserveComponent implements OnInit {
       this.visualizations = [];
       this.location = result[0];
       this.email = result[1];
+      this.partnerCode = this.email;
       this.analytics.analyticsEventEmitter('user_entered_email_location', 'selfserve', undefined, undefined, {name: '', company: '', email: this.email});
       this.demoService.getEmbeds({
         ...this.location,
@@ -102,7 +103,7 @@ export class SelfserveComponent implements OnInit {
   }
 
   getEmbedCode(height,url) {
-    return '<iframe style="display:block;" width="100%" height="'+height+'" src="'+url+'" class="hg-data-interactive" frameborder="0" scrolling="no"></iframe>';
+    return '<iframe style="display:block;" width="100%" height="'+height+'" src="'+url.replace("123",this.partnerCode)+'" class="hg-data-interactive" frameborder="0" scrolling="no"></iframe>';
   }
 
   copyEmbed(inputElement) {
