@@ -84,6 +84,7 @@ export class SelfserveComponent implements OnInit {
       this.location = result[0];
       this.email = result[1];
       this.partnerCode = this.email;
+      this.analytics.analyticsEventEmitter('user_entered_email_location', 'selfserve', undefined, undefined, {name: '', company: '', email: this.email});
       this.demoService.getEmbeds({
         ...this.location,
         partnerCode: this.partnerCode
@@ -106,13 +107,14 @@ export class SelfserveComponent implements OnInit {
   }
 
   copyEmbed(inputElement) {
+    this.analytics.analyticsEventEmitter('user_copied_embed_code', 'selfserve', undefined, undefined,undefined);
     inputElement.select();
     document.execCommand('copy');
     inputElement.setSelectionRange(0, 0);
   }
 
   setUserInfo() {
-    this.analytics.analyticsEventEmitter('selected_location', 'selfserve', undefined, undefined, {name: '', company: '', email: this.email});
+    
     this.demoService.submitInfo({
       ...{name: '', company: '', email: this.email},
       ...this.location,
