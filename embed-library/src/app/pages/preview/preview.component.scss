@@ -1,6 +1,13 @@
 @import '../../../assets/colors';
 @import '../../../assets/breakpoints';
 
+
+iframe {
+  width: 100%;
+
+  border: none;
+}
+
 :host {
   .bg {
     width: 100%;
@@ -22,14 +29,11 @@
       margin-bottom: 45px;
     }
 
-    iframe {
-      border: none;
-    }
 
-    .frame-wrapper {
-      margin-bottom: 45px;
-    }
-
+.width{
+  width:100%;
+  text-align: center;
+}
     .shadow-container {
       background-color: rgb(247, 249, 253);
       border-radius: 4px;

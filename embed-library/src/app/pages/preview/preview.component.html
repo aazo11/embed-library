@@ -1,14 +1,32 @@
-<div class="bg">
+
   <div class="main-content slim-contents col">
     <div class="header col align-center">
       <a href="/"><img class="logo" src="assets/images/logos/hi-george.svg" /></a>
       <div class="title">Data Visualizations for Newsrooms</div>
     </div>
+<div class="width">
 
-    <div class="frame-wrapper shadow-container" *ngFor="let id of ids; index as i">
-      <iframe [cachedSrc]="'https://callyourcongressperson.com/datainteractive/' + id + '?' + queryParams[i].toString()" width="100%" [height]="previewHeights[i] + 'px'"></iframe>
-    </div>
-    
-    <app-touch-panel></app-touch-panel>
-  </div>
+
+<iframe style="display:block;" width="100%" height="400px" src="https://app.hi-george.com/v2/smartviz/evictionsWeekly?location=New%20York&stateAbbr=NY&partner=HiGeorgeLibrary" class="hg_v2_covidVaccines hg-data-interactive" frameborder="0" scrolling="no"></iframe>
+<iframe style="display:block;" width="100%" height="1000px" src="https://app.hi-george.com/v2/smartviz/evictionsGeoviz?location=New%20York&stateAbbr=NY&months=6" class="hg_v2_covidVaccines hg-data-interactive" frameborder="0" scrolling="no"></iframe>
+
+<iframe height="700" src='https://app.hi-george.com/v1/smartviz/justice/nypd_timeseries?borough=Brooklyn&days=365'>
+</iframe>
+
+<iframe height="950" src='https://app.hi-george.com/v2/smartviz/crimeTimeOfDay?state=New%20York&city=Brooklyn&days=365&partner=BKReader'>
+</iframe>
+
+<iframe height="950" src='https://app.hi-george.com/v2/smartviz/cityCrimeMap?city=Brooklyn&state=New%20York&days=10&partner=BKReader&color=%235A38FD'>
+</iframe>
+
+<div *ngFor="let viz of visualizations" class="width">
+            <iframe style="display:block;" [cachedSrc]="viz.url" frameBorder="0"
+              [height]="isMobile ? viz.heightMobile : viz.heightDesktop"></iframe>
 </div>
+
+<iframe style="display:block;" width="100%" height="700px" src="https://app.hi-george.com/v2/smartviz/homeRentIncrease?lat1=40.917047&lat2=40.513253&lon1=-74.180026&lon2=-73.710234&months=18&partner=NYDailyNews" class="hg_v2_homeRentIncrease hg-data-interactive" frameborder="0" scrolling="no"></iframe>
+<iframe style="display:block;" width="100%" height="700px" src="https://app.hi-george.com/v2/smartviz/medianHomePrice?location=New%20York%20County&stateAbbr=NY&regionType=county&partner=NYDailyNews" class="hg_v2_medianHomePrice hg-data-interactive" frameborder="0" scrolling="no"></iframe>   
+   
+   
+    <app-touch-panel></app-touch-panel>
+ 

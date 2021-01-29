@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, PLATFORM_ID, Inject } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
+import { DemoService } from 'src/app/demo.service';
+import { isPlatformBrowser } from '@angular/common';
+import { fromEvent } from 'rxjs'
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-preview',
@@ -10,92 +14,46 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class PreviewComponent implements OnInit {
 
   constructor(
-    private route: ActivatedRoute,
-    private sanitizer: DomSanitizer,
+    private demoService: DemoService,
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private route: ActivatedRoute
   ) { }
   ids: string[];
   queryParams: URLSearchParams[];
   previewHeights: string[];
-
-  private collections = {
-    covid: this.covidDashboard
-  };
-
-  private covidDashboard(comp: PreviewComponent, params: ParamMap) {
-    comp.ids = [];
-    comp.previewHeights = [];
-    if (params.get('county')) {
-      comp.ids.push('5f3710a103614b2c289f8bc0', '5f20ed3eaaff4e1186cd46e3', '5f2851667db7754c3cf2780a');
-      comp.previewHeights.push('430', '700', '700');
-    }
-
-    comp.ids.push('5f3710a103614b2c289f8bc0', '5f2851397db7754c3cf27808', '5f28514c7db7754c3cf27809', '5f31ffe2de59950c38c8ffa3', '5f3c3311d12d831e4684b580');
-    comp.previewHeights.push('430', '700', '700', '775', '700');
-
-    comp.queryParams = comp.ids.map(i => new URLSearchParams());
-    for (const key of params.keys) {
-      if (!key.startsWith('preview')) {
-        comp.queryParams.forEach((u, i) => {
-          if (i > 2 && key === 'county') {
-            return;
-          }
-          u.set(key, params.get(key));
-        });
-      }
-    }
-
-    if (params.get('county')) {
-      comp.queryParams[0].set('homepageMode', '1');
-      comp.queryParams[0].set('noCTA', '1');
-      comp.queryParams[0].set('noGraph', '1');
-      comp.queryParams[3].set('homepageMode', '1');
-      comp.queryParams[3].set('noCTA', '1');
-      comp.queryParams[3].set('noGraph', '1');
-    } else {
-      comp.queryParams[0].set('homepageMode', '1');
-      comp.queryParams[0].set('noCTA', '1');
-      comp.queryParams[0].set('noGraph', '1');
-    }
-  }
-
-  private defaultDashboard(comp: PreviewComponent, originalQueryParams: ParamMap) {
-    comp.ids = originalQueryParams.get('ids').split(',');
-    comp.queryParams = comp.ids.map(i => new URLSearchParams());
-
-    for (const key of originalQueryParams.keys) {
-      if (key === 'ids' || key.startsWith('preview')) {
-        continue;
-      }
-      const values = originalQueryParams.get(key).split(',');
-      for (let i = 0; i < values.length; i++) {
-        if (values[i]) {
-          comp.queryParams[i].append(key, values[i]);
-        }
-      }
-    }
-  }
+  location = null;
+  visualizations = [];
+  isMobile = false;
+  partnerCode = '123';
 
   ngOnInit() {
     const originalQueryParams = this.route.snapshot.queryParamMap;
-    const collection = this.route.snapshot.paramMap.get('collection');
+    this.location = {county:'New York', state:'New York'}
 
-    if (collection && collection in this.collections) {
-      console.log('Collection', collection);
-      this.collections[collection](this, originalQueryParams);
-    } else {
-      this.defaultDashboard(this, originalQueryParams);
+    this.demoService.getEmbeds({
+      ...this.location,
+      partnerCode: this.partnerCode
+    }).subscribe((data) => {
+      this.visualizations = data.visualizations;
+      console.log(this.visualizations)
+    });
+
+    if (isPlatformBrowser(this.platformId)) {
+      fromEvent(window, 'resize')
+        .pipe(debounceTime(500))
+        .subscribe(() => {
+          this.isMobile = window.innerWidth < 768;
+        });
+
+      this.isMobile = window.innerWidth < 768;
     }
 
-    if (!this.previewHeights) {
-      this.previewHeights = this.ids.map(i => '700');
-    }
-
-    if (originalQueryParams.has('previewHeights')) {
-      originalQueryParams.get('previewHeights').split(',').forEach((v, i) => {
-        if (v) {
-          this.previewHeights[i] = v;
-        }
-      });
-    }
+    
   }
+
+  getEmbedCode(height,url) {
+    return '<iframe style="display:block;" width="100%" height="'+height+'" src="'+url.replace("123",this.partnerCode)+'" class="hg-data-interactive" frameborder="0" scrolling="no"></iframe>';
+  }
+
+ 
 }
