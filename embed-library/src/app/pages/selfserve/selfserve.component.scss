@@ -15,9 +15,8 @@
       margin-top: 100px;
     }
 
-    .mat-progress-spinner circle, .mat-spinner circle {
-      display: block;
-      stroke: #5A38FD;
+    .mat-spinner::ng-deep circle {
+      stroke: #3931D8;
     }
 
     .container {

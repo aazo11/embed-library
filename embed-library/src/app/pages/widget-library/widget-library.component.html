@@ -32,17 +32,17 @@
       </div>
     </div>
 
-    <div *ngIf="embedList.length !=0;else comingSoonText" class="list" >
+    <div *ngIf="embedList.length !=0;else loadSpinner" class="list" >
       <div *ngFor="let embed of embedList; let idx = index;" class="widget-box">
         <div class="widget-content" *ngIf="idx < limit">
           <app-widget [title]="widgetTitle" [campaign]="embed" [mobile]="width < 1058"></app-widget>
         </div>
       </div>
     </div>
-    <ng-template #comingSoonText>
-      <div class="comingSoon">
-      Coming Soon
-    </div>
+    <ng-template #loadSpinner>
+      <div class="spinner">
+        <mat-spinner></mat-spinner>
+      </div>
     </ng-template>
   </div>
 </div>
