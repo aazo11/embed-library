@@ -19,7 +19,6 @@ export class SelfserveComponent implements OnInit {
   visualizations = [];
   isMobile = false;
   email = '';
-  loading = [];
 
   defaultEmbed = [
     '<iframe style="display:block;" width="100%" height="700px" src="https://app.hi-george.com/v1/smartviz/covid/county_cases?state=California&county=San+Francisco&partner=123&start=2020-03-01&tz=America%2FNew_York&theme=higeorge&noCTA=1" class="hg-data-interactive" frameborder="0" scrolling="no"></iframe>',
@@ -93,13 +92,6 @@ export class SelfserveComponent implements OnInit {
       });
     });
     console.log(this.visualizations);
-  }
-
-  iframeLoaded(i) {
-    console.log(i)
-      if (typeof this.loading.length[i] === 'undefined') {
-        document.getElementById("loading-"+i).remove()
-      }
   }
 
   getEmbedCode(height,url) {
