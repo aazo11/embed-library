@@ -1,0 +1,115 @@
+<div class="col">
+  <app-header></app-header>
+  <div class="main-content col container">
+    <section class="section-0 col" *ngIf="step === 0">
+      <h1>YC startups are eligible for 3 hours of free CFO services.</h1>
+      <p>
+        Pilot is offering YC 2020 & 2021 3 hours of free CFO services, which can
+        include: building your KPI dashboard, creating a template for your pitch
+        deck or budget, mock pitch sessions, or a series of calls to chat
+        face-to-face with an expert from our CFO team.
+      </p>
+      <p>
+        Apply for Pilot's YC special CFO services offer. If approved, you will
+        be eligible for up to 3 hours of free CFO services (valued at $1,050).
+      </p>
+      <p><i>*You must claim the hours by August 1, 2021</i></p>
+      <div class="action row justify-end">
+        <app-button color="purple" (click)="updateStep(1)">Next</app-button>
+      </div>
+    </section>
+
+    <section class="section-1 col" *ngIf="step === 1">
+      <form
+        class="col"
+        [formGroup]="userForm"
+        autocomplete="off"
+        (ngSubmit)="submit()"
+      >
+        <mat-form-field>
+          <input
+            matInput
+            type="text"
+            placeholder="First Name"
+            formControlName="firstName"
+            id="firstName"
+          />
+          <mat-error *ngIf="hasError('firstName', 'required')">
+            First name is required
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            type="text"
+            placeholder="Last Name"
+            formControlName="lastName"
+            id="lastName"
+          />
+          <mat-error *ngIf="hasError('lastName', 'required')">
+            Last name is required
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            type="text"
+            placeholder="Email Address"
+            formControlName="email"
+            id="email"
+          />
+          <mat-error *ngIf="hasError('email', 'required')">
+            Email address is required
+          </mat-error>
+          <mat-error *ngIf="hasError('email', 'email')">
+            Email address is not valid
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            type="text"
+            placeholder="Company Name"
+            formControlName="company"
+            id="company"
+          />
+          <mat-error *ngIf="hasError('company', 'required')">
+            Company name is required
+          </mat-error>
+        </mat-form-field>
+        <div class="checkbox-wrapper">
+          <mat-checkbox formControlName="acceptTerms" id="acceptTerms">
+            Accept Pilot
+            <a href="http://www.pilot.com/terms">Terms and Conditions</a>
+          </mat-checkbox>
+          <div
+            class="mat-form-field-subscript-wrapper"
+            *ngIf="formSubmitted && userForm.controls.acceptTerms.invalid"
+          >
+            <mat-error>Please read and accept "Terms and Conditions"</mat-error>
+          </div>
+        </div>
+        <div class="action row justify-between">
+          <app-button color="grey" (click)="updateStep(0)" width="160px">
+            Back
+          </app-button>
+          <app-button type="submit" color="purple" width="160px">
+            Next
+          </app-button>
+        </div>
+      </form>
+    </section>
+
+    <section class="section-2 col" *ngIf="step === 2">
+      <h5>You're all done! 🥳</h5>
+      <p>You can schedule a CFO services kickoff session on the next page!</p>
+      <div class="action row justify-between">
+        <app-button color="grey" (click)="updateStep(1)" width="160px">
+          Back
+        </app-button>
+        <app-button url="/" color="purple" width="160px">Next</app-button>
+      </div>
+    </section>
+  </div>
+  <app-footer></app-footer>
+</div>
