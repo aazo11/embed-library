@@ -2,18 +2,12 @@
   <app-header></app-header>
   <div class="main-content col container">
     <section class="section-0 col" *ngIf="step === 0">
-      <h1>YC startups are eligible for 3 hours of free CFO services.</h1>
+      <h1>Thanks for signing up with HiGeorge.</h1>
       <p>
-        Pilot is offering YC 2020 & 2021 3 hours of free CFO services, which can
-        include: building your KPI dashboard, creating a template for your pitch
-        deck or budget, mock pitch sessions, or a series of calls to chat
-        face-to-face with an expert from our CFO team.
+       The next screens will finalize account creation and walk you through our Terms of Service.
       </p>
-      <p>
-        Apply for Pilot's YC special CFO services offer. If approved, you will
-        be eligible for up to 3 hours of free CFO services (valued at $1,050).
-      </p>
-      <p><i>*You must claim the hours by August 1, 2021</i></p>
+      
+      <!--<p><i>*You must claim the hours by August 1, 2021</i></p>-->
       <div class="action row justify-end">
         <app-button color="purple" (click)="updateStep(1)">Next</app-button>
       </div>
@@ -79,8 +73,8 @@
         </mat-form-field>
         <div class="checkbox-wrapper">
           <mat-checkbox formControlName="acceptTerms" id="acceptTerms">
-            Accept Pilot
-            <a href="http://www.pilot.com/terms">Terms and Conditions</a>
+            I accept
+            <a href="https://hi-george.com/tos">Terms and Conditions</a>
           </mat-checkbox>
           <div
             class="mat-form-field-subscript-wrapper"
@@ -102,12 +96,12 @@
 
     <section class="section-2 col" *ngIf="step === 2">
       <h5>You're all done! 🥳</h5>
-      <p>You can schedule a CFO services kickoff session on the next page!</p>
+      <p>You will receive a confirmation via email.</p>
       <div class="action row justify-between">
         <app-button color="grey" (click)="updateStep(1)" width="160px">
           Back
         </app-button>
-        <app-button url="/" color="purple" width="160px">Next</app-button>
+        <app-button url="/" color="purple" width="160px">Done</app-button>
       </div>
     </section>
   </div>
