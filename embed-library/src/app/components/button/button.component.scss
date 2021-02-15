@@ -1,8 +1,9 @@
-@import '../../../assets/colors';
-@import '../../../assets/breakpoints';
+@import "../../../assets/colors";
+@import "../../../assets/breakpoints";
 
 :host {
-  a, button {
+  a,
+  button {
     display: flex;
     height: 48px;
     max-width: 100%;
@@ -34,6 +35,34 @@
       &:hover {
         color: $color-button-blue;
         background-color: white;
+      }
+    }
+
+    &.blue-fill {
+      border-color: $color-button-blue;
+      background-color: $color-button-blue;
+      color: white;
+      &:hover {
+        color: $color-button-blue;
+        background-color: white;
+      }
+    }
+
+    &.grey {
+      background-color: $color-button-grey;
+      color: white;
+      text-transform: unset;
+      &:hover {
+        background-color: $color-button-hover-grey;
+      }
+    }
+
+    &.purple {
+      background-color: $color-button-purple;
+      color: white;
+      text-transform: unset;
+      &:hover {
+        background-color: $color-button-hover-purple;
       }
     }
   }
