@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router'
   styleUrls: ["./clickthrough-agreement.component.scss"],
 })
 export class ClickthroughAgreementComponent implements OnInit {
-  step: Number =1;
+  step: Number =0;
   userForm: FormGroup;
   formSubmitted = false;
 
@@ -30,7 +30,9 @@ export class ClickthroughAgreementComponent implements OnInit {
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
       const step = params['step'];
+      if(step){
       this.step = Number(step)
+      }
     });
     console.log(this.step)
     this.userForm = new FormGroup({
