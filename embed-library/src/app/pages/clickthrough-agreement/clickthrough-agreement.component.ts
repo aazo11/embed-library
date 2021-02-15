@@ -3,6 +3,7 @@ import { Component, OnInit, Inject, PLATFORM_ID } from "@angular/core";
 import { Title, Meta } from "@angular/platform-browser";
 import { AnalyticsService } from "src/app/analytics.service";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { ActivatedRoute, Router } from '@angular/router'
 
 @Component({
   selector: "app-clickthrough-agreement",
@@ -10,7 +11,7 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
   styleUrls: ["./clickthrough-agreement.component.scss"],
 })
 export class ClickthroughAgreementComponent implements OnInit {
-  step = 2;
+  step: Number =1;
   userForm: FormGroup;
   formSubmitted = false;
 
@@ -18,10 +19,20 @@ export class ClickthroughAgreementComponent implements OnInit {
     private analytics: AnalyticsService,
     private titleService: Title,
     private metaService: Meta,
+    private route: ActivatedRoute,
+    private router: Router,
     @Inject(PLATFORM_ID) private platformId: Object
-  ) {}
+  ) {
+
+
+  }
 
   ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      const step = params['step'];
+      this.step = Number(step)
+    });
+    console.log(this.step)
     this.userForm = new FormGroup({
       firstName: new FormControl("", [Validators.required]),
       lastName: new FormControl("", [Validators.required]),
@@ -37,6 +48,17 @@ export class ClickthroughAgreementComponent implements OnInit {
 
   updateStep(value) {
     this.step = value;
+    
+    const queryParams = { step: value.toString() };
+
+  this.router.navigate(
+    [], 
+    {
+      relativeTo: this.route,
+      queryParams: queryParams, 
+     
+      replaceUrl: true 
+    });
     this.formSubmitted = false;
   }
 
@@ -45,9 +67,8 @@ export class ClickthroughAgreementComponent implements OnInit {
     if (this.userForm.invalid) {
       return;
     }
-
-    this.step = 2;
     // handle form
     console.log(this.userForm.value);
+    this.updateStep(2)
   }
 }
