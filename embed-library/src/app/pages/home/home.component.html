@@ -5,48 +5,58 @@
       <div class="container col">
         <div class="section-content row">
           <div class="col">
-            <h2>Add Data Visualizations to Your Articles
-            </h2>
+            <h2>Add Data Visualizations to Your Articles</h2>
             <div class="desc">
-              HiGeorge creates data visualizations that you can drag-and-drop into articles. No data background required. 
-              We make sense of data so that you don’t have to. 
+              HiGeorge creates data visualizations that you can drag-and-drop
+              into articles. No data background required. We make sense of data
+              so that you don’t have to.
             </div>
             <div class="links row">
-              <app-button url="/contact" color="blue">Contact us to start</app-button>
-              <a class="row link-red" (click)="trackClick('homepage_how_it_works')" [routerLink]="['/how-it-works']">
+              <app-button url="/contact" color="blue"
+                >Contact us to start</app-button
+              >
+              <a
+                class="row link-red"
+                (click)="trackClick('homepage_how_it_works')"
+                [routerLink]="['/how-it-works']"
+              >
                 How it works
                 <mat-icon aria-hidden="false">arrow_right_alt</mat-icon>
               </a>
             </div>
-            <div style="padding-top: 20px;" class="row">
-              <a href="https://www.producthunt.com/posts/higeorge-data-visualizations?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-higeorge-data-visualizations" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=279743&theme=light" alt="HiGeorge Data Visualizations - No-code real-time data visualizations for anything | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+            <div style="padding-top: 20px" class="row">
+              <a
+                href="https://www.producthunt.com/posts/higeorge-data-visualizations?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-higeorge-data-visualizations"
+                target="_blank"
+                ><img
+                  src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=279743&theme=light"
+                  alt="HiGeorge Data Visualizations - No-code real-time data visualizations for anything | Product Hunt"
+                  style="width: 250px; height: 54px"
+                  width="250"
+                  height="54"
+              /></a>
             </div>
           </div>
           <div class="image col">
             <img class="bg" src="assets/images/home/1.jpg" />
           </div>
         </div>
-        <div class="col">
-          <div class="subtitle row">SEE CASE STUDIES</div>
-          <div class="logos row justify-center">
-            <!--<a
+      </div>
+    </div>
+
+    <div class="section-success-stories">
+      <div class="slim-contents">
+        <h3>Our success stories</h3>
+        <div class="carousel-wrapper">
+          <carousel [height]="200" [cellWidth]="300" [margin]="20">
+            <div
               *ngFor="let logo of logos"
-              class="logo row justify-center"
-              [routerLink]="['/case-study', logo]"
-              (click)="trackClick('case_study', logo)"
-            >
-              <img [src]="'assets/images/logos/' + logo + '.png'">
-          </a> -->
-           <div
-              *ngFor="let logo of logos"
-              class="logo row justify-center"
+              class="carousel-cell"
               (click)="goToCaseStudy('case_study', logo)"
-              (mouseenter)="setHoverLogo(logo)"
-              (mouseleave)="setHoverLogo(null)"
             >
-              <img [src]="logoUrl(logo)">
+              <img [ngClass]="logo" [src]="logoUrl(logo)" />
             </div>
-          </div>
+          </carousel>
         </div>
       </div>
     </div>
@@ -57,8 +67,9 @@
           <div class="subtitle"></div>
           <h3>Turn-key Visualizations</h3>
           <div class="desc">
-            All visualizations are ready-to-use, include the necessary datasets, and require no coding whatsoever. 
-            Just choose what you want and drag and drop into WordPress.
+            All visualizations are ready-to-use, include the necessary datasets,
+            and require no coding whatsoever. Just choose what you want and drag
+            and drop into WordPress.
           </div>
           <div class="links row">
             <app-button url="/how-it-works">See how it works</app-button>
@@ -84,24 +95,29 @@
           <div class="subtitle"></div>
           <h3>The HiGeorge Visualization Library</h3>
           <p>
-            Our library contains a wide array of interactive data visualizations to supplement different articles and storylines - all of which can be localized to any region and customized to meet specific requirements.
+            Our library contains a wide array of interactive data visualizations
+            to supplement different articles and storylines - all of which can
+            be localized to any region and customized to meet specific
+            requirements.
           </p>
           <div class="items col">
             <div class="row">
-              <img src="assets/images/icons/check-green.svg">
+              <img src="assets/images/icons/check-green.svg" />
               Auto updated with latest data
             </div>
             <div class="row">
-              <img src="assets/images/icons/check-green.svg">
+              <img src="assets/images/icons/check-green.svg" />
               Summary information for each metric
             </div>
           </div>
           <div class="links row">
-            <app-button  url="/visualizations" color="white">See our library</app-button>
+            <app-button url="/visualizations" color="white"
+              >See our library</app-button
+            >
           </div>
         </div>
         <div class="image row">
-          <img src="assets/images/home/5.png">
+          <img src="assets/images/home/5.png" />
         </div>
       </div>
     </div>
@@ -112,16 +128,19 @@
           <div class="subtitle">Why us</div>
           <h3>Loved by Journalists, Engaging for Readers</h3>
           <div class="desc">
-            HiGeorge believes in the democratization of data visualizations. 
-            We are committed to helping newsrooms enhance their existing reporting and further reader understanding.
-
+            HiGeorge believes in the democratization of data visualizations. We
+            are committed to helping newsrooms enhance their existing reporting
+            and further reader understanding.
           </div>
         </div>
         <div class="col flex-1">
           <div class="tip col align-start">
             <img src="assets/images/home/hero.svg" />
             <h5>Increase Engagement</h5>
-            <p>Readers are able to interact with our visualizations, thereby increasing engagement and pageviews</p>
+            <p>
+              Readers are able to interact with our visualizations, thereby
+              increasing engagement and pageviews
+            </p>
           </div>
           <div class="tip col align-start">
             <img src="assets/images/home/rocket.svg" />
@@ -135,7 +154,10 @@
           <div class="tip col align-start">
             <img src="assets/images/home/ai-powered.svg" />
             <h5>AI-Powered Reporting</h5>
-            <p>Increase your breadth of coverage without additional resources by leveraging the power of AI</p>
+            <p>
+              Increase your breadth of coverage without additional resources by
+              leveraging the power of AI
+            </p>
           </div>
           <!--<div class="tip col align-start">
             <img src="assets/images/home/wifi.svg" />
