@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div class="main-content container">
+  <div class="section-title">
+    <h2>Success Stories</h2>
+    <p>Description of impact HiGeorge had made on their client</p>
+  </div>
+  <div class="section-grid">
+    <div *ngFor="let item of stories" class="grid-cell" [ngClass]="item.name">
+      <div class="image" [ngClass]="item.type">
+        <img [src]="imgUrl(item.name, item.type)" />
+      </div>
+      <div class="bg">
+        <img [src]="imgUrl(item.name, 'logo')" />
+        <a [routerLink]="['/case-study', item.name]">
+          <span>Read story</span>
+          <mat-icon aria-hidden="false">arrow_right_alt</mat-icon>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

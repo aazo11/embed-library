@@ -15,6 +15,7 @@ import { PrivacyComponent } from "src/app/pages/privacy/privacy.component";
 import { TosComponent } from "src/app/pages/tos/tos.component";
 import { DemoComponent } from "src/app/pages/demo/demo.component";
 import { ClickthroughAgreementComponent } from "src/app/pages/clickthrough-agreement/clickthrough-agreement.component";
+import { SuccessStoriesComponent } from "src/app/pages/success-stories/success-stories.component";
 
 import { WidgetComponent } from "src/app/components/widget/widget.component";
 import { SearchComponent } from "src/app/components/search/search.component";
@@ -59,6 +60,7 @@ import { SelfserveSearchComponent } from "./components/selfserve-search/selfserv
     TosComponent,
     DemoComponent,
     ClickthroughAgreementComponent,
+    SuccessStoriesComponent,
 
     HeaderComponent,
     FooterComponent,
