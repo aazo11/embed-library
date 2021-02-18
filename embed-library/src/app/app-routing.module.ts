@@ -13,6 +13,7 @@ import { TosComponent } from "src/app/pages/tos/tos.component";
 import { DemoComponent } from "src/app/pages/demo/demo.component";
 import { SelfserveComponent } from "src/app/pages/selfserve/selfserve.component";
 import { ClickthroughAgreementComponent } from "src/app/pages/clickthrough-agreement/clickthrough-agreement.component";
+import { SuccessStoriesComponent } from "src/app/pages/success-stories/success-stories.component";
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: "selfserve", component: SelfserveComponent },
   { path: "tos", component: TosComponent },
   { path: "clickthrough-agreement", component: ClickthroughAgreementComponent },
+  { path: "success-stories", component: SuccessStoriesComponent },
 ];
 
 @NgModule({
