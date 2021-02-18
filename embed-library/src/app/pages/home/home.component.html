@@ -48,11 +48,13 @@
       <div class="slim-contents">
         <h3>Our success stories</h3>
         <div class="carousel-wrapper">
-          <carousel [height]="200" [cellWidth]="300" [margin]="20">
+          <carousel [height]="200" [cellWidth]="210" [margin]="24">
             <div
               *ngFor="let logo of logos"
               class="carousel-cell"
               (click)="goToCaseStudy('case_study', logo)"
+              (mouseenter)="setHoverLogo(logo)"
+              (mouseleave)="setHoverLogo(null)"
             >
               <img [ngClass]="logo" [src]="logoUrl(logo)" />
             </div>
