@@ -64,8 +64,8 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
       fromEvent(window, 'scroll')
         .pipe(debounceTime(500))
         .subscribe(() => {
-          if (window.scrollY + document.documentElement.offsetHeight >= 0.85 * document.documentElement.scrollHeight) {
-            this.limit += 2
+          if (window.scrollY + document.documentElement.offsetHeight >= 0.55 * document.documentElement.scrollHeight) {
+            this.limit += 3
             this.analytics.analyticsEventEmitter('library_scroll', undefined, undefined, this.limit, { num: this.limit });
           }
         });
@@ -105,7 +105,7 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
 
     this.embedService.getEmbeds(this.queryParams).subscribe((list) => {
       this.embedList = list.visualizations;
-      this.limit = 2
+      this.limit = 5
     })
   }
 }

@@ -14,7 +14,7 @@ import { isPlatformBrowser } from '@angular/common';
 export class WidgetLibraryComponent implements OnInit, OnDestroy {
   embedList: any[] = []
   queryParams: any = {};
-  limit = 2
+  limit = 5
 
   constructor(
     private embedService: EmbedService,
