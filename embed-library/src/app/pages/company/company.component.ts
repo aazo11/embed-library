@@ -18,7 +18,7 @@ export class CompanyComponent implements OnInit {
 
   get selected() {
     if(isPlatformBrowser(this.platformId)) {
-      return location.hash === '#advisors' ? 3 : 2;
+      return location.hash === '#advisors' ? 4 : 3;
     }
     return 2;
   }

@@ -4,6 +4,7 @@
   </a>
   <ul class="row">
     <li class="row" *ngFor="let item of menuItems; let i = index" [ngClass]="{active: active === i}">
+    
       <a class="menu-item" (click)="clickLink('desktop_nav', item.label)" [routerLink]="[item.path]">{{item.label}}</a>
     </li>
   </ul>

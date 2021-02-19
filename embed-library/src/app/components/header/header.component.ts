@@ -15,6 +15,7 @@ export class HeaderComponent {
 
   menuItems = [
     { label: 'How it works', path: '/how-it-works' },
+    { label: 'Success stories', path:'/success-stories'},
     { label: 'Visualizations', path: '/visualizations' },
     { label: 'Company', path: '/company' },
     { label: 'Advisors', path: '/advisors' },

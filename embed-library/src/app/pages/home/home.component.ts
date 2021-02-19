@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { AnalyticsService } from 'src/app/analytics.service';
 import { Title, Meta } from '@angular/platform-browser';
 import { Router } from '@angular/router'
+import { PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-home-page',
@@ -10,6 +12,7 @@ import { Router } from '@angular/router'
 })
 export class HomeComponent implements OnInit {
   hoverLogo: string = null;
+  isBrowser: boolean;
 
   logos = [
     'advocate',
@@ -23,8 +26,11 @@ export class HomeComponent implements OnInit {
     private analytics: AnalyticsService,
     private titleService: Title,
     private metaService: Meta,
-    private router: Router
-  ) { }
+    private router: Router,
+    @Inject(PLATFORM_ID) private platformId
+  ) { 
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
 
   ngOnInit() {
     const title = 'Home';
