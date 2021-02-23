@@ -25,7 +25,31 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
       {
         label: 'COVID-19',
         value: 'COVID-19',
-      }
+      },
+      // {
+      //   label: 'COVID-19 Vaccine',
+      //   value: 'COVID-19 Vaccine',
+      // },
+      // {
+      //   label: 'Campaign Finance',
+      //   value: 'Campaign Finance',
+      // },
+      // {
+      //   label: 'Crime',
+      //   value: 'Crime',
+      // },
+      // {
+      //   label: 'Criminal Justice',
+      //   value : 'Criminal Justice',
+      // },
+      // {
+      //   label: 'Demographics',
+      //   value : 'Demographics',
+      // },
+      // {
+      //   label: 'Criminal Justice',
+      //   value : 'Criminal Justice',
+      // },
     ]
   };
 
@@ -51,6 +75,7 @@ export class WidgetLibraryComponent implements OnInit, OnDestroy {
 
     this.embedService.getTopics().subscribe((list) => {
       this.searchOptions.topic = list.map(s => ({label: s, value: s}));
+      this.load();
     });
 
     this.activatedRoute.queryParams.subscribe(params => {
