@@ -45,6 +45,7 @@ import { CachedSrcDirective } from "./cached-src.directive";
 import { SelfserveComponent } from "./pages/selfserve/selfserve.component";
 import { PopupComponent } from "./components/popup/popup.component";
 import { SelfserveSearchComponent } from "./components/selfserve-search/selfserve-search.component";
+import { AnnouncementsComponent } from 'src/app/pages/announcements/announcements.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { SelfserveSearchComponent } from "./components/selfserve-search/selfserv
     SelfserveComponent,
     PopupComponent,
     SelfserveSearchComponent,
+    AnnouncementsComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: "serverApp" }),
